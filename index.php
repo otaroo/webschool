@@ -111,10 +111,10 @@
     </a>
 </div>
   
-   <font color="#FFFFFF"><marquee direction="left" class="blog_news_content style7" style="background:#003366">
+   <!-- <font color="#FFFFFF"><marquee direction="left" class="blog_news_content style7" style="background:#003366">
       ยินดีต้อนรับเข้าสู่เว็บไซต์
 </marquee>
-      </font>
+      </font> -->
 <section>
       <div class="container">
           <?php 
@@ -127,14 +127,20 @@
                 require_once("$file");
                 }
             else{
-                require_once("main.php");
+                require_once("main2.php");
                 }
             ?>
       </div>
 </section>
-<footer class="container-fluid text-center">
+<!-- <footer class="container-fluid text-center" >
   <p>กศน.ตำบลนาโบสถ์ อำเภอวังเจ้า จังหวัดตาก 63000 โทร 089-8337446</p>
-</footer>
+</footer> -->
+<footer class="py-5 bg-dark">
+      <div class="container">
+        <p class="m-0 text-center text-white">Copyright &copy; Your Website 2018</p>
+      </div>
+      <!-- /.container -->
+    </footer>
 
 </body>
 </html>

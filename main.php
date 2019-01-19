@@ -1,10 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
 
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>Untitled Document</title>
-</head>
 
 <body>
   <br />
@@ -18,7 +12,7 @@
       <div class="col-sm-3 well">
         <div class="well">
           <p><a href="#">My Profile</a></p>
-          <img src="bird.jpg" class="img-circle" height="65" width="65" alt="Avatar">
+          <img src="img/cut10.jpg" class="img-circle" height="55" width="55" alt="Avatar">
         </div>
         <div class="well">
           <p><a href="#">การติดต่อสื่อสาร</a></p>
@@ -35,13 +29,13 @@
         <p><a href="http://www.etvthai.tv/stream/home.aspx">สถานีโทรทัศน์เพื่อการศึกษา</a></p>
         <p><a href="http://www.ceted.org/">ศูนย์เทคโนโลยีทางการศึกษา</a></p>
       </div>
-      <div class="col-sm-7">
+      <div class="col-sm-9">
 
         <div class="row">
           <div class="col-sm-12">
             <div class="panel panel-default text-left">
               <div class="panel-body">
-                <p contenteditable="true">การศึกษานอกระบบการศึกษาตามอัธยาศัย กศน.ตำบลนาโบสถ์</p>
+                <h2>การศึกษานอกระบบการศึกษาตามอัธยาศัย กศน.ตำบลนาโบสถ์</h2>
 
               </div>
             </div>
@@ -66,20 +60,17 @@
         </div>
    <?php } ?>
       </div>
-      <div class="col-sm-2 well">
+      <!-- <div class="col-sm-2 well">
         <div class="thumbnail">
-          <p>รูปกิจกรรม</p>
           <img src="img/cut10.jpg" alt="Paris" width="400" height="300">
-
-          <button class="btn btn-primary">คลิก</button>
         </div>
-        <div class="well">
-          <p>ADS</p>
+        <div class="thumbnail">
+          <img src="img/cut10.jpg" alt="Paris" width="400" height="300">
         </div>
-        <div class="well">
-          <p>ADS</p>
+        <div class="thumbnail">
+          <img src="img/cut10.jpg" alt="Paris" width="400" height="300">
         </div>
-      </div>
+      </div> -->
     </div>
   </div>
 
