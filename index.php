@@ -7,13 +7,17 @@
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <title>กศน.ตำบลนาโบสถ์</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="css/modern-business.css" rel="stylesheet">
+
   <style>
     /* Remove the navbar's default margin-bottom and rounded borders */ 
     .navbar {
@@ -41,90 +45,87 @@
   }
   </style>
 </head>
+
 <body>
 
-<nav class="navbar navbar-inverse">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle"   data-toggle="collapse" data-target="#myNavbar">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>      </button>
-      <a class="navbar-brand" href="#">กศน.ตำบลนาโบสถ์</a>
-    </div>
-    <div class="collapse navbar-collapse" id="myNavbar">
-      <ul class="nav navbar-nav">
-        <ul class="nav navbar-nav">
-      <li class="active"><a href="index.php">หน้าหลัก</a></li>
-      <li class="dropdown">
-        <a class="dropdown-toggle" data-toggle="dropdown" href="#">เกี่ยวกับ
-        <span class="caret"></span></a>
-        <ul class="dropdown-menu">
-          <li><a href="?fd=admin&page=history">ประวัติโรงเรียน</a></li>
-          <li><a href="?fd=admin&page=about">ความเป็นมา</a></li>
-          <li><a href="?fd=admin&page=showpersonnel_new">คณะทำงาน</a></li>
-          <li><a href="?fd=admin&page=showper_new">ทำเนียบผู้บริหาร</a></li>
-        </ul>
-      </li>
-        <li><a href="?fd=admin&page=showtb_activity_new">กิจกรรม</a></li>
-        <li><a href="?fd=admin&page=addtb_member">สมัครกิจกรรมกศน</a></li>
-        <li><a href="?fd=admin&page=showtb_activity_rate">ประเมินกิจกรรม</a></li>
-</ul>
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="index.php?fd=user&page=admin_login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-</ul>
-    </div>
-  </div>
-</nav>
-
-<div id="myCarousel" class="carousel slide" data-ride="carousel">
-    <!-- Indicators -->
-    <ol class="carousel-indicators">
-      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-      <li data-target="#myCarousel" data-slide-to="1"></li>
-    </ol>
-
-    <!-- Wrapper for slides -->
-    <div class="carousel-inner" role="listbox">
-      <div class="item active">
-        <img src="img/headd.png" alt="Image">
-        <div class="carousel-caption">
-          
-        </div>      
-      </div>
-
-      <div class="item">
-        <img src="img/wi.png" alt="Image">
-        <div class="carousel-caption">
-          
-        </div>      
-      </div>
-      <div class="item">
-        <img src="img/boon.png" alt="Image">
-        <div class="carousel-caption">
-          
-        </div>      
-      </div>
-    </div>
-    
-<!-- Left and right controls -->
-    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-      <span class="sr-only">Previous</span>
-    </a>
-    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-      <span class="sr-only">Next</span>
-    </a>
-</div>
-  
-   <font color="#FFFFFF"><marquee direction="left" class="blog_news_content style7" style="background:#228B22">
-      ยินดีต้อนรับเข้าสู่เว็บไซต์
-</marquee>
-      </font>
-<section>
+ <!-- Navigation -->
+ <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top">
       <div class="container">
-          <?php 
+        <a class="navbar-brand" href="index.php">กศน.ตำบลนาโบสถ์</a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+          <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownPortfolio" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              เกี่ยวกับ
+              </a>
+              <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownPortfolio">
+                <a class="dropdown-item" href="history.php">ประวัติโรงเรียน</a>
+                <a class="dropdown-item" href="about.php">ความเป็นมา</a>
+                <a class="dropdown-item" href="?fd=admin&page=showpersonnel_new">คณะทำงาน</a>
+                <a class="dropdown-item" href="?fd=admin&page=showper_new">ทำเนียบผู้บริหาร</a>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link"  href="?fd=admin&page=showtb_activity_new">กิจกรรม</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="?fd=admin&page=addtb_member">สมัครกิจกรรมกศน</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">ประเมินกิจกรรม</a>
+            </li>
+            
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <header>
+      <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+          <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner" role="listbox">
+          <!-- Slide One - Set the background image for this slide in the line below -->
+          <div class="carousel-item active" style="background-image: url('img/cut1.png')">
+            <div class="carousel-caption d-none d-md-block">
+            
+            </div>
+          </div>
+          <!-- Slide Two - Set the background image for this slide in the line below -->
+          <div class="carousel-item" style="background-image: url('img/หัว.png')">
+            <div class="carousel-caption d-none d-md-block">
+             
+            </div>
+          </div>
+          <!-- Slide Three - Set the background image for this slide in the line below -->
+          <div class="carousel-item" style="background-image: url('img/carousel3.jpg')">
+            <div class="carousel-caption d-none d-md-block">
+             
+            </div>
+          </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+    </header>
+
+
+
+  <section>
+    <div class="container">
+      <?php 
             if(@$_GET['fd'])
                 $file="module/".$_GET['fd']."_files/".$_GET['page'].".php";
             else
@@ -134,15 +135,23 @@
                 require_once("$file");
                 }
             else{
-                require_once("main.php");
+                require_once("main2.php");
                 }
             ?>
-      </div>
-</section>
-<footer class="container-fluid text-center">
-  <p>กศน.ตำบลนาโบสถ์ อำเภอวังเจ้า จังหวัดตาก 63000 ที่อยู่ : 225  หมู่ที่  2  บ้านสบยมใต้  ตำบลเชียงทอง  อำเภอวังเจ้า
-เบอร์โทรศัพท์   : 055 - 593013  เบอร์โทรสาร :  055-593013</p>
-</footer>
+
+    </div>
+  </section>
+
+  <footer class="py-5 bg-dark">
+    <div class="container">
+      <p class="m-0 text-center text-white">กศน.ตำบลนาโบสถ์ อำเภอวังเจ้า จังหวัดตาก 63000 โทร 089-8337446</p>
+    </div>
+    <!-- /.container -->
+  </footer>
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
 </body>
+
 </html>
