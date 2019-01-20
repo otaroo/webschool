@@ -13,10 +13,10 @@ Download Code On : developers.khontermfan.com
     	 <div style="display:table; margin:0 auto; padding: 20px; width:70%;">
 		       <h2>สมัครกิจกรรม</h2>
 			<form id="frminsert" name="frminsert"  method="post" enctype="multipart/form-data">
-				<div class="form-group"><label for="Act_id">ชื่อกิจกรรม:</label><label id="err2" class="err"></label>
-					<select  id="Act_id" name="Act_id" class="form-control">
+				<div class="form-group"><label for="act_id">ชื่อกิจกรรม:</label><label id="err2" class="err"></label>
+					<select  id="act_id" name="act_id" class="form-control">
 		       			<option value="" disabled >เลือก</option><?php
-							$sql3 ="select Act_id id,Act_name  name from tb_activity ";  
+							$sql3 ="select act_id id,act_name  name from tb_activity ";  
 							$qess3=$db->query($sql3);	
 							while($fd3=$qess3->fetch_assoc()){ ?>
 						       <option value="<?php echo $fd3['id'];?>">
@@ -56,10 +56,10 @@ Download Code On : developers.khontermfan.com
 				 $("#err5").html('');
 		 			  var chk=true; 
 		 			  
-				  if($("#Act_id").val() == "")
+				  if($("#act_id").val() == "")
 				  {
 				    $("#err2").html('กรุณากำหนดค่า รหัสกิจกรรม ด้วยค่ะ');
-				    $("#Act_id").focus();
+				    $("#act_id").focus();
 				    chk= false;
 				  }
 				  if($("#mem_name").val() == "")

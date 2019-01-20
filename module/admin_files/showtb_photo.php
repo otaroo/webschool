@@ -35,13 +35,13 @@ Download Code On : developers.khontermfan.com
 		</tr>
 		</thead>
 		<tbody><?php 
-			$sql2 ="select * from  tb_photo where 1  order by Act_id desc";  
+			$sql2 ="select * from  tb_photo where 1  order by act_id desc";  
 			$qess2=$db->query($sql2);	
 			while($fd2=$qess2->fetch_assoc()){	
 			
 		?><tr>
 					<td><?php echo $fd2['ph_id'];?></td><?php 
-							$sql3 ="select Act_name name from tb_activity where Act_id='".$fd2['Act_id']."'";  
+							$sql3 ="select act_name name from tb_activity where act_id='".$fd2['act_id']."'";  
 							$qess3=$db->query($sql3);	
 							$fd3=$qess3->fetch_assoc();
 							

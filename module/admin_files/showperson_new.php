@@ -37,7 +37,7 @@ Download Code On : developers.khontermfan.com
 		</tr>
 		</thead>
 		<tbody><?php 
-			$sql2 ="select * from tb_person where 1  order by person_name desc";  
+			$sql2 ="select * from tb_person where 1  order by person_name asc";  
 			$qess2=$db->query($sql2);	
 			while($fd2=$qess2->fetch_assoc()){	
 			

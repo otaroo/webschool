@@ -33,7 +33,7 @@ Download Code On : developers.khontermfan.com
 		</tr>
 		</thead>
 		<tbody><?php 
-			$sql2 ="select * from tb_news where 1  order by description desc";  
+			$sql2 ="select * from tb_news where 1  order by description asc";  
 			$qess2=$db->query($sql2);	
 			while($fd2=$qess2->fetch_assoc()){	
 			

@@ -17,20 +17,23 @@ Download Code On : developers.khontermfan.com
 		   </li>
 		  </ol>
 <?php 
-  $Act_id = $_GET['Act_id'];
-  $sql = "select * from tb_activity where Act_id='$Act_id'";
+  $act_id = $_GET['act_id'];
+  $sql = "select * from tb_activity where act_id='$act_id'";
   $qqes=$db->query($sql);
   $row_q = $qqes->fetch_assoc();
 ?>
     	<form id="frmedit" name="frmedit"  method="post"  enctype="multipart/form-data">
 				<div class="form-group">    	
-    		<input type="hidden" class="form-control" id="Act_id" name="Act_id" value="<?php echo $row_q['Act_id'] ?>" >
+    		<input type="hidden" class="form-control" id="act_id" name="act_id" value="<?php echo $row_q['act_id'] ?>" >
 				</div>
-				<div class="form-group"><label for="Act_name">ชื่อกิจกรรม:</label><label id="err2" class="err"></label>    	
-    		<input type="text" class="form-control" id="Act_name" name="Act_name" value="<?php echo $row_q['Act_name'] ?>" >
+				<div class="form-group"><label for="act_name">ชื่อกิจกรรม:</label><label id="err2" class="err"></label>    	
+    		<input type="text" class="form-control" id="act_name" name="act_name" value="<?php echo $row_q['act_name'] ?>" >
 				</div>
-				<div class="form-group"><label for="Act_date">วันที่กิจกรรม:</label><label id="err3" class="err"></label>    	
-    		<input type="date" class="form-control" id="Act_date" name="Act_date" value="<?php echo $row_q['Act_date'] ?>" >
+				<div class="form-group"><label for="act_date">วันที่กิจกรรม:</label><label id="err3" class="err"></label>    	
+    		<input type="date" class="form-control" id="act_date" name="act_date" value="<?php echo $row_q['act_date'] ?>" >
+				</div>
+                <div class="form-group"><label for="act_des">รายละเอียด:</label><label id="err4" class="err"></label>    	
+    		<input type="text" class="form-control" id="act_des" name="act_des" value="<?php echo $row_q['act_des'] ?>" >
 				</div>
 		  <span id="status_save"></span>
 		  <button type="button" onclick="return checkEmpty();" id="btnAdd" name="btnAdd" class="btn btn-info">แก้ไขข้อมูล</button>
@@ -45,22 +48,28 @@ Download Code On : developers.khontermfan.com
 				 $("#err3").html('');
 		 			  var chk=true; 
 		 			  
-				  if($("#Act_id").val() == "")
+				  if($("#act_id").val() == "")
 				  {
 				    $("#err1").html('กรุณากำหนดค่า รหัสกิจกรรม ด้วยค่ะ');
-				    $("#Act_id").focus();
+				    $("#act_id").focus();
 				    chk= false;
 				  }
-				  if($("#Act_name").val() == "")
+				  if($("#act_name").val() == "")
 				  {
 				    $("#err2").html('กรุณากำหนดค่า ชื่อกิจกรรม ด้วยค่ะ');
-				    $("#Act_name").focus();
+				    $("#act_name").focus();
 				    chk= false;
 				  }
-				  if($("#Act_date").val() == "")
+				  if($("#act_date").val() == "")
 				  {
 				    $("#err3").html('กรุณากำหนดค่า วันที่กิจกรรม ด้วยค่ะ');
-				    $("#Act_date").focus();
+				    $("#act_date").focus();
+				    chk= false;
+				  }
+				  if($("#act_des").val() == "")
+				   {
+				    $("#err4").html('กรุณากำหนดค่า รายละเอียด ด้วยค่ะ');
+				    $("#act_des").focus();
 				    chk= false;
 				  }
 			  

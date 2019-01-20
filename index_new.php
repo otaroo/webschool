@@ -23,7 +23,7 @@
     
     /* Add a gray background color and some padding to the footer */
     footer {
-      background-color: #000000;
+      background-color: #228B22;
       padding: 25px;
     }
     
@@ -61,13 +61,13 @@
         <a class="dropdown-toggle" data-toggle="dropdown" href="#">เกี่ยวกับ
         <span class="caret"></span></a>
         <ul class="dropdown-menu">
-          <li><a href="history.php">ประวัติโรงเรียน</a></li>
-          <li><a href="about.php">ความเป็นมา</a></li>
+          <li><a href="?fd=admin&page=history">ประวัติโรงเรียน</a></li>
+          <li><a href="?fd=admin&page=about">ความเป็นมา</a></li>
           <li><a href="?fd=admin&page=addpersonnel">คณะทำงาน</a></li>
           <li><a href="?fd=admin&page=addperson">ทำเนียบผู้บริหาร</a></li>
         </ul>
       </li>
-        <li><a href="?fd=admin&page=addtb_activity">เพิ่มกิจกรรม</a></li>
+        <li><a href="?fd=admin&page=addtb_activity1">เพิ่มกิจกรรม</a></li>
         <li><a href="?fd=admin&page=showmember_new">รายชื่อผู้เข้าร่วมกิจกรรม</a></li>
         <li><a href="#">ดูผลประเมินกิจกรรม</a></li>
       </ul>
@@ -88,21 +88,42 @@
     <!-- Wrapper for slides -->
     <div class="carousel-inner" role="listbox">
       <div class="item active">
-        <img src="img/cut1.png" alt="Image">
+        <img src="img/headd.png" alt="Image">
         <div class="carousel-caption">
           
         </div>      
       </div>
 
       <div class="item">
-        <img src="img/หัว.png" alt="Image">
+        <img src="img/wi.png" alt="Image">
+        <div class="carousel-caption">
+          
+        </div>      
+      </div>
+      <div class="item">
+        <img src="img/boon.png" alt="Image">
         <div class="carousel-caption">
           
         </div>      
       </div>
     </div>
+    
 
-   
+   <!-- Left and right controls -->
+    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+</div>
+  
+   <font color="#FFFFFF"><marquee direction="left" class="blog_news_content style7" style="background:#228B22">
+      ยินดีต้อนรับเข้าสู่เว็บไซต์
+</marquee>
+      </font>
 <section>
       <div class="container">
           <?php 
@@ -121,7 +142,8 @@
       </div>
 </section>
 <footer class="container-fluid text-center">
-  <p>Footer Text</p>
+  <p>กศน.ตำบลนาโบสถ์ อำเภอวังเจ้า จังหวัดตาก 63000 ที่อยู่ : 225  หมู่ที่  2  บ้านสบยมใต้  ตำบลเชียงทอง  อำเภอวังเจ้า
+เบอร์โทรศัพท์   : 055 - 593013  เบอร์โทรสาร :  055-593013</p>
 </footer>
 
 </body>

@@ -26,13 +26,13 @@ Download Code On : developers.khontermfan.com
 				<div class="form-group">    	
     		<input type="hidden" class="form-control" id="ph_id" name="ph_id" value="<?php echo $row_q['ph_id'] ?>" >
 				</div>
-				<div class="form-group"><label for="Act_id">รหัสกิจกรรม:</label><label id="err2" class="err"></label>
-					<select  id="Act_id" name="Act_id" class="form-control">
+				<div class="form-group"><label for="act_id">รหัสกิจกรรม:</label><label id="err2" class="err"></label>
+					<select  id="act_id" name="act_id" class="form-control">
 		       			<option value="" disabled >เลือก</option><?php
-							$sql3 ="select Act_id id,Act_name  name from tb_activity ";  
+							$sql3 ="select act_id id,act_name  name from tb_activity ";  
 							$qess3=$db->query($sql3);	
 							while($fd3=$qess3->fetch_assoc()){ 
-								$chk = ($row_q['Act_id']==$fd3['id'])?"selected":"";
+								$chk = ($row_q['act_id']==$fd3['id'])?"selected":"";
 								?>
 						       <option value="<?php echo $fd3['id'];?>" <?php echo $chk;?>>
 						        <?php echo $fd3['name'];?>
@@ -64,10 +64,10 @@ Download Code On : developers.khontermfan.com
 				    $("#ph_id").focus();
 				    chk= false;
 				  }
-				  if($("#Act_id").val() == "")
+				  if($("#act_id").val() == "")
 				  {
 				    $("#err2").html('กรุณากำหนดค่า รหัสกิจกรรม ด้วยค่ะ');
-				    $("#Act_id").focus();
+				    $("#act_id").focus();
 				    chk= false;
 				  }
 				  if($("#photo").val() == "")

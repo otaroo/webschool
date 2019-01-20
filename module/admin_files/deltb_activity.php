@@ -7,8 +7,8 @@ Date Create : 2018-11-30 19:39:14
 Download Code On : developers.khontermfan.com
 */
 	require_once "../../config.php";
-	$Act_id = $_POST['Act_id'];
-	$sql_pk ="delete from  tb_activity where Act_id='$Act_id' ";
+	$act_id = $_POST['act_id'];
+	$sql_pk ="delete from  tb_activity where act_id='$act_id' ";
 	$qess3=$db->query($sql_pk);	
 	echo "ลบรายการสำเร็จ";
  	?>

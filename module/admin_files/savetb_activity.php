@@ -11,10 +11,11 @@ Download Code On : developers.khontermfan.com
 */?> <?php
 		require_once "../../config.php";
 			
-					$Act_id = '';
-					$Act_name = $_POST['Act_name'];
-					$Act_date = $_POST['Act_date'];
-  		 	  $sql_add = "insert into tb_activity (Act_id,Act_name,Act_date) values('$Act_id','$Act_name','$Act_date')";
+					$act_id = '';
+					$act_name = $_POST['act_name'];
+					$act_date = $_POST['act_date'];
+					$act_des = $_POST['act_des'];
+  		 	  $sql_add = "insert into tb_activity (act_id,act_name,act_date,act_des) values('$act_id','$act_name','$act_date','$act_des')";
 			  $qqes = $db->query($sql_add);
 			 if($qqes){
 				echo "1";

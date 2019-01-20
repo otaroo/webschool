@@ -12,9 +12,9 @@ Download Code On : developers.khontermfan.com
 		require_once "../../config.php";
 			
 					$ph_id = '';
-					$Act_id = $_POST['Act_id'];
+					$act_id = $_POST['act_id'];
 					$photo = $_POST['photo'];
-  		 	  $sql_add = "insert into tb_photo (ph_id,Act_id,photo) values('$ph_id','$Act_id','$photo')";
+  		 	  $sql_add = "insert into tb_photo (ph_id,act_id,photo) values('$ph_id','$act_id','$photo')";
 			  $qqes = $db->query($sql_add);
 			 if($qqes){
 				echo "1";

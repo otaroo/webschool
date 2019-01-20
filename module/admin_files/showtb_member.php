@@ -25,26 +25,26 @@ Download Code On : developers.khontermfan.com
      </p>
     	<div class='datagrid'>      
    			<table id='tblSearch' width='90%' align='center' class='tblSearch table table-bordered table-hover'>
-			    <thead>
+        <thead>
 			      <tr>
-				 	<th>ลำดับ  </th>
-				 	<th>ชื่อกิจกรรม  </th>
-				 	<th>ชื่อผู้สมัคร  </th>
-				 	<th>เบอร์โทร  </th>
-                    <th>เลขบัตรประชาชน  </th>
-				 	<th>เพศ  </th>
-				  	<th>แก้ไข  </th>
+				 	<th bgcolor="#3399CC">ลำดับ  </th>
+				 	<th bgcolor="#3399CC">ชื่อกิจกรรม  </th>
+				 	<th bgcolor="#3399CC">ชื่อผู้สมัคร  </th>
+				 	<th bgcolor="#3399CC">เบอร์โทร  </th>
+                    <th bgcolor="#3399CC">เลขบัตรประชาชน  </th>
+				 	<th bgcolor="#3399CC">เพศ  </th>
+				  	
 				  
 		</tr>
 		</thead>
 		<tbody><?php 
-			$sql2 ="select * from tb_member where 1  order by Act_id asc";  
+			$sql2 ="select * from tb_member where 1  order by act_id asc";  
 			$qess2=$db->query($sql2);	
 			while($fd2=$qess2->fetch_assoc()){	
 			
 		?><tr>
 					<td><?php echo $fd2['mem_id'];?></td><?php 
-							$sql3 ="select Act_name name from tb_activity where Act_id='".$fd2['Act_id']."'";  
+							$sql3 ="select act_name name from tb_activity where act_id='".$fd2['act_id']."'";  
 							$qess3=$db->query($sql3);	
 							$fd3=$qess3->fetch_assoc();
 							
@@ -56,14 +56,14 @@ Download Code On : developers.khontermfan.com
 					<td><?php 
 	        			$_array = array('M'=>'ชาย','F'=>'หญิง');
 	        		echo $_array[$fd2['mem_sex']];?></td>
-					  			<td><a href='?fd=admin&page=edittb_member&mem_id=<?php echo $fd2['mem_id'];?>'><img src="img/edit.png" height="30" width="30">  </a></td>
+					  			
 					  			
 		  	</tr>
 		  	<?php  } ?>
 		  	
 		</tbody>
 		</table>
-		</div>
+	</div>
 		</div>
 	</div>
 	<script src="js/search.js"></script>

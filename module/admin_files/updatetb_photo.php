@@ -8,7 +8,7 @@ Download Code On : developers.khontermfan.com
 		require_once "../../config.php";
 			
 					$ph_id = $_POST['ph_id'];
-					$Act_id = $_POST['Act_id'];
+					$act_id = $_POST['act_id'];
 					$photo = $_POST['photo'];
 			$dir = "files/$ph_id/";
 					if(!is_dir($dir))
@@ -20,7 +20,7 @@ Download Code On : developers.khontermfan.com
 						$lastname=strtolower($array_last [$c]);
 						$distination = $dir."/".$ph_id.".".$lastname;
 	 					@copy($source,$distination);
-  		 	  $sql_update = "update tb_photo set Act_id='$Act_id',photo='.".$lastname' where ph_id='$ph_id' ";
+  		 	  $sql_update = "update tb_photo set act_id='$act_id',photo='.".$lastname' where ph_id='$ph_id' ";
 			  $qqes = $db->query($sql_update);
 			 if($qqes){
 				echo "1";

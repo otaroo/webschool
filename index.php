@@ -23,7 +23,7 @@
     
     /* Add a gray background color and some padding to the footer */
     footer {
-      background-color: #000000;
+      background-color: #228B22;
       padding: 25px;
     }
     
@@ -60,15 +60,15 @@
         <a class="dropdown-toggle" data-toggle="dropdown" href="#">เกี่ยวกับ
         <span class="caret"></span></a>
         <ul class="dropdown-menu">
-          <li><a href="history.php">ประวัติโรงเรียน</a></li>
-          <li><a href="about.php">ความเป็นมา</a></li>
+          <li><a href="?fd=admin&page=history">ประวัติโรงเรียน</a></li>
+          <li><a href="?fd=admin&page=about">ความเป็นมา</a></li>
           <li><a href="?fd=admin&page=showpersonnel_new">คณะทำงาน</a></li>
           <li><a href="?fd=admin&page=showper_new">ทำเนียบผู้บริหาร</a></li>
         </ul>
       </li>
         <li><a href="?fd=admin&page=showtb_activity_new">กิจกรรม</a></li>
         <li><a href="?fd=admin&page=addtb_member">สมัครกิจกรรมกศน</a></li>
-        <li><a href="#">ประเมินกิจกรรม</a></li>
+        <li><a href="?fd=admin&page=showtb_activity_rate">ประเมินกิจกรรม</a></li>
 </ul>
       <ul class="nav navbar-nav navbar-right">
         <li><a href="index.php?fd=user&page=admin_login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
@@ -87,19 +87,26 @@
     <!-- Wrapper for slides -->
     <div class="carousel-inner" role="listbox">
       <div class="item active">
-        <img src="img/cut1.png" alt="Image">
+        <img src="img/headd.png" alt="Image">
         <div class="carousel-caption">
           
         </div>      
       </div>
 
       <div class="item">
-        <img src="img/หัว.png" alt="Image">
+        <img src="img/wi.png" alt="Image">
+        <div class="carousel-caption">
+          
+        </div>      
+      </div>
+      <div class="item">
+        <img src="img/boon.png" alt="Image">
         <div class="carousel-caption">
           
         </div>      
       </div>
     </div>
+    
 <!-- Left and right controls -->
     <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
       <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
@@ -111,7 +118,7 @@
     </a>
 </div>
   
-   <font color="#FFFFFF"><marquee direction="left" class="blog_news_content style7" style="background:#003366">
+   <font color="#FFFFFF"><marquee direction="left" class="blog_news_content style7" style="background:#228B22">
       ยินดีต้อนรับเข้าสู่เว็บไซต์
 </marquee>
       </font>
@@ -133,7 +140,8 @@
       </div>
 </section>
 <footer class="container-fluid text-center">
-  <p>กศน.ตำบลนาโบสถ์ อำเภอวังเจ้า จังหวัดตาก 63000 โทร 089-8337446</p>
+  <p>กศน.ตำบลนาโบสถ์ อำเภอวังเจ้า จังหวัดตาก 63000 ที่อยู่ : 225  หมู่ที่  2  บ้านสบยมใต้  ตำบลเชียงทอง  อำเภอวังเจ้า
+เบอร์โทรศัพท์   : 055 - 593013  เบอร์โทรสาร :  055-593013</p>
 </footer>
 
 </body>

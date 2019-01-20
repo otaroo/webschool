@@ -27,12 +27,12 @@ Download Code On : developers.khontermfan.com
    			<table id='tblSearch' width='90%' align='center' class='tblSearch table table-bordered table-hover'>
 			    <thead>
 			      <tr>
-				 	<th>ลำดับผู้ทำงาน  </th>
-				 	<th>ชื่อผู้ทำงาน  </th>
-				 	<th>ตำแหน่ง  </th>
-				 	<th>รูปคณะทำงาน  </th>
-				  	<th>แก้ไข  </th>
-				  	<th>ลบ  </th>
+				 	<th width="22%"><div align="center">ลำดับผู้ทำงาน  </div></th>
+				 	<th width="18%"><div align="center">ชื่อผู้ทำงาน  </div></th>
+				 	<th width="13%"><div align="center">ตำแหน่ง  </div></th>
+				 	<th width="23%"><div align="center">รูปคณะทำงาน  </div></th>
+				  	<th width="13%"><div align="center">แก้ไข  </div></th>
+				  	<th width="11%"><div align="center">ลบ  </div></th>
 		</tr>
 		</thead>
 		<tbody><?php 
@@ -45,15 +45,24 @@ Download Code On : developers.khontermfan.com
 					<td><?php echo $fd2['personnel_name'];?></td>
 					<td><?php echo $fd2['personnel_position'];?></td>
 					<td><p align="center"><img src="<?php echo $url_img;?>" width="150px"/> </p>
-				    <p align="center"><a href="?fd=admin&amp;page=editlper&personnel_id=<?php echo $fd2['personnel_id'];?>">แก้ไขรูปภาพ</a></p></td>
-					  			<td><a href='?fd=admin&page=editpersonnel&personnel_id=<?php echo $fd2['personnel_id'];?>'><img src="img/edit.png" height="30" width="30">  </a></td>
-					  			<td><span class ="personnel_id"><?php echo $fd2['personnel_id'];?></span><img class="picdel"  src="img/del.png" height="25" width="25"></td>
+                    
+                   
+                    
+				    <p align="center"><a href="?fd=admin&amp;page=editlper&personnel_id=<?php echo $fd2['personnel_id'];?>"><img src="img/dl.png" height="30" width="30"></a>แก้ไขรูปภาพ
+                     <p align="center"><a href="?fd=admin&amp;page=editlper1&personnel_id=<?php echo $fd2['personnel_id'];?>"><img src="img/dl.png" height="30" width="30"></a>แก้ไขข้อมูล
+					<p align="center">
+					  
+					<p align="center">
+                  
+					  
+		  </div></td>
+					  			<td><div align="center"><a href='?fd=admin&page=editpersonnel&personnel_id=<?php echo $fd2['personnel_id'];?>'><img src="img/.png" height="30" width="30">  </a></div></td>
+					  			<td><div align="center"><span class ="personnel_id"><?php echo $fd2['personnel_id'];?></span><img class="picdel"  src="img/del.png" height="25" width="25"></div></td>
 		  	</tr>
 		  	<?php  } ?>
-		  	
 		</tbody>
 		</table>
-		</div>
+	</div>
 		</div>
 	</div>
 	<script src="js/search.js"></script>
