@@ -35,7 +35,7 @@
           <div class="col-sm-12">
             <div class="panel panel-default text-left">
               <div class="panel-body">
-                <h2>การศึกษานอกระบบการศึกษาตามอัธยาศัย กศน.ตำบลนาโบสถ์</h2>
+                <h2>การศึกษานอกระบบการศึกษาตามอัธยาศัย กศน.ตำบลนาโบสถ์ </h2>
 
               </div>
             </div>
