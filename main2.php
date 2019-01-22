@@ -1,6 +1,12 @@
 <?php 
 require_once "config.php";
-?>
+?><style type="text/css">
+<!--
+body {
+	background-image: url(img/1264242635.jpg);
+}
+-->
+</style>
 
 <div class="container">
 
@@ -8,7 +14,7 @@ require_once "config.php";
     <!-- Marketing Icons Section -->
     <div class="row">
         <?php
-    $sql ="SELECT * FROM tb_news order by publish_time desc limit 3 ";  
+    $sql ="SELECT * FROM tb_news order by publish_time asc limit 5 ";  
     $qess=$db->query($sql);	
     while($fd=$qess->fetch_assoc()){	?>
 
@@ -26,7 +32,7 @@ require_once "config.php";
                     </p>
                 </div>
                 <div class="card-footer">
-                    <a href="#" class="btn btn-primary">รายละเอียด</a>
+                    
                 </div>
             </div>
         </div>
@@ -53,7 +59,7 @@ require_once "config.php";
                       <p class="card-text"> <?php echo $fd['act_des']; ?></p>
                 </div>
                 <div class="card-footer">
-                    <a href="#" class="btn btn-primary">สมัคร</a>
+                    <a href="?fd=admin&page=addtb_member" class="btn btn-primary">สมัคร</a>
                 </div>
             </div>
         </div>
@@ -62,5 +68,6 @@ require_once "config.php";
 
     </div>
     <!-- /.row  -->
+    
 
 </div>

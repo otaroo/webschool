@@ -56,7 +56,7 @@ Download Code On : developers.khontermfan.com
                   
 					  
 		  </div></td>
-					  			<td><div align="center"><a href='?fd=admin&page=editpersonnel&personnel_id=<?php echo $fd2['personnel_id'];?>'><img src="img/.png" height="30" width="30">  </a></div></td>
+					  			<td><div align="center"><a href='?fd=admin&page=editpersonnel&personnel_id=<?php echo $fd2['personnel_id'];?>'><img src="img/do.png" height="30" width="30">  </a></div></td>
 					  			<td><div align="center"><span class ="personnel_id"><?php echo $fd2['personnel_id'];?></span><img class="picdel"  src="img/del.png" height="25" width="25"></div></td>
 		  	</tr>
 		  	<?php  } ?>

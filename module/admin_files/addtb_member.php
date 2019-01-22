@@ -89,7 +89,7 @@ Download Code On : developers.khontermfan.com
 			  
 				  if(chk){ 
 				  	  
-				  	  	var url="module/admin_files/savetb_member.php";
+				  	  	var url="module/user_files/checkuser.php";
 						var form = $('#frminsert')[0];
 				  	    var data = new FormData(form);
 				  	    $.ajax({
@@ -103,6 +103,8 @@ Download Code On : developers.khontermfan.com
 					            timeout: 600000,
 					            success: function (data) {
 	 								//alert(data);
+
+	 								
 					                if(data.trim()=='1'){
 								  	  $("#status_save").html('<font color=green>บันทึกข้อมูลเรียบร้อยแล้วค่ะ...</font><br>');
 								  	 setTimeout(function(){ 

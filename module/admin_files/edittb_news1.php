@@ -6,34 +6,34 @@
 <?php /*
 Create By:PK Model
 Generate Code By :Mr.Thanawat Kaewwongkhieo
-Date Create : 2018-12-20 18:43:04
+Date Create : 2019-01-20 23:18:04
 Download Code On : developers.khontermfan.com
 */?> 
     	<style> .err{color:red;}</style>
     	 <div style="display:table; margin:0 auto; padding: 20px; width:70%;">
 		  <ol class="breadcrumb">
 		   <li class="active">
-		       <h2>แก้ไขข้อมูลคณะทำงาน</h2>
+		       <h2>แก้ไขข่าวประชาสัมพันธ์</h2>
 		   </li>
 		  </ol>
 <?php 
-  $personnel_id = $_GET['personnel_id'];
-  $sql = "select * from personnel where personnel_id='$personnel_id'";
+  $id = $_GET['id'];
+  $sql = "select * from tb_news where id='$id'";
   $qqes=$db->query($sql);
   $row_q = $qqes->fetch_assoc();
 ?>
     	<form id="frmedit" name="frmedit"  method="post"  enctype="multipart/form-data">
 				<div class="form-group">    	
-    		<input type="hidden" class="form-control" id="personnel_id" name="personnel_id" value="<?php echo $row_q['personnel_id'] ?>" >
+    		<input type="hidden" class="form-control" id="id" name="id" value="<?php echo $row_q['id'] ?>" >
 				</div>
-				<div class="form-group"><label for="personnel_name">ชื่อผู้ทำงาน:</label><label id="err2" class="err"></label>    	
-    		<input type="text" class="form-control" id="personnel_name" name="personnel_name" value="<?php echo $row_q['personnel_name'] ?>" >
+				<div class="form-group"><label for="title">หัวข้อข่าว:</label><label id="err2" class="err"></label>    	
+    		<input type="text" class="form-control" id="title" name="title" value="<?php echo $row_q['title'] ?>" >
 				</div>
-				<div class="form-group"><label for="personnel_position">ตำแหน่ง:</label><label id="err3" class="err"></label>    	
-    		<input type="text" class="form-control" id="personnel_position" name="personnel_position" value="<?php echo $row_q['personnel_position'] ?>" >
+				<div class="form-group"><label for="description">รายละเอียดข่าว:</label><label id="err3" class="err"></label>    	
+    		<input type="text" class="form-control" id="description" name="description" value="<?php echo $row_q['description'] ?>" >
 				</div>
-				<div class="form-group"><label for="personnel_img">รูปคณะทำงาน:</label><label id="err4" class="err"></label>    	
-    		
+				<div class="form-group"><label for="publish_time">วันที่ตีพิมพ์:</label><label id="err4" class="err"></label>    	
+    		<input type="date" class="form-control" id="publish_time" name="publish_time" value="<?php echo $row_q['publish_time'] ?>" >
 				</div>
 		  <span id="status_save"></span>
 		  <button type="button" onclick="return checkEmpty();" id="btnAdd" name="btnAdd" class="btn btn-info">แก้ไขข้อมูล</button>
@@ -49,34 +49,34 @@ Download Code On : developers.khontermfan.com
 				 $("#err4").html('');
 		 			  var chk=true; 
 		 			  
-				  if($("#personnel_id").val() == "")
+				  if($("#id").val() == "")
 				  {
-				    $("#err1").html('กรุณากำหนดค่า ลำดับผู้ทำงาน ด้วยค่ะ');
-				    $("#personnel_id").focus();
+				    $("#err1").html('กรุณากำหนดค่า ลำดับข่าว ด้วยค่ะ');
+				    $("#id").focus();
 				    chk= false;
 				  }
-				  if($("#personnel_name").val() == "")
+				  if($("#title").val() == "")
 				  {
-				    $("#err2").html('กรุณากำหนดค่า ชื่อผู้ทำงาน ด้วยค่ะ');
-				    $("#personnel_name").focus();
+				    $("#err2").html('กรุณากำหนดค่า หัวข้อข่าว ด้วยค่ะ');
+				    $("#title").focus();
 				    chk= false;
 				  }
-				  if($("#personnel_position").val() == "")
+				  if($("#description").val() == "")
 				  {
-				    $("#err3").html('กรุณากำหนดค่า ตำแหน่ง ด้วยค่ะ');
-				    $("#personnel_position").focus();
+				    $("#err3").html('กรุณากำหนดค่า รายละเอียดข่าว ด้วยค่ะ');
+				    $("#description").focus();
 				    chk= false;
 				  }
-				  if($("#personnel_img").val() == "")
+				  if($("#publish_time").val() == "")
 				  {
-				    $("#err4").html('กรุณากำหนดค่า รูปคณะทำงาน ด้วยค่ะ');
-				    $("#personnel_img").focus();
+				    $("#err4").html('กรุณากำหนดค่า วันที่ตีพิมพ์ ด้วยค่ะ');
+				    $("#publish_time").focus();
 				    chk= false;
 				  }
 			  
 				  if(chk){ 
 				  	  
-				  	    var url="module/admin_files/updatper1.php"
+				  	    var url="module/admin_files/updatetb_news1.php"
 				  		var form = $('#frmedit')[0];
 				  	    var data = new FormData(form);
 				  	    $.ajax({
@@ -89,11 +89,11 @@ Download Code On : developers.khontermfan.com
 					            cache: false,
 					            timeout: 600000,
 					            success: function (data) {
-	 								alert(data);
+	 								//alert(data);
 					                if(data.trim()=='1'){
 								  	  $("#status_save").html('<font color=green>บันทึกข้อมูลเรียบร้อยแล้วค่ะ...</font><br>');
 								  	 setTimeout(function(){ 
-								       location='?fd=admin&page=showpersonnel';
+								       location='?fd=admin&page=showtb_news1';
 								      }, 3000);  
 								  	 }else $("#status_save").html('<font color=red>ไม่สามารถบันทึกข้อมูลได้...กรุณาตรวจสอบข้อมูลอีกครั้ง...</font><br>');
 								  

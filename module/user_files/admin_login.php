@@ -5,8 +5,7 @@ Date Create : 2018-11-27 19:23:33
 Download Code On : developers.khontermfan.com
 */?> 
 <meta charset='UTF-8'>
-<script src='https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
-<link rel='stylesheet prefetch' href='http://netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css'>
+   <div class="container col-sm-6"></br></br>
 <link rel="stylesheet" href="css/style_login.css">
 <div class="wrapper">
   <form class="form-signin" id="frm_login"  method="post">       
@@ -19,6 +18,7 @@ Download Code On : developers.khontermfan.com
     <span id='status_login'></span>
     <button class="btn btn-lg btn-primary btn-block" onclick="return checkEmpty();" type="button">Login</button>   
   </form>
+</div></br></br>
 </div>
 <script>
 function checkEmpty(){

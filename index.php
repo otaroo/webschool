@@ -43,6 +43,10 @@
       display: none; 
     }
   }
+  .style1 {
+	font-size: 36px;
+	font-weight: bold;
+}
   </style>
 </head>
 
@@ -51,19 +55,20 @@
  <!-- Navigation -->
  <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top">
       <div class="container">
-        <a class="navbar-brand" href="index.php">กศน.ตำบลนาโบสถ์</a>
-        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <a href="index.php" class="navbar-brand style1">กศน.ตำบลนาโบสถ์</a>
+<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
           <li class="nav-item dropdown">
+          
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownPortfolio" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               เกี่ยวกับ
               </a>
               <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownPortfolio">
-                <a class="dropdown-item" href="history.php">ประวัติโรงเรียน</a>
-                <a class="dropdown-item" href="about.php">ความเป็นมา</a>
+                <a class="dropdown-item" href="?fd=admin&page=history">ประวัติโรงเรียน</a>
+                <a class="dropdown-item" href="?fd=admin&page=about">ความเป็นมา</a>
                 <a class="dropdown-item" href="?fd=admin&page=showpersonnel_new">คณะทำงาน</a>
                 <a class="dropdown-item" href="?fd=admin&page=showper_new">ทำเนียบผู้บริหาร</a>
               </div>
@@ -72,16 +77,18 @@
               <a class="nav-link"  href="?fd=admin&page=showtb_activity_new">กิจกรรม</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="?fd=admin&page=addtb_member">สมัครกิจกรรมกศน</a>
+              <a class="nav-link" href="?fd=admin&page=addtb_member">สมัครกิจกรรม กศน.</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">ประเมินกิจกรรม</a>
+              <a class="nav-link" href="?fd=admin&page=showtb_activity_rate">ประเมินกิจกรรม</a>
             </li>
-            
+             <li class="nav-item">
+              <a class="nav-link" href="index.php?fd=user&page=admin_login">Login</a>
+            </li>
           </ul>
         </div>
       </div>
-    </nav>
+</nav>
 
     <header>
       <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">

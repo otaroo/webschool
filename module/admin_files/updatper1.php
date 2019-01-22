@@ -14,7 +14,7 @@ Download Code On : developers.khontermfan.com
 					$personnel_id = $_POST['personnel_id'];
 					$personnel_name = $_POST['personnel_name'];
 					$personnel_position = $_POST['personnel_position'];
-					$personnel_img = $_POST['personnel_img'];
+				/*$personnel_img = $_POST['personnel_img'];
 			$dir = "files/$personnel_id/";
 					if(!is_dir($dir))
 						mkdir($dir, 0755, true);
@@ -24,8 +24,8 @@ Download Code On : developers.khontermfan.com
 				 		$c=count($array_last) -1 ;
 						$lastname=strtolower($array_last [$c]);
 						$distination = $dir."/".$personnel_id.".".$lastname;
-	 					@copy($source,$distination);
-  		 	  $sql_update = "update personnel set personnel_name='$personnel_name',personnel_position='$personnel_position',personnel_img='.".$lastname' where personnel_id='$personnel_id' ";
+	 					@copy($source,$distination);*/
+  		 	  $sql_update = "update personnel set personnel_name='$personnel_name',personnel_position='$personnel_position' where personnel_id='$personnel_id' ";
 			  $qqes = $db->query($sql_update);
 			 if($qqes){
 				echo "1";

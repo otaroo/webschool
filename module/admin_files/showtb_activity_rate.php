@@ -51,7 +51,7 @@ Download Code On : developers.khontermfan.com
 					
 			<td><?php echo $fd2['act_name'];?></td>
 			<td><?php echo $fd2['act_date'];?></td>
-            <td><div align="center"><a href='?fd=admin&page=tbrate&act_id=<?php echo $fd2['act_id'];?>'><img src="img/a.png" height="30" width="30">  </a></div></td>
+            <td><div align="center"><a href='?fd=admin&page=tbrate01&act_id=<?php echo $fd2['act_id'];?>'><img src="img/a.png" height="30" width="30">  </a></div></td>
                    
 		  	</tr>
 		  	<?php  } ?>

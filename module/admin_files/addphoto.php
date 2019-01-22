@@ -6,29 +6,17 @@
 <?php /*
 Create By:PK Model
 Generate Code By :Mr.Thanawat Kaewwongkhieo
-Date Create : 2018-11-29 12:06:30
+Date Create : 2019-01-22 07:12:04
 Download Code On : developers.khontermfan.com
 */?> 
     	<style> .err{color:red;}</style>
     	 <div style="display:table; margin:0 auto; padding: 20px; width:70%;">
-		       <h2>รูปภาพ</h2>
+		       <h2>รูปกิจกรรม</h2>
 			<form id="frminsert" name="frminsert"  method="post" enctype="multipart/form-data">
-				<div class="form-group"><label for="act_id">รหัสกิจกรรม:</label><label id="err2" class="err"></label>
-					<select  id="act_id" name="act_id" class="form-control">
-		       			<option value="" disabled >เลือก</option><?php
-							$sql3 ="select act_id id,act_name  name from tb_activity ";  
-							$qess3=$db->query($sql3);	
-							while($fd3=$qess3->fetch_assoc()){ ?>
-						       <option value="<?php echo $fd3['id'];?>">
-						        <?php echo $fd3['name'];?>
-						        </option> 
-						      <?php
-						     }
-						       ?>
-					</select>
+				<div class="form-group"><label for="photo_name">ชื่อรูปภาพ:</label><label id="err2" class="err"></label>    	
+    		<input type="text" class="form-control" id="photo_name" name="photo_name"  >
 				</div>
-				
-            <div class="form-group"><label for="img">รูปคณะทำงาน:</label><label id="err4" class="err"></label>    	
+				<div class="form-group"><label for="img">รูปกิจกรรม:</label><label id="err3" class="err"></label>    	
     		<input type="file" class="form-control" id="img" name="img" accept="pdf,doc,docx,jpg,png,gif,ppt,pptx,jpge,xls,xlsx">
 				</div>
 		  <span id="status_save"></span>
@@ -43,22 +31,22 @@ Download Code On : developers.khontermfan.com
 				 $("#err3").html('');
 		 			  var chk=true; 
 		 			  
-				  if($("#act_id").val() == "")
+				  if($("#photo_name").val() == "")
 				  {
-				    $("#err2").html('กรุณากำหนดค่า รหัสกิจกรรม ด้วยค่ะ');
-				    $("#act_id").focus();
+				    $("#err2").html('กรุณากำหนดค่า ชื่อรูปภาพ ด้วยค่ะ');
+				    $("#photo_name").focus();
 				    chk= false;
 				  }
-				  if($("#photo").val() == "")
+				  if($("#img").val() == "")
 				  {
-				    $("#err3").html('กรุณากำหนดค่า รูปภาพ ด้วยค่ะ');
-				    $("#photo").focus();
+				    $("#err3").html('กรุณากำหนดค่า รูปกิตกรรม ด้วยค่ะ');
+				    $("#img").focus();
 				    chk= false;
 				  }
 			  
 				  if(chk){ 
 				  	  
-				  	  	var url="module/admin_files/savetb_photo.php";
+				  	  	var url="module/admin_files/savephoto.php";
 						var form = $('#frminsert')[0];
 				  	    var data = new FormData(form);
 				  	    $.ajax({
@@ -75,7 +63,7 @@ Download Code On : developers.khontermfan.com
 					                if(data.trim()=='1'){
 								  	  $("#status_save").html('<font color=green>บันทึกข้อมูลเรียบร้อยแล้วค่ะ...</font><br>');
 								  	 setTimeout(function(){ 
-								       location='?fd=admin&page=showtb_photo';
+								       location='?fd=admin&page=showphoto';
 								      }, 3000);  
 								  	 }else $("#status_save").html('<font color=red>ไม่สามารถบันทึกข้อมูลได้...กรุณาตรวจสอบข้อมูลอีกครั้ง...</font><br>');
 								  
