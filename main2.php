@@ -7,21 +7,21 @@ require_once "config.php";
     }
 </style>
 
-<div class="container">
+<div class="container" >
 
     <h1 class="my-4">ข่าวสาร</h1>
     <!-- Marketing Icons Section -->
     <div class="row">
 
         <?php
-    $sql ="SELECT * FROM tb_news order by publish_time asc limit 5 ";  
+    $sql ="SELECT * FROM tb_news order by publish_time desc limit 5 ";  
     $qess=$db->query($sql);	
     while($fd=$qess->fetch_assoc()){	?>
 
         <div class="col-lg-12 mb-12">
-            <ul class="list-unstyled">
-                <li>
-                    <?php echo $fd['title'];  ?>
+            <ul class="list-group">
+                <li  class="list-group-item">
+                    <?php echo $fd['title'];  ?> -- <?php echo $fd['description'];  ?> 
                 </li>
             </ul>
         </div>
@@ -29,12 +29,12 @@ require_once "config.php";
         <?php } ?>
     </div>
     <!-- /.row  -->
-
+<br/>
     <h2>กิจกรรม</h2>
 
     <div class="row">
         <?php
-    $sql ="SELECT * FROM tb_activity limit 3";  
+    $sql ="SELECT * FROM tb_activity order by act_date desc limit 3";  
     $qess=$db->query($sql);	
     while($fd=$qess->fetch_assoc()){	?>
 

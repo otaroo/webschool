@@ -90,7 +90,7 @@ require_once "config.php";
         </table>
       </div>
     </div>
-
+<hr>
     <div class="row justify-content-end">
       <div class="col-3 text-right">
         <div class="form-group">
