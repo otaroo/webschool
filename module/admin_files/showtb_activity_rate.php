@@ -14,12 +14,12 @@ Download Code On : developers.khontermfan.com
 <link rel="stylesheet" href="css/pagation-style.css">
 <link rel="stylesheet" href="css/page-style.css">
 <style type="text/css">
-<!--
+
 .style1 {
 	font-size: 36px;
 	font-weight: bold;
 }
--->
+
 </style>
 <div class="container-fluid">
 

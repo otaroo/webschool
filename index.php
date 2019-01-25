@@ -80,7 +80,7 @@
               <a class="nav-link" href="?fd=admin&page=addtb_member">สมัครกิจกรรม กศน.</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">ประเมินกิจกรรม</a>
+              <a class="nav-link" href="?fd=admin&page=showtb_activity_rate">ประเมินกิจกรรม</a>
             </li>
              <li class="nav-item">
               <a class="nav-link" href="index.php?fd=user&page=admin_login">Login</a>
