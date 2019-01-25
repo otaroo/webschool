@@ -8,23 +8,32 @@
 <body>
 <p>&nbsp;</p>
 
+<?php 
 
-<table width="542" height="354" border="0" align="center">
+$act_id=$_GET['act_id'];
+  
+      $sql2 ="select * from tb_activity where act_id='$act_id' ";  
+      $qess2=$db->query($sql2); 
+      ($fd2=$qess2->fetch_assoc());  
+      
+    ?><tr>
+          
+      <td><?php echo $fd2['act_name'];?></td>
+
+
+<table width="542" height="354" border="1" align="center">
   <tr>
-
-   
-
 
 
     <td width="312" bgcolor="#00CC33"><div align="center"><strong>กรอกเลขบัตรประชาชน</strong></div></td>
-    <td colspan="3" bgcolor="#00CC33"><form action="" method="post" name="form1" id="form1">
+    <td colspan="3" bgcolor="#00CC33"><form action="" method="post" name="mem_card" id="mem_card">
       <strong>      </strong><strong>
-      <label>
-        </label>
+      <label>        </label>
       </strong>
       <label><div align="center">
           <strong>          </strong>
           <div align="left">
+          
             <strong>
               <div align="center">
                 <input type="text" name="textfield" id="textfield" />
@@ -36,13 +45,13 @@
     </form>    </td>
   </tr>
   <tr>
-    <td rowspan="2" bgcolor="#99FFCC"><div align="center"><strong>รายงานการประเมิน</strong></div></td>
-    <td colspan="3" bgcolor="#99FFCC"><div align="center"><strong>ระดับความพึงพอใจ</strong></div></td>
+    <td rowspan="2" bgcolor="#FF6666"><div align="center"><strong>รายงานการประเมิน</strong></div></td>
+    <td colspan="3" bgcolor="#FF6666"><div align="center"><strong>ระดับความพึงพอใจ</strong></div></td>
   </tr>
   <tr>
-    <td width="61" bgcolor="#99FFCC"><div align="center"><strong>มาก</strong></div></td>
-    <td width="72" bgcolor="#99FFCC"><div align="center"><strong>ปานกลาง</strong></div></td>
-    <td width="69" bgcolor="#99FFCC"><div align="center"><strong>น้อย</strong></div></td>
+    <td width="61" bgcolor="#FF6666"><div align="center"><strong>มาก</strong></div></td>
+    <td width="72" bgcolor="#FF6666"><div align="center"><strong>ปานกลาง</strong></div></td>
+    <td width="69" bgcolor="#FF6666"><div align="center"><strong>น้อย</strong></div></td>
   </tr>
   <tr>
      <td bgcolor="#FFFFCC">1.กิจกรรมนี้มีประโยชน์หรือไม่</td>
@@ -234,9 +243,15 @@
 
 <p align="center">&nbsp;</p>
 <p align="center">
-  <label>
-  <input type="submit" name="Submit" id="button" value="ส่งคำตอบ" />
-  </label>
+  <td><div align="center"><a href='?fd=admin&page=saverate>'><img src="img/a.png" height="30" width="30">  </a></div></td>
 </p>
+
+<form id="form1" name="form1" method="post" action="">
+  <label></label>
+</form>
+<tr>
+  <p align="center">
+    <label></label>
+  </p>
 </body>
 </html>

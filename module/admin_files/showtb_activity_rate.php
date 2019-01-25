@@ -28,10 +28,7 @@ Download Code On : developers.khontermfan.com
 	require_once("class/DatetimeFormat.class.php");
 	$dt = new DatetimeFormat();
 	?>
-    	<p style="text-align:center;width:90%;">
-         <span style="font-weight:;">ค้นหา:</span> <input type="text" id="txtSearch" name="txtSearch" mgetShowTableaxlength="50" />&nbsp; 
-        <img id="imgSearch" src="img/del.png" alt="เคลียร์" title="เคลียร์" style="width:150px;width:14px;height:14px;">
-     </p>
+    	
     	<div class='datagrid'>      
    			<table id='tblSearch' width='51%' align='center' class='tblSearch table table-bordered table-hover'>
 	        <thead>
