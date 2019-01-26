@@ -50,7 +50,7 @@
 		  	
 		</tbody>
 		</table>
-		    <p align="center"><a href="?fd=admin&page=act"><img src="img/actions_document_print_15785.png" width="46" height="53" /></a></p>
+		    
     	</div>
 		</div>
 	</div>

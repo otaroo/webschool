@@ -77,13 +77,13 @@
               <a class="nav-link"  href="?fd=admin&page=addtb_pho">รูป</a>
             </li>
              <li class="nav-item">
-              <a class="nav-link"  href="?fd=admin&page=addtb_news1">ข่าว</a>
+              <a class="nav-link"  href="?fd=admin&page=addnew">ข่าว</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="?fd=admin&page=showmember_new">รายชื่อคนเข้ากิจกรรม</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="act.php">ประเมินกิจกรรม</a>
+              <a class="nav-link" href="?fd=admin&page=tb_rate1">ดูผลการประเมิน</a>
             </li>
              <li class="nav-item">
               <a class="nav-link" href="index.php">logout</a>
