@@ -1,5 +1,18 @@
 
+<?php 
+if(!isset($_SESSION['Status']))
+{
+	echo "Please Login!";
+	exit();
+}	
 
+
+if(!isset($_SESSION['Status']))
+{
+	echo "This page for Admin only!";
+	exit();
+}	
+?>
 
 
 
@@ -19,9 +32,7 @@ Download Code On : developers.khontermfan.com
 				<div class="form-group"><label for="description_news">รายละเอียดข่าว:</label><label id="err3" class="err"></label>    	
     		<input type="text" class="form-control" id="description_news" name="description_news"  >
 				</div>
-				<div class="form-group"><label for="date_news">วันที่:</label><label id="err4" class="err"></label>    	
-    		<input type="date" class="form-control" id="date_news" name="date_news"  >
-				</div>
+				
 		  <span id="status_save"></span>
 		  <button type="button" onclick="return checkEmpty();" id="btnAdd" name="btnAdd" class="btn btn-info">เพิ่มข้อมูล</button>
 		  <button type="reset"   class="btn btn-warning">ล้างข้อมูล</button>
@@ -47,12 +58,7 @@ Download Code On : developers.khontermfan.com
 				    $("#description_news").focus();
 				    chk= false;
 				  }
-				  if($("#date_news").val() == "")
-				  {
-				    $("#err4").html('กรุณากำหนดค่า วันที่ ด้วยค่ะ');
-				    $("#date_news").focus();
-				    chk= false;
-				  }
+				 
 			  
 				  if(chk){ 
 				  	  

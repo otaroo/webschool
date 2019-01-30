@@ -3,8 +3,13 @@ Create By:PK Model
 Generate Code By :Mr.Thanawat Kaewwongkhieo
 Date Create : 2018-11-29 18:12:43
 Download Code On : developers.khontermfan.com
+<<<<<<< HEAD
 */?>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+=======
+*/?> 
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+>>>>>>> 83353502f8c065b68e1e49c9b79b927138ec5786
 <!-- <script src="http://sogddt.vinhphuc.gov.vn/ResourcesList/jquery.tablePagination.0.5.js"></script> -->
 <link rel="stylesheet" href="css/pagation-style.css">
 <link rel="stylesheet" href="css/page-style.css">
@@ -14,7 +19,7 @@ Download Code On : developers.khontermfan.com
 		font-weight: bold;
 	}
 </style>
-<div class="container-fluid">
+    <div class="container-fluid">
 
 	<h2 class="style1">กิจกรรม</h2>
 	<div class="w3-row content_box">
@@ -43,6 +48,7 @@ Download Code On : developers.khontermfan.com
 					<?php 
 			$sql2 ="select * from tb_activity where 1  order by act_name desc";  
 			$qess2=$db->query($sql2);	
+<<<<<<< HEAD
 			while($fd2=$qess2->fetch_assoc()){			
 		?>
 					<tr>
@@ -60,6 +66,20 @@ Download Code On : developers.khontermfan.com
 					<?php  } ?>
 				</tbody>
 			</table>
+=======
+			while($fd2=$qess2->fetch_assoc()){	
+			
+		?><tr>
+					
+			<td><?php echo $fd2['act_name'];?></td>
+			<td><?php echo $fd2['act_date'];?></td>
+            <td><div align="center"><a href='?fd=admin&page=tbrate01&act_id=<?php echo $fd2['act_id'];?>'>ประเมินกิจกรรม  </a></div></td>
+                   
+		  	</tr>
+		  	<?php  } ?>
+		</tbody>
+		</table>
+>>>>>>> 83353502f8c065b68e1e49c9b79b927138ec5786
 		</div>
 	</div>
 </div>

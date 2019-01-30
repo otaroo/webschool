@@ -1,5 +1,18 @@
 
+<?php 
+if(!isset($_SESSION['Status']))
+{
+	echo "Please Login!";
+	exit();
+}	
 
+
+if(!isset($_SESSION['Status']))
+{
+	echo "This page for Admin only!";
+	exit();
+}	
+?>
 
 
 
@@ -30,13 +43,12 @@ Download Code On : developers.khontermfan.com
 				 	<th>ลำดับข่าว  </th>
 				 	<th>ชื่อข่าว  </th>
 				 	<th>รายละเอียดข่าว  </th>
-				 	<th>วันที่  </th>
 				  	<th>แก้ไข  </th>
 				  	<th>ลบ  </th>
 		</tr>
 		</thead>
 		<tbody><?php 
-			$sql2 ="select * from tb_new where 1  order by title_news desc";  
+			$sql2 ="select * from tb_new where 1  order by title_news asc";  
 			$qess2=$db->query($sql2);	
 			while($fd2=$qess2->fetch_assoc()){	
 			
@@ -44,7 +56,7 @@ Download Code On : developers.khontermfan.com
 					<td><?php echo $fd2['id_news'];?></td>
 					<td><?php echo $fd2['title_news'];?></td>
 					<td><?php echo $fd2['description_news'];?></td>
-					<td><?php echo $fd2['date_news'];?></td>
+					
 					  			<td><a href='?fd=admin&page=editnew&id_news=<?php echo $fd2['id_news'];?>'><img src="img/edit.jpg" height="30" width="30">  </a></td>
 					  			<td><span class ="id_news"><?php echo $fd2['id_news'];?></span><img class="picdel"  src="img/del.png" height="25" width="25"></td>
 		  	</tr>
@@ -63,7 +75,7 @@ Download Code On : developers.khontermfan.com
            var  id_news=$(this).parent().find(".id_news").html();
            //alert(course_id);
            if(confirm('คุณต้องการลบข้อมูลใช่หรือไม่')){
-             var url="module/admin_files/delnew.php";
+             var url="?fd=admin&page=delnew.php";
              $.post(url,{id_news:id_news},function (data) {
               alert(data);
               location.reload(); 

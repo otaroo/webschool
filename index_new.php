@@ -1,3 +1,4 @@
+
 <?php
 		ob_start();
 		@session_start();
@@ -52,7 +53,7 @@
  <!-- Navigation -->
  <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top">
       <div class="container">
-        <a href="index.php" class="navbar-brand style1"><strong>กศน.ตำบลนาโบสถ์</strong></a>
+        <a href="#" class="navbar-brand style1"><strong>กศน.ตำบลนาโบสถ์</strong></a>
 <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -64,29 +65,29 @@
               </a>
               <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownPortfolio">
                 <a class="dropdown-item" href="?fd=admin&page=history">ประวัติโรงเรียน</a>
-                <a class="dropdown-item" href="?fd=admin&page=about">ความเป็นมา</a>
                 <a class="dropdown-item" href="?fd=admin&page=addpersonnel">คณะทำงาน</a>
                 <a class="dropdown-item" href="?fd=admin&page=addperson">ทำเนียบผู้บริหาร</a>
               </div>
             </li>
           
              <li class="nav-item">
-              <a class="nav-link"  href="?fd=admin&page=addtb_activity">เพิ่มกิจกรรม</a>
+              <a class="nav-link"  href="?fd=admin&page=addtbact">เพิ่มกิจกรรม</a>
             </li>
+            
             <li class="nav-item">
-              <a class="nav-link"  href="?fd=admin&page=addtb_pho">รูป</a>
+              <a class="nav-link"  href="?fd=admin&page=addph">รูป</a>
             </li>
              <li class="nav-item">
-              <a class="nav-link"  href="?fd=admin&page=addnew">ข่าว</a>
+              <a class="nav-link"  href="?fd=admin&page=addnews">ข่าว</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="?fd=admin&page=showmember_new">รายชื่อคนเข้ากิจกรรม</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="?fd=admin&page=tb_rate1">ดูผลการประเมิน</a>
+              <a class="nav-link" href="?fd=admin&page=showtbrate">ดูผลการประเมิน</a>
             </li>
              <li class="nav-item">
-              <a class="nav-link" href="index.php">logout</a>
+              <a class="nav-link" href="index.php">ADMIN</a>
             </li>
           </ul>
         </div>

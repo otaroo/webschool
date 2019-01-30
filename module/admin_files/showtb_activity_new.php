@@ -38,7 +38,6 @@ Download Code On : developers.khontermfan.com
 				 	<th bgcolor="#3399FF">ชื่อกิจกรรม  </th>
 				 	<th bgcolor="#3399FF">วันที่กิจกรรม  </th>
                     <th bgcolor="#3399FF">รายละเอียด  </th>
-                    <th bgcolor="#3399FF">สมัครกิจกรรม  </th>
                     
 		</tr>
 		</thead>
@@ -52,7 +51,7 @@ Download Code On : developers.khontermfan.com
 			<td><?php echo $fd2['act_name'];?></td>
 			<td><?php echo $fd2['act_date'];?></td>
            	<td><?php echo $fd2['act_des'];?></td>
-            <td><div align="center"><a href='?fd=admin&amp;page=addtb_member&mem_id=<?php echo $fd2['act_id'];?>'><img src="img/us.png" height="30" width="30">  </a></div></td>      
+                 
 		  	</tr>
 		  	<?php  } ?>
 		  	

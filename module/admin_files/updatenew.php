@@ -14,9 +14,9 @@ Download Code On : developers.khontermfan.com
 					$id_news = $_POST['id_news'];
 					$title_news = $_POST['title_news'];
 					$description_news = $_POST['description_news'];
-					$date_news = $_POST['date_news'];
+					
 			
-  		 	  $sql_update = "update tb_new set title_news='$title_news',description_news='$description_news',date_news='$date_news' where id_news='$id_news' ";
+  		 	  $sql_update = "update tb_new set title_news='$title_news',description_news='$description_news',date_news=' where id_news='$id_news' ";
 			  $qqes = $db->query($sql_update);
 			 if($qqes){
 				echo "1";

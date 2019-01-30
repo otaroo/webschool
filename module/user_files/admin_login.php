@@ -1,9 +1,4 @@
-<?php /*
-Create By:PK Model
-Generate Code By :Mr.Thanawat Kaewwongkhieo
-Date Create : 2018-11-27 19:23:33
-Download Code On : developers.khontermfan.com
-*/?> 
+
 <meta charset='UTF-8'>
    <div class="container col-sm-6"></br></br>
 <link rel="stylesheet" href="css/style_login.css">

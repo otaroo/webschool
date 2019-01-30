@@ -18,7 +18,12 @@ Download Code On : developers.khontermfan.com
 		       			<option value="" disabled >เลือก</option><?php
 							$sql3 ="select act_id id,act_name  name from tb_activity ";  
 							$qess3=$db->query($sql3);	
-							while($fd3=$qess3->fetch_assoc()){ ?>
+							
+							$num = 1;
+							$num += 1; 
+							
+							
+							while ($fd3=$qess3->fetch_assoc()){ ?>
 						       <option value="<?php echo $fd3['id'];?>">
 						        <?php echo $fd3['name'];?>
 						        </option> 

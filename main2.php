@@ -14,6 +14,7 @@ require_once "config.php";
     <!-- Marketing Icons Section -->
     <div class="row">
         <?php
+<<<<<<< HEAD
     $sql ="SELECT * FROM tb_news order by publish_time desc limit 5 ";  
     $qess=$db->query($sql);	
     while($fd=$qess->fetch_assoc()){	?>
@@ -25,6 +26,25 @@ require_once "config.php";
                     <?php echo $fd['description'];  ?>
                 </li>
             </ul>
+=======
+    $sql ="SELECT * FROM tb_new order by description_news asc limit 5 ";  
+    $qess=$db->query($sql);	
+    while($fd=$qess->fetch_assoc()){	?>
+
+        <div class="col-lg-4 mb-4">
+            <div class="card h-100">
+                <h4 class="card-header">
+                    <?php echo $fd['title_news'];  ?>
+                </h4>
+                <div class="card-body">
+                    
+                   <div class="card-footer">
+                    <a href="?fd=admin&page=news" class="btn btn-primary">รายละเอียด</a>
+                </div>
+                </div>
+                
+            </div>
+>>>>>>> 83353502f8c065b68e1e49c9b79b927138ec5786
         </div>
         <?php } ?>
     </div>
@@ -46,15 +66,13 @@ require_once "config.php";
                         <a href="#">
                             <?php echo $fd['act_name'];  ?></a>
                     </h4>
-                    <p class="card-text">วันที่ :
-                        <?php echo $fd['act_date']; ?>
+                    <p class="card-text"> :
+                        <?php echo $fd['act_place']; ?>
                     </p>
-                    <p class="card-text">
-                        <?php echo $fd['act_des']; ?>
-                    </p>
+                    
                 </div>
                 <div class="card-footer">
-                    <a href="?fd=admin&page=addtb_member" class="btn btn-primary">สมัคร</a>
+                    <a href="?fd=admin&page=des" class="btn btn-primary">รายละเอียด</a>
                 </div>
             </div>
         </div>
