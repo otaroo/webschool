@@ -14,7 +14,7 @@
 
         <?php 
 
-  
+
    $sql = "SELECT COUNT(mem_id) as loveyou FROM `tb_member` where act_id = '$act_id'";
    $qess=$db->query($sql);
    while($fd=$qess->fetch_assoc()){ ?>
