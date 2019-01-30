@@ -14,19 +14,6 @@ require_once "config.php";
     <!-- Marketing Icons Section -->
     <div class="row">
         <?php
-<<<<<<< HEAD
-    $sql ="SELECT * FROM tb_news order by publish_time desc limit 5 ";  
-    $qess=$db->query($sql);	
-    while($fd=$qess->fetch_assoc()){	?>
-
-        <div class="col-lg-12 mb-12">
-            <ul class="list-group">
-                <li class="list-group-item">
-                    <?php echo $fd['title'];  ?> --
-                    <?php echo $fd['description'];  ?>
-                </li>
-            </ul>
-=======
     $sql ="SELECT * FROM tb_new order by description_news asc limit 5 ";  
     $qess=$db->query($sql);	
     while($fd=$qess->fetch_assoc()){	?>
@@ -44,7 +31,6 @@ require_once "config.php";
                 </div>
                 
             </div>
->>>>>>> 83353502f8c065b68e1e49c9b79b927138ec5786
         </div>
         <?php } ?>
     </div>
