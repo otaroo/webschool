@@ -101,11 +101,12 @@
 			<table id="table_id" class="table" style="width:100%">
 				<thead>
 					<tr>
-						<th>ลำดับ </th>
+						<th>รหัสกิจกรรม </th>
 						<th>ชื่อผู้สมัคร </th>
 						<th>เบอร์โทร </th>
 						<th>เลขบัตรประชาชน </th>
 						<th>เพศ </th>
+					
 
 					</tr>
 				</thead>
@@ -176,7 +177,14 @@
 				},
 				{
 					"data": "mem_sex"
-				}
+				},
+				// {
+				// 	"data": null,
+				// 	"render": function (data) {
+				// 		return data.act_id
+				// 	}
+				// },
+
 			]
 		});
 
