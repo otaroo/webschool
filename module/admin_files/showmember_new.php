@@ -146,9 +146,14 @@
 		});
 
 
-
+		
 		var url = "module/admin_files/get_member_by_act.php"
 		table_mem = $('#table_id').DataTable({
+			"searching": false,
+			"paging": false,
+			"ordering": false,
+			"ordering": false,
+			"info": false ,
 			"serverSide": true,
 			"ajax": {
 				"url": url,
