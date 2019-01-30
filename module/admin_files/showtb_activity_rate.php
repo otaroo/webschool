@@ -10,7 +10,7 @@ Date Create : 2018-11-29 18:12:43
 Download Code On : developers.khontermfan.com
 */?> 
  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="http://sogddt.vinhphuc.gov.vn/ResourcesList/jquery.tablePagination.0.5.js"></script>
+<!-- <script src="http://sogddt.vinhphuc.gov.vn/ResourcesList/jquery.tablePagination.0.5.js"></script> -->
 <link rel="stylesheet" href="css/pagation-style.css">
 <link rel="stylesheet" href="css/page-style.css">
 <style type="text/css">
@@ -21,7 +21,7 @@ Download Code On : developers.khontermfan.com
 }
 
 </style>
-<div class="container-fluid">
+    <div class="container-fluid">
 
 <h2 class="style1">กิจกรรม</h2>
 <div class="w3-row content_box"><?php
@@ -48,7 +48,7 @@ Download Code On : developers.khontermfan.com
 					
 			<td><?php echo $fd2['act_name'];?></td>
 			<td><?php echo $fd2['act_date'];?></td>
-            <td><div align="center"><a href='?fd=admin&page=tbrate01&act_id=<?php echo $fd2['act_id'];?>'><img src="img/a.png" height="30" width="30">  </a></div></td>
+            <td><div align="center"><a href='?fd=admin&page=tbrate01&act_id=<?php echo $fd2['act_id'];?>'>ประเมินกิจกรรม  </a></div></td>
                    
 		  	</tr>
 		  	<?php  } ?>

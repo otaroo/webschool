@@ -14,8 +14,8 @@ Download Code On : developers.khontermfan.com
 					$id_news = '';
 					$title_news = $_POST['title_news'];
 					$description_news = $_POST['description_news'];
-					$date_news = $_POST['date_news'];
-  		 	  $sql_add = "insert into tb_new (id_news,title_news,description_news,date_news) values('$id_news','$title_news','$description_news','$date_news')";
+					
+  		 	  $sql_add = "insert into tb_new (id_news,title_news,description_news) values('$id_news','$title_news','$description_news')";
 			  $qqes = $db->query($sql_add);
 			 if($qqes){
 				echo "1";

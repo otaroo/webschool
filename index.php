@@ -68,7 +68,6 @@
               </a>
               <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownPortfolio">
                 <a class="dropdown-item" href="?fd=admin&page=history">ประวัติโรงเรียน</a>
-                <a class="dropdown-item" href="?fd=admin&page=about">ความเป็นมา</a>
                 <a class="dropdown-item" href="?fd=admin&page=showpersonnel_new">คณะทำงาน</a>
                 <a class="dropdown-item" href="?fd=admin&page=showper_new">ทำเนียบผู้บริหาร</a>
               </div>
@@ -83,7 +82,7 @@
               <a class="nav-link" href="?fd=admin&page=showtb_activity_rate">ประเมินกิจกรรม</a>
             </li>
              <li class="nav-item">
-              <a class="nav-link" href="index.php?fd=user&page=admin_login">Login</a>
+              <a class="nav-link" href="index.php?fd=user&page=admin_login">ADMIN</a>
             </li>
           </ul>
         </div>

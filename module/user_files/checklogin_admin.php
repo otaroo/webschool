@@ -14,12 +14,15 @@ Download Code On : developers.khontermfan.com
     $sql ="select * from  tb_admin 
     where member_user='$user_log' 
     and member_pass='$pass_log'";
-	
+
 	$qqes=$db->query($sql);
 	if($qqes->num_rows>0){
 	    $row_q = $qqes->fetch_assoc();
 	    $username = $row_q['member_user'];
 		$_SESSION['sess_login_id']=time();
+		$_SESSION["Status"] = "Admin";
+		$_SESSION['UserID'] = $username;
+		session_write_close();
 		//$_SESSION['user_login_id']=$row_q['กำหนดคอลัมน์ id หรือ primarykey'];
 		//$_SESSION['user_login_name']=$row_q['กำหนดคอลัมน์ ชื่อ'];
 		//$_SESSION['user_login_fullname']=$row_q['กำหนดคอลัมน์ ชื่อ']."".$row_q['กำหนดคอลัมน์ นามสกุล'];

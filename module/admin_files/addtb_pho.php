@@ -13,7 +13,9 @@ Download Code On : developers.khontermfan.com
     	 <div style="display:table; margin:0 auto; padding: 20px; width:70%;">
 		       <h2>รูปภาพ</h2>
 			<form id="frminsert" name="frminsert"  method="post" enctype="multipart/form-data">
-				<div class="form-group"><label for="photo_name">ชื่อรูปภาพ:</label><label id="err2" class="err"></label>    	
+				<div class="form-group">
+				  <label for="photo_name">รูปภาพ:</label>
+				  <label id="err2" class="err"></label>    	
     		<input type="file" class="form-control" id="photo_name" name="photo_name" accept="pdf,doc,docx,jpg,png,gif,ppt,pptx,jpge,xls,xlsx">
 				</div>
 		  <span id="status_save"></span>

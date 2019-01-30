@@ -1,0 +1,120 @@
+
+
+
+
+
+<?php /*
+Create By:PK Model
+Generate Code By :Mr.Thanawat Kaewwongkhieo
+Date Create : 2018-12-20 18:43:04
+Download Code On : developers.khontermfan.com
+*/?> 
+    	<style> .err{color:red;}</style>
+    	 <div style="display:table; margin:0 auto; padding: 20px; width:70%;">
+		  <ol class="breadcrumb">
+		   <li class="active">
+		       <h2>แก้ไขข้อมูลผู้สมัคร</h2>
+		   </li>
+		  </ol>
+
+<?php
+
+  $mem_id = $_GET['mem_id'];
+  $sql = "select * from tb_member where mem_id='$mem_id'";
+  $qqes=$db->query($sql);
+  $row_q = $qqes->fetch_assoc();
+?>
+    	<form id="frmedit" name="frmedit"  method="post"  enctype="multipart/form-data">
+				<div class="form-group">    	
+    		<input type="hidden" class="form-control" id="mem_id" name="mem_id" value="<?php echo $row_q['mem_id'] ?>" >
+				</div>
+				<div class="form-group"><label for="mem_name">ชื่อผู้สมัคร:</label><label id="err2" class="err"></label>    	
+    		<input type="text" class="form-control" id="mem_name" name="mem_name" value="<?php echo $row_q['mem_name'] ?>" >
+				</div>
+				<div class="form-group"><label for="mem_tel">เบอร์โทร:</label><label id="err3" class="err"></label>    	
+    		<input type="text" class="form-control" id="mem_tel" name="mem_tel" value="<?php echo $row_q['mem_tel'] ?>" >
+				</div>
+				<div class="form-group"><label for="mem_card">รหัสประชาชน:</label><label id="err4" class="err"></label>    	
+    		<input type="text" class="form-control" id="mem_card" name="mem_card" value="<?php echo $row_q['mem_card'] ?>" >
+				</div>
+
+				<div class="form-group"><label for="mem_sex">เพศ:</label><label id="err5" class="err"></label>
+					<div class="radio">
+					 <label  class="radio-inline"><input type="radio"  id="mem_sex" name="mem_sex" value="M"> ชาย</label>
+					 <label  class="radio-inline"><input type="radio"  id="mem_sex" name="mem_sex" value="F"> หญิง</label>
+					</div>
+				</div>
+				
+		  <span id="status_save"></span>
+		  <button type="button" onClick="return checkEmpty();" id="btnAdd" name="btnAdd" class="btn btn-info">แก้ไขข้อมูล</button>
+		  <button type="reset"   class="btn btn-warning">ล้างข้อมูล</button>
+		</form>
+		</div>
+				<script language="javascript">
+				function checkEmpty()
+				{
+				 $("#err1").html('');
+				 $("#err2").html('');
+				 $("#err3").html('');
+				 $("#err4").html('');
+		 			  var chk=true; 
+		 			  
+				  if($("#mem_id").val() == "")
+				  {
+				    $("#err1").html('กรุณากำหนดค่า ลำดับผู้ทำงาน ด้วยค่ะ');
+				    $("#mem_id").focus();
+				    chk= false;
+				  }
+				  if($("#mem_name").val() == "")
+				  {
+				    $("#err2").html('กรุณากำหนดค่า ชื่อผู้สมัคร ด้วยค่ะ');
+				    $("#mem_name").focus();
+				    chk= false;
+				  }
+				  if($("#mem_tel").val() == "")
+				  {
+				    $("#err3").html('กรุณากำหนดค่า เบอร์โทร ด้วยค่ะ');
+				    $("#mem_tel").focus();
+				    chk= false;
+				  }
+				  if($("#mem_card").val() == "")
+				  {
+				    $("#err4").html('กรุณากำหนดค่า เพศ ด้วย');
+				    $("#mem_card").focus();
+				    chk= false;
+				  }
+			  
+				  if(chk){ 
+				  	  
+				  	    var url="module/admin_files/updatper1.php"
+				  		var form = $('#frmedit')[0];
+				  	    var data = new FormData(form);
+				  	    $.ajax({
+					            type: "POST",
+					            enctype: 'multipart/form-data',
+					            url: url,
+					            data: data,
+					            processData: false,
+					            contentType: false,
+					            cache: false,
+					            timeout: 600000,
+					            success: function (data) {
+	 								alert(data);
+					                if(data.trim()=='1'){
+								  	  $("#status_save").html('<font color=green>บันทึกข้อมูลเรียบร้อยแล้วค่ะ...</font><br>');
+								  	 setTimeout(function(){ 
+								       location='?fd=admin&page=showtb_member';
+								      }, 3000);  
+								  	 }else $("#status_save").html('<font color=red>ไม่สามารถบันทึกข้อมูลได้...กรุณาตรวจสอบข้อมูลอีกครั้ง...</font><br>');
+								  
+					            },
+					            error: function (e) {
+					                $("#status_save").html(e.responseText);
+					            }
+					        });
+				  	  
+				  }else{ 
+				    return false;
+				  }
+				}
+		</script>
