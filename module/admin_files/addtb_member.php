@@ -1,6 +1,6 @@
 
 
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
 
 <?php /*
@@ -33,7 +33,7 @@ Download Code On : developers.khontermfan.com
 				<div class="form-group"><label for="mem_tel">เบอร์โทร:</label><label id="err4" class="err"></label>    	
     		<input type="tel" class="form-control" id="mem_tel" name="mem_tel"  >
 				</div>
-                <div class="form-group"><label for="mem_card">เลขบัตรประชาชน:</label><label id="err4" class="err"></label>    	
+                <div class="form-group"><label for="mem_card">เลขบัตรประชาชน:</label><label id="usercheck"></label><label id="err4" class="err"></label>    	
     		<input type="tex" class="form-control" id="mem_card" name="mem_card"  >
 				<div class="form-group"><label for="mem_sex">เพศ:</label><label id="err5" class="err"></label>
 					<div class="radio">
@@ -47,6 +47,33 @@ Download Code On : developers.khontermfan.com
 		  <button type="reset"   class="btn btn-warning">ล้างข้อมูล</button>
 		</form>
 		</div>
+		<script type="text/javascript">
+ $(document).ready(function(){
+   //alert(55);
+   $("#mem_card").focusout(function(){
+      //alert(555);
+      var mem_card = $(this).val();
+      if(mem_card!=""){
+   //   alert(mem_card);
+      $.post( "module/user_files/checkuser.php",{mem_card:mem_card}, function( data ) {
+    //   alert(data);
+        if(data==0){
+          $( "#usercheck" ).html('<font color=red>ใช้ไม่ได้นะค่ะ เนื่องจากมีการลงทะเบียนแล้วค่ะ</font>');
+          $("#mem_card").val('');
+          $("#mem_card").focus();
+		
+        }
+        else{
+			 $( "#usercheck" ).html('<font color=green>ใช้ได้ค่ะ..</font>');
+			
+		}
+      });
+    }
+    });
+ 
+  
+  });
+</script>
 				<script language="javascript">
 				function checkEmpty()
 				{
@@ -89,7 +116,7 @@ Download Code On : developers.khontermfan.com
 			  
 				  if(chk){ 
 				  	  
-				  	  	var url="module/user_files/checkuser.php";
+				  	  	var url="module/admin_files/savetb_member.php";
 						var form = $('#frminsert')[0];
 				  	    var data = new FormData(form);
 				  	    $.ajax({

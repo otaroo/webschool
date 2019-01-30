@@ -99,7 +99,7 @@
         </ol>
         <div class="carousel-inner" role="listbox">
           <!-- Slide One - Set the background image for this slide in the line below -->
-          <div class="carousel-item active" style="background-image: url('img/cut1.png')">
+          <div class="carousel-item active" style="background-image: url('img/la.png')">
             <div class="carousel-caption d-none d-md-block">
             
             </div>

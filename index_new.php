@@ -52,7 +52,7 @@
  <!-- Navigation -->
  <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top">
       <div class="container">
-        <a href="#" class="navbar-brand style1"><strong>กศน.ตำบลนาโบสถ์</strong></a>
+        <a href="index.php" class="navbar-brand style1"><strong>กศน.ตำบลนาโบสถ์</strong></a>
 <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -73,14 +73,17 @@
              <li class="nav-item">
               <a class="nav-link"  href="?fd=admin&page=addtb_activity">เพิ่มกิจกรรม</a>
             </li>
+            <li class="nav-item">
+              <a class="nav-link"  href="?fd=admin&page=addtb_pho">รูป</a>
+            </li>
              <li class="nav-item">
-              <a class="nav-link"  href="?fd=admin&page=showtb_news1">ข่าว</a>
+              <a class="nav-link"  href="?fd=admin&page=addnew">ข่าว</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="?fd=admin&page=showmember_new">รายชื่อคนเข้ากิจกรรม</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="page=rate">ประเมินกิจกรรม</a>
+              <a class="nav-link" href="?fd=admin&page=tb_rate1">ดูผลการประเมิน</a>
             </li>
              <li class="nav-item">
               <a class="nav-link" href="index.php">logout</a>
