@@ -24,10 +24,10 @@ require_once "config.php";
                     <?php echo $fd['title_news'];  ?>
                 </h4>
                 <div class="card-body">
-
-                    <div class="card-footer">
-                        <a href="?fd=admin&page=news" class="btn btn-primary">รายละเอียด</a>
-                    </div>
+                    
+                   <div class="card-footer">
+                    <a href='?fd=admin&page=news'class="btn btn-primary">รายละเอียด</a>
+                </div>
                 </div>
 
             </div>

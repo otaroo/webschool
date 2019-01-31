@@ -9,6 +9,7 @@
     <!-- Marketing Icons Section -->
     <div class="row">
         <?php
+		$id_news=$_GET['id_news'];
     $sql ="SELECT * FROM tb_new order by description_news asc limit 5 ";  
     $qess=$db->query($sql);	
     while($fd=$qess->fetch_assoc()){	?>
