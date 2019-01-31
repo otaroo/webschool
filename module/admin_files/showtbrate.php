@@ -21,7 +21,41 @@ Download Code On : developers.khontermfan.com
 <div class="container-fluid">
 
 	<h2 class="style1 style2">&nbsp;</h2>
-	<h2 class="style1 style2">การสรุปผลประเมินกิจกรรม</h2>
+	<h2 align="center" class="style1 style2">การสรุปผลประเมินกิจกรรม</h2>
+	<div class="row">
+		<div class="col-12 text-center">
+			<select id="activity">
+				<option value="">เลือกกิจกรรม</option>
+				<?php 
+					$sql2 ="select * from tb_activity where 1  order by act_name desc";  
+					$qess2=$db->query($sql2);	
+					while($fd2=$qess2->fetch_assoc()){	
+				?>
+				<option value="<?php echo $fd2['act_id'];?>">
+					<?php echo $fd2['act_name'];?>
+				</option>
+				<?php  } ?>
+			</select>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-12">
+			<table id="table_id" class="table" style="width:100%">
+				<thead>
+					<tr align="center">
+						<th scope="col">รายการ</th>
+						<th scope="col">คะแนน</th>
+					</tr>
+				</thead>
+				<tbody>
+				</tbody>
+			</table>
+		</div>
+	</div>
+
+
+
 	<!-- <div class="w3-row content_box">
 		<?php
 	// require_once("class/DatetimeFormat.class.php");
@@ -73,39 +107,133 @@ Download Code On : developers.khontermfan.com
 			</table>
 		</div> -->
 	<!-- </div> -->
-	
-	
+
+
 </div>
 
 <!-- <script src="js/search.js"></script> -->
 <script>
 	$(document).ready(function () {
+		let table_mem;
+		let act_id = '';
 		$('#activity').on('change', function () {
-			let value = $("#activity option:selected").text();
-			alert(value);
+			let value = $("#activity option:selected").val();
+			act_id = value;
+			table_mem.ajax.reload();
 		});
-		getmember('41');
-		$('#table_id').DataTable();
 
-		function getmember(value) {
-			var url = "module/admin_files/get_member_by_act.php?act_id=" + value;
-			$.ajax({
-				type: "GET",
-				url: url,
-				success: function (result) {
-					var content = '';
-					$.each(result, function (i, item) { // loop..
-						// content = content + "Location : " + item.LOC_NAME + ', Lat = ' + item.LAT + ', Lng = ' + item.LNG + ' <br>';
-						console.log('item', item);
+
+
+		var url = "module/admin_files/get_rate_by_act.php"
+		table_mem = $('#table_id').DataTable({
+			"searching": false,
+			"paging": false,
+			"ordering": false,
+			"ordering": false,
+			"info": false,
+			"serverSide": true,
+			"ajax": {
+				"url": url,
+				"data": function (d) {
+					d.act_id = act_id;
+				},
+				dataSrc: function (data) {
+
+					let result = []
+					result.push({
+						"name": '1.กิจกรรมนี้มีประโยชน์หรือไม่',
+						"point": data['r1']
 					});
+					result.push({
+						"name": '2.การประชาสัมพันธ์กิจกรรม/โครงการ',
+						"point": data['r2']
+					});
+					result.push({
+						"name": '3.รูปแบบการจัดกิจกรรมมีความเหมาะสม',
+						"point": data['r3']
+					});
+					result.push({
+						"name": '4.สิ่งอำนวยความสะดวกมีความเหมาะสม',
+						"point": data['r4']
+					});
+					result.push({
+						"name": '5.สถานที่ให้บริการมีความสะดวกในการเดินทาง',
+						"point": data['r5']
+					});
+					result.push({
+						"name": '6.เวลาที่ใช้ในการจัดกิจกรรมมีความเหมาะสม',
+						"point": data['r6']
+					});
+					result.push({
+						"name": '7.สถานที่จัดมีความเหมาะสม',
+						"point": data['r7']
+					});
+					result.push({
+						"name": '8.จิตสำนึก ทัศนคติ ความตระหนัก ความยุติธรรม',
+						"point": data['r8']
+					});
+					result.push({
+						"name": '9.การมีส่วนร่วมและในการทำงานเป็นทีม',
+						"point": data['r9']
+					});
+					result.push({
+						"name": '10.ความพึงพอใจโดยรวมในการเข้าร่วมโครงการนี้',
+						"point": data['r10']
+					});
+					result.push({
+						"name": 'จำนวนคนประเมินทั้งหมด',
+						"point": data['count_mem']
+					});
+					console.log(data);
+					if (data['act_id'] === null) {
+						result = []
+					}
+
+					return result
+				}
+			},
+
+			columns: [{
+					"data": "name",
 
 				},
-				error: function (e) {
-					console.log('error', e);
+				{
+					"data": "point",
+					"className": "text-center",
+				},
+				// {
+				// 	"data": "r3"
+				// },
+				// {
+				// 	"data": "r4"
+				// },
+				// {
+				// 	"data": "r5"
+				// },
+				// {
+				// 	"data": "r6"
+				// },
+				// {
+				// 	"data": "r7"
+				// },
+				// {
+				// 	"data": "r8"
+				// },
+				// {
+				// 	"data": "r9"
+				// },
+				// {
+				// 	"data": "r10"
+				// },
+				// {
+				// 	"data": null,
+				// 	"render": function (data) {
+				// 		return data.act_id
+				// 	}
+				// },
 
-				}
-			});
-		}
+			]
+		});
 
 	});
 </script>

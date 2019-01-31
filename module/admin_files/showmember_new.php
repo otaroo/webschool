@@ -106,15 +106,9 @@
 						<th>เบอร์โทร </th>
 						<th>เลขบัตรประชาชน </th>
 						<th>เพศ </th>
-					
-
 					</tr>
 				</thead>
 				<tbody>
-					<tr>
-						<td>Row 1 Data 1</td>
-						<td>Row 1 Data 2</td>
-					</tr>
 				</tbody>
 			</table>
 		</div>
@@ -147,14 +141,14 @@
 		});
 
 
-		
+
 		var url = "module/admin_files/get_member_by_act.php"
 		table_mem = $('#table_id').DataTable({
 			"searching": false,
 			"paging": false,
 			"ordering": false,
 			"ordering": false,
-			"info": false ,
+			"info": false,
 			"serverSide": true,
 			"ajax": {
 				"url": url,
@@ -188,26 +182,6 @@
 			]
 		});
 
-
-		function getmember(value) {
-			var url = "module/admin_files/get_member_by_act.php?act_id=" + value;
-			$.ajax({
-				type: "GET",
-				url: url,
-				success: function (result) {
-					var content = '';
-					$.each(result, function (i, item) { // loop..
-						// content = content + "Location : " + item.LOC_NAME + ', Lat = ' + item.LAT + ', Lng = ' + item.LNG + ' <br>';
-						console.log('item', item);
-					});
-
-				},
-				error: function (e) {
-					console.log('error', e);
-
-				}
-			});
-		}
 
 	});
 </script>
