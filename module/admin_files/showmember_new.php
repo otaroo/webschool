@@ -29,6 +29,7 @@
 			</select>
 		</div>
 	</div>
+
 	<!-- <div class="w3-row content_box">
 
 		<p style="text-align:center;width:90%;">&nbsp;</p>
@@ -106,11 +107,17 @@
 						<th>เบอร์โทร </th>
 						<th>เลขบัตรประชาชน </th>
 						<th>เพศ </th>
+						<th>ลบ </th>
 					</tr>
 				</thead>
 				<tbody>
 				</tbody>
 			</table>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-12 text-center">
+			<a id="print" href=target="_blank"><img src="img/ac.png" height="30" width="30"> </a>
 		</div>
 	</div>
 </div>
@@ -119,20 +126,8 @@
 	$(document).ready(function () {
 		let table_mem;
 		let act_id = '';
-		$(".mem_id").hide();
-		$(".picdel").click(function () {
-			var mem_id = $(this).parent().find(".mem_id").html();
-			//alert(course_id);
-			if (confirm('คุณต้องการลบข้อมูลใช่หรือไม่')) {
-				var url = "module/admin_files/deltb_member.php";
-				$.post(url, {
-					mem_id: mem_id
-				}, function (data) {
-					alert(data);
-					location.reload();
-				});
-			}
-		});
+		$("#print").hide();
+
 
 		$('#activity').on('change', function () {
 			let value = $("#activity option:selected").val();
@@ -141,9 +136,12 @@
 		});
 
 
-
+		var groupColumn = 2;
 		var url = "module/admin_files/get_member_by_act.php"
 		table_mem = $('#table_id').DataTable({
+			"language": {
+				"url": "https://cdn.datatables.net/plug-ins/1.10.19/i18n/Thai.json"
+			},
 			"searching": false,
 			"paging": false,
 			"ordering": false,
@@ -155,7 +153,19 @@
 				"data": function (d) {
 					d.act_id = act_id;
 				},
-				dataSrc: ""
+				dataSrc: function (data) {
+					console.log(data.length);
+
+
+					if (data.length != 0) {
+						$("#print").show();
+						$("#print").attr("href", "module/view_files/print_mem.php?act_id=" + act_id)
+					} else {
+						$("#print").hide();
+					}
+
+					return data
+				}
 			},
 			columns: [{
 					"data": "act_id"
@@ -172,14 +182,59 @@
 				{
 					"data": "mem_sex"
 				},
-				// {
-				// 	"data": null,
-				// 	"render": function (data) {
-				// 		return data.act_id
-				// 	}
-				// },
+				{
+					"data": null,
+					"render": function (data) {
+						return '<span class="mem_id">' +
+							'<?php echo $fd2["mem_id"];?></span><img class="picdel" src="img/del.png" height="25" width="25">'
+					}
+				},
 
-			]
+			],
+			drawCallback: function (settings) {
+				var api = this.api();
+				console.log(api.rows({
+					page: 'current'
+				}).data());
+
+
+
+
+				$(".mem_id").hide();
+				$(".picdel").click(function () {
+					var mem_id = $(this).parent().find(".mem_id").html();
+					//alert(course_id);
+					if (confirm('คุณต้องการลบข้อมูลใช่หรือไม่')) {
+						var url = "module/admin_files/deltb_member.php";
+						$.post(url, {
+							mem_id: mem_id
+						}, function (data) {
+							alert(data);
+							location.reload();
+						});
+					}
+				});
+			
+				
+				// $(rows).eq(i).before(
+				// 			'<tr class="group"><td colspan="5">4</td></tr>'
+				// 		);
+
+				// var api = this.api();
+				
+				// var last = null;
+				// api.column(groupColumn, {
+				// 	page: 'current'
+				// }).data().each(function (group, i) {
+				// 	if (last !== group) {
+				// 		$(rows).eq(i).before(
+				// 			'<tr class="group"><td colspan="5">' + group + '</td></tr>'
+				// 		);
+
+				// 		last = group;
+				// 	}
+				// });
+			}
 		});
 
 

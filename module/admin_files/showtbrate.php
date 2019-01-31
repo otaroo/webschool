@@ -126,6 +126,9 @@ Download Code On : developers.khontermfan.com
 
 		var url = "module/admin_files/get_rate_by_act.php"
 		table_mem = $('#table_id').DataTable({
+			"language": {
+				"url": "https://cdn.datatables.net/plug-ins/1.10.19/i18n/Thai.json"
+			},
 			"searching": false,
 			"paging": false,
 			"ordering": false,
@@ -195,43 +198,11 @@ Download Code On : developers.khontermfan.com
 
 			columns: [{
 					"data": "name",
-
 				},
 				{
 					"data": "point",
 					"className": "text-center",
 				},
-				// {
-				// 	"data": "r3"
-				// },
-				// {
-				// 	"data": "r4"
-				// },
-				// {
-				// 	"data": "r5"
-				// },
-				// {
-				// 	"data": "r6"
-				// },
-				// {
-				// 	"data": "r7"
-				// },
-				// {
-				// 	"data": "r8"
-				// },
-				// {
-				// 	"data": "r9"
-				// },
-				// {
-				// 	"data": "r10"
-				// },
-				// {
-				// 	"data": null,
-				// 	"render": function (data) {
-				// 		return data.act_id
-				// 	}
-				// },
-
 			]
 		});
 
