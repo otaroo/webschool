@@ -30,79 +30,39 @@
 		</div>
 	</div>
 
-	<!-- <div class="w3-row content_box">
-
-		<p style="text-align:center;width:90%;">&nbsp;</p>
-		<div class='datagrid'>
-			<table id='tblSearch' width='90%' align='center' class='tblSearch table table-bordered table-hover'>
+	<br />
+	<div class="row">
+		<div class="col-4">
+			<table id="table_count" class="table" style="width:100%">
 				<thead>
-					<tr>
-						<th>ลำดับ </th>
-						<th>ชื่อกิจกรรม </th>
-						<th>ชื่อผู้สมัคร </th>
-						<th>เบอร์โทร </th>
-						<th>เลขบัตรประชาชน </th>
+					<tr align="center">
 						<th>เพศ </th>
-						<th>ลบ </th>
-
+						<th>จำนวน </th>
 					</tr>
 				</thead>
 				<tbody>
-					<?php 
-			$sql2 ="select * from tb_member where 1  order by act_id asc";  
-			$qess2=$db->query($sql2);	
-			$num = 1;
-
-			while($fd2=$qess2->fetch_assoc()){	
-			
-		?>
-					<tr>
+					<tr align="center">
+						<td>ชาย</td>
 						<td>
-							<?php echo $num;?>
+							<p id="mem_m"></p>
 						</td>
-						<?php 
-							$sql3 ="select act_name name from tb_activity where act_id='".$fd2['act_id']."'";  
-							$qess3=$db->query($sql3);	
-							$fd3=$qess3->fetch_assoc();
-							
-						?>
+					</tr>
+					<tr align="center">
+						<td>หญิง</td>
 						<td>
-							<?php echo $fd3['name'];?>
+							<p id="mem_f"></p>
 						</td>
-						<td>
-							<?php echo $fd2['mem_name'];?>
-						</td>
-						<td>
-							<?php echo $fd2['mem_tel'];?>
-						</td>
-						<td>
-							<?php echo $fd2['mem_card'];?>
-						</td>
-						<td>
-							<?php echo $fd2['mem_sex'];?>
-						</td>
-						<td><span class="mem_id">
-								<?php echo $fd2['mem_id'];?></span><img class="picdel" src="img/del.png" height="25" width="25"></td>
-
-
-						<?php $num += 1; } ?>
-
+					</tr>
 				</tbody>
 			</table>
-			<td>
-				<div align="center"><a href='module/view_files/print_mem.php?act_id=<?php echo $fd2[' act_id'];?>' target="_blank"><img
-						 src="img/ac.png" height="30" width="30"> </a></div>
-			</td>
-			<p>&nbsp;</p>
 		</div>
-	</div> -->
-
+	</div>
 	<div class="row">
 		<div class="col-12">
-			<table id="table_id" class="table" style="width:100%">
+			<table id="table_mem" class="table" style="width:100%">
 				<thead>
 					<tr>
-						<th>รหัสกิจกรรม </th>
+						<th>ลำดับ </th>
 						<th>ชื่อผู้สมัคร </th>
 						<th>เบอร์โทร </th>
 						<th>เลขบัตรประชาชน </th>
@@ -125,20 +85,47 @@
 <script type="text/javascript">
 	$(document).ready(function () {
 		let table_mem;
+		let table_count;
 		let act_id = '';
 		$("#print").hide();
+		$("#table_count").hide();
 
 
 		$('#activity').on('change', function () {
 			let value = $("#activity option:selected").val();
 			act_id = value;
 			table_mem.ajax.reload();
+			count_mem(act_id);
 		});
 
+		function count_mem(params) {
+			var url_count = "module/admin_files/count_mem.php?act_id=" + params;
+			$.get(url_count, function (data, status) {
+				$('#mem_f').text(0 + ' คน');
+				$('#mem_m').text(0 + ' คน');
+				if (data.length > 0) {
+					data.forEach(element => {
 
-		var groupColumn = 2;
+						if (element['mem_sex'] == "F") {
+							$('#mem_f').text(element['mem_count'] + ' คน');
+						}
+						if (element['mem_sex'] == "M") {
+							$('#mem_m').text(element['mem_count'] + ' คน');
+						}
+					});
+					$("#table_count").show();
+				} else {
+					$("#table_count").hide();
+				}
+
+
+
+			});
+		}
+
+
 		var url = "module/admin_files/get_member_by_act.php"
-		table_mem = $('#table_id').DataTable({
+		table_mem = $('#table_mem').DataTable({
 			"language": {
 				"url": "https://cdn.datatables.net/plug-ins/1.10.19/i18n/Thai.json"
 			},
@@ -154,9 +141,6 @@
 					d.act_id = act_id;
 				},
 				dataSrc: function (data) {
-					console.log(data.length);
-
-
 					if (data.length != 0) {
 						$("#print").show();
 						$("#print").attr("href", "module/view_files/print_mem.php?act_id=" + act_id)
@@ -168,7 +152,10 @@
 				}
 			},
 			columns: [{
-					"data": "act_id"
+					"data": null,
+					render: function (data, type, row, meta) {
+						return meta.row + meta.settings._iDisplayStart + 1;
+					}
 				},
 				{
 					"data": "mem_name"
@@ -182,13 +169,11 @@
 				{
 					"data": "mem_sex",
 					"render": function (data) {
-						console.log(data);
-						
 						let text = '';
-						if(data == "F"){
+						if (data == "F") {
 							text = "หญิง";
-						} 
-						if(data == "M"){
+						}
+						if (data == "M") {
 							text = "ชาย";
 						}
 						return text
@@ -205,13 +190,6 @@
 			],
 			drawCallback: function (settings) {
 				var api = this.api();
-				console.log(api.rows({
-					page: 'current'
-				}).data());
-
-
-
-
 				$(".mem_id").hide();
 				$(".picdel").click(function () {
 					var mem_id = $(this).parent().find(".mem_id").html();
@@ -226,26 +204,6 @@
 						});
 					}
 				});
-			
-				
-				// $(rows).eq(i).before(
-				// 			'<tr class="group"><td colspan="5">4</td></tr>'
-				// 		);
-
-				// var api = this.api();
-				
-				// var last = null;
-				// api.column(groupColumn, {
-				// 	page: 'current'
-				// }).data().each(function (group, i) {
-				// 	if (last !== group) {
-				// 		$(rows).eq(i).before(
-				// 			'<tr class="group"><td colspan="5">' + group + '</td></tr>'
-				// 		);
-
-				// 		last = group;
-				// 	}
-				// });
 			}
 		});
 
