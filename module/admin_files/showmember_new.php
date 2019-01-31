@@ -180,7 +180,19 @@
 					"data": "mem_card"
 				},
 				{
-					"data": "mem_sex"
+					"data": "mem_sex",
+					"render": function (data) {
+						console.log(data);
+						
+						let text = '';
+						if(data == "F"){
+							text = "หญิง";
+						} 
+						if(data == "M"){
+							text = "ชาย";
+						}
+						return text
+					}
 				},
 				{
 					"data": null,
