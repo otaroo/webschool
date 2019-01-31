@@ -26,7 +26,7 @@ require_once "config.php";
                 <div class="card-body">
                     
                    <div class="card-footer">
-                    <a href="?fd=admin&page=news" class="btn btn-primary">รายละเอียด</a>
+                    <a href='?fd=admin&page=news'class="btn btn-primary">รายละเอียด</a>
                 </div>
                 </div>
                 

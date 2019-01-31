@@ -103,19 +103,19 @@
         </ol>
         <div class="carousel-inner" role="listbox">
           <!-- Slide One - Set the background image for this slide in the line below -->
-          <div class="carousel-item active" style="background-image: url('img/cut1.png')">
+          <div class="carousel-item active" style="background-image: url('img/wed.png')">
             <div class="carousel-caption d-none d-md-block">
             
             </div>
           </div>
           <!-- Slide Two - Set the background image for this slide in the line below -->
-          <div class="carousel-item" style="background-image: url('img/หัว.png')">
+          <div class="carousel-item" style="background-image: url('img/add.png')">
             <div class="carousel-caption d-none d-md-block">
              
             </div>
           </div>
           <!-- Slide Three - Set the background image for this slide in the line below -->
-          <div class="carousel-item" style="background-image: url('img/carousel3.jpg')">
+          <div class="carousel-item" style="background-image: url('img/af.png')">
             <div class="carousel-caption d-none d-md-block">
              
             </div>
