@@ -9,12 +9,12 @@ require_once "config.php";
 
 <div class="container">
 
-    
-<h1 class="my-4">ข่าวสาร</h1>
+
+    <h1 class="my-4">ข่าวสาร</h1>
     <!-- Marketing Icons Section -->
     <div class="row">
         <?php
-    $sql ="SELECT * FROM tb_new order by description_news asc limit 5 ";  
+    $sql ="SELECT * FROM tb_new order by description_news desc limit 5 ";  
     $qess=$db->query($sql);	
     while($fd=$qess->fetch_assoc()){	?>
 
@@ -29,19 +29,18 @@ require_once "config.php";
                     <a href='?fd=admin&page=news'class="btn btn-primary">รายละเอียด</a>
                 </div>
                 </div>
-                
+
             </div>
         </div>
         <?php } ?>
     </div>
     <!-- /.row  -->
-   
-
+    <br />
     <h2>กิจกรรม</h2>
 
     <div class="row">
         <?php
-    $sql ="SELECT * FROM tb_activity limit 3";  
+    $sql ="SELECT * FROM tb_activity order by act_date desc limit 3";  
     $qess=$db->query($sql);	
     while($fd=$qess->fetch_assoc()){	?>
 
@@ -56,7 +55,7 @@ require_once "config.php";
                     <p class="card-text"> :
                         <?php echo $fd['act_place']; ?>
                     </p>
-                    
+
                 </div>
                 <div class="card-footer">
                     <a href="?fd=admin&page=des" class="btn btn-primary">รายละเอียด</a>
@@ -68,25 +67,5 @@ require_once "config.php";
 
     </div>
     <!-- /.row  -->
-
-
-
-    
-
-    <h2>กิจกรรม</h2>
-
-   
-    <div class="row">
-    <?php 
-            $sql ="SELECT * FROM tb_news"; 
-            $qess=$db->query($sql);
-            while($fd=$qess->fetch_assoc()){ ?>    
-         <div class="col">
-         <?php echo $fd['title'];  ?>
-        </div>
-       <?php }?>
-      
-    </div>
 </div>
 <!-- /.row  -->
-
