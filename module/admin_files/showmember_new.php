@@ -56,6 +56,24 @@
 				</tbody>
 			</table>
 		</div>
+		<div class="col-4">
+			<table id="table_count_all" class="table" style="width:100%">
+				<thead>
+					<!-- <tr align="center">
+						<th>เพศ </th>
+						<th>จำนวน </th>
+					</tr> -->
+				</thead>
+				<tbody>
+					<tr align="center">
+						<td>ผู้สมัครทั้งหมด</td>
+						<td>
+							<p id="mem_all"></p>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
 	</div>
 	<div class="row">
 		<div class="col-12">
@@ -89,6 +107,7 @@
 		let act_id = '';
 		$("#print").hide();
 		$("#table_count").hide();
+		$("#table_count_all").hide();
 
 
 		$('#activity').on('change', function () {
@@ -103,9 +122,14 @@
 			$.get(url_count, function (data, status) {
 				$('#mem_f').text(0 + ' คน');
 				$('#mem_m').text(0 + ' คน');
+				$('#mem_all').text(0 + ' คน');
+				let mem_all = 0;
+
 				if (data.length > 0) {
 					data.forEach(element => {
-
+						console.log(element);
+						
+						mem_all +=parseInt(element['mem_count']);
 						if (element['mem_sex'] == "F") {
 							$('#mem_f').text(element['mem_count'] + ' คน');
 						}
@@ -113,9 +137,14 @@
 							$('#mem_m').text(element['mem_count'] + ' คน');
 						}
 					});
+					console.log(mem_all);
+					
+					$('#mem_all').text(mem_all + ' คน');
 					$("#table_count").show();
+					$("#table_count_all").show();
 				} else {
 					$("#table_count").hide();
+					$("#table_count_all").hide();
 				}
 
 
