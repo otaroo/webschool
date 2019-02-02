@@ -141,7 +141,8 @@ Download Code On : developers.khontermfan.com
 					d.act_id = act_id;
 				},
 				dataSrc: function (data) {
-
+					console.log(data);
+					
 					let result = []
 					result.push({
 						"name": '1.กิจกรรมนี้มีประโยชน์หรือไม่',
@@ -183,11 +184,16 @@ Download Code On : developers.khontermfan.com
 						"name": '10.ความพึงพอใจโดยรวมในการเข้าร่วมโครงการนี้',
 						"point": data['r10']
 					});
+					// result.push({
+					// 	"name": 'จำนวนคนประเมินทั้งหมด',
+					// 	"point": data['count_mem'] + ' คน'
+					// });
 					result.push({
-						"name": 'จำนวนคนประเมินทั้งหมด',
-						"point": data['count_mem']
+						"name": 'รวม',
+						"point":(parseFloat(data['r1']) +parseFloat(data['r2'])+parseFloat(data['r3'])+parseFloat(data['r4'])+parseFloat(data['r5'])
+						+parseFloat(data['r6'])+parseFloat(data['r7'])+parseFloat(data['r8'])+parseFloat(data['r9'])+parseFloat(data['r10']) ).toFixed(2)
 					});
-					console.log(data);
+
 					if (data['act_id'] === null) {
 						result = []
 					}
