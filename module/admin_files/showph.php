@@ -1,8 +1,5 @@
 
 
-
-
-
 <?php /*
 Create By:PK Model
 Generate Code By :Mr.Thanawat Kaewwongkhieo

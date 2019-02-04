@@ -10,7 +10,7 @@
 
 <head>
   <title>กศน.ตำบลนาโบสถ์</title>
-  <meta charset="utf-8">
+  <meta charset="utf-8"><script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Bootstrap core CSS -->
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -89,9 +89,7 @@
           <li class="nav-item">
             <a class="nav-link" href="?fd=admin&page=showtbrate">ดูผลการประเมิน</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="index.php">ADMIN</a>
-          </li>
+         
           <li class="nav-item">
             <a class="nav-link" href="?fd=admin&page=logout">ออกจากระบบนะจ๊ะ</a>
           </li>
@@ -166,7 +164,7 @@
     <!-- /.container -->
   </footer>
   <!-- Bootstrap core JavaScript -->
-  <script src="vendor/jquery/jquery.min.js"></script>
+ 
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="js/DataTables/datatables.min.js"></script>
 

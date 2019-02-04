@@ -49,7 +49,7 @@ Download Code On : developers.khontermfan.com
 		?><tr>
 					
 			<td><?php echo $fd2['act_name'];?></td>
-			<td><?php echo $fd2['act_date'];?></td>
+			<td><?php echo $dt->DtoLDthai($fd2['act_date']);?></td>
            	<td><?php echo $fd2['act_des'];?></td>
                  
 		  	</tr>

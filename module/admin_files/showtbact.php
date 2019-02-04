@@ -32,21 +32,24 @@ Download Code On : developers.khontermfan.com
 				 	<th>วันที่กิจกรรม  </th>
 				 	<th>รายละเอียด  </th>
 				 	<th>สถานที่  </th>
+                    <th>รูปภาพ  </th>
 				  	<th>แก้ไข  </th>
 				  	<th>ลบ  </th>
 		</tr>
 		</thead>
 		<tbody><?php 
-			$sql2 ="select * from  tb_activity where 1  order by act_name desc";  
+			$sql2 ="select * from  tb_activity where 1  order by act_name asc";  
 			$qess2=$db->query($sql2);	
 			while($fd2=$qess2->fetch_assoc()){	
 			
 		?><tr>
 					
 					<td><?php echo $fd2['act_name'];?></td>
-					<td><?php echo $fd2['act_date'];?></td>
+					
+					<td><?php echo $dt->DtoLDthai($fd2['act_date']);?></td>
 					<td><?php echo $fd2['act_des'];?></td>
 					<td><?php echo $fd2['act_place'];?></td>
+                    <td><a href='?fd=admin&page=add_file_news&act_id=<?php echo $fd2['act_id'];?>'>รูปภาพ  </a></td>
 					  			<td><a href='?fd=admin&page=edittbact&act_id=<?php echo $fd2['act_id'];?>'><img src="img/edit.jpg" height="30" width="30">  </a></td>
 					  			<td><span class ="act_id"><?php echo $fd2['act_id'];?></span><img class="picdel"  src="img/del.png" height="25" width="25"></td>
 		  	</tr>
