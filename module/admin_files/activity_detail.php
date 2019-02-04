@@ -1,8 +1,8 @@
 <div class="container">
     <div class="row">
         <?php
-		$id_news=$_GET['id_news'];
-    $sql ="SELECT * FROM tb_news where id = '$id_news' ";  
+		$id_activity=$_GET['id_activity'];
+    $sql ="SELECT * FROM tb_activity where act_id = '$id_activity' ";  
     $qess=$db->query($sql);	
     while($fd=$qess->fetch_assoc()){	?>
       
@@ -10,7 +10,7 @@
         <div class="col-lg-8">
 
             <!-- Title -->
-            <h1 class="mt-4"> ข่าว:  <? echo $fd['title']?></h1>
+            <h1 class="mt-4"> กิจกรรม: <? echo $fd['act_name']?></h1>
 
             <!-- Author -->
             <p class="lead">
@@ -21,7 +21,7 @@
             <hr>
 
             <!-- Date/Time -->
-            <p>วันที่  <? echo $fd['publish_time']?></p>
+            <p>วันที่  <? echo $fd['act_date']?></p>
 
             <hr>
 
@@ -31,8 +31,9 @@
             <hr>
 
             <!-- Post Content -->
-            <p class="lead"> <? echo $fd['description']?> </p>
+            <p class="lead"> <? echo $fd['act_des']?> </p>
 
+            <a type="button"  href="?fd=admin&page=addtb_member&id_activity=<? echo  $id_activity; ?>" class="btn btn-primary">สมัคร</a>
           
             <hr>
 
