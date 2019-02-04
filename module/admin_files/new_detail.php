@@ -2,7 +2,7 @@
     <div class="row">
         <?php
 		$id_news=$_GET['id_news'];
-    $sql ="SELECT * FROM tb_news where id = '$id_news' ";  
+    $sql ="SELECT * FROM tb_new where id_news = '$id_news' ";  
     $qess=$db->query($sql);	
     while($fd=$qess->fetch_assoc()){	?>
       
@@ -10,7 +10,7 @@
         <div class="col-lg-8">
 
             <!-- Title -->
-            <h1 class="mt-4"> ข่าว:  <? echo $fd['title']?></h1>
+            <h1 class="mt-4"> ข่าว:  <? echo $fd['title_news'];?></h1>
 
             <!-- Author -->
             <p class="lead">
@@ -21,7 +21,7 @@
             <hr>
 
             <!-- Date/Time -->
-            <p>วันที่  <? echo $fd['publish_time']?></p>
+            <p>วันที่ </p>
 
             <hr>
 
@@ -31,7 +31,7 @@
             <hr>
 
             <!-- Post Content -->
-            <p class="lead"> <? echo $fd['description']?> </p>
+            <p class="lead"> <? echo $fd['description_news'];?> </p>
 
           
             <hr>
@@ -93,4 +93,3 @@
     </div>
     <!-- /.row -->
 </div>
-<!-- /.container -->

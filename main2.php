@@ -14,19 +14,19 @@ require_once "config.php";
     <!-- Marketing Icons Section -->
     <div class="row">
         <?php
-    $sql ="SELECT * FROM tb_news order by publish_time desc limit 5 ";  
+    $sql ="SELECT * FROM tb_new  limit 5 ";  
     $qess=$db->query($sql);	
     while($fd=$qess->fetch_assoc()){	?>
 
         <div class="col-lg-4 mb-4">
             <div class="card h-100">
                 <h4 class="card-header">
-                    <?php echo $fd['title'];  ?>
+                    <?php echo $fd['title_news'];  ?>
                 </h4>
                 <div class="card-body">
-                    <p><?php echo $fd['description'];  ?></p>
+                   
                    <div class="card-footer">
-                    <a href="index.php?fd=admin&page=new_detail&id_news=<?php echo $fd['id'];?>" class="btn btn-primary">รายละเอียด</a>
+                    <a href="index.php?fd=admin&page=new_detail&id_news=<?php echo $fd['id_news'];?>" class="btn btn-primary">รายละเอียด</a>
                 </div>
                 </div>
 
