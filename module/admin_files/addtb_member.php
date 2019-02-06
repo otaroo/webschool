@@ -13,7 +13,7 @@ Download Code On : developers.khontermfan.com
 	<form id="frminsert" name="frminsert" method="post" enctype="multipart/form-data">
 		<div class="form-group"><label for="act_id">ชื่อกิจกรรม:</label><label id="err2" class="err"></label>
 			<select id="act_id" name="act_id" class="form-control">
-				<option value="" disabled>เลือก</option>
+				<option selected value="" disabled>เลือก</option>
 				<?php
 								 $id_activity='';
 								 $id_activity=$_GET['id_activity'];
@@ -24,7 +24,7 @@ Download Code On : developers.khontermfan.com
 							$num += 1; 													
 							while ($fd3=$qess3->fetch_assoc()){
 								if($fd3['id'] ==  $id_activity){ ?>
-				<option selected value="<?php echo $fd3['id'];?>">
+				<option value="<?php echo $fd3['id'];?>">
 					<?php echo $fd3['name'];?>
 				</option>
 
@@ -63,32 +63,41 @@ Download Code On : developers.khontermfan.com
 <script type="text/javascript">
 	$(document).ready(function () {
 		//alert(55);
+		let act_id = '';
+		$('#act_id').on('change', function () {
+			let value = $("#act_id option:selected").val();
+			act_id = value;
+			$("#mem_card").val('');
+		});
+
 		$("#mem_card").focusout(function () {
-			//alert(555);
 			var mem_card = $(this).val();
+			if (act_id == "") {
+				$("#err2").html('กรุณากำหนดค่า รหัสกิจกรรม ด้วยค่ะ');
+				$("#act_id").focus();
+				return false;
+			}else{
+				$("#err2").html('');
+			}
 			if (mem_card != "") {
 				//   alert(mem_card);
-				$.post("module/user_files/checkuser.php", {
-					mem_card: mem_card
+				$.get("module/user_files/checkuser.php", {
+					mem_card: mem_card,
+					act_id: act_id
 				}, function (data) {
 					//   alert(data);
 					if (data == 0) {
 						$("#usercheck").html('<font color=red>ใช้ไม่ได้นะค่ะ เนื่องจากมีการลงทะเบียนแล้วค่ะ</font>');
 						$("#mem_card").val('');
 						$("#mem_card").focus();
-
 					} else {
 						$("#usercheck").html('<font color=green>ใช้ได้ค่ะ..</font>');
-
 					}
 				});
 			}
 		});
-
-
 	});
-</script>
-<script language="javascript">
+
 	function checkEmpty() {
 		$("#err2").html('');
 		$("#err3").html('');
@@ -121,9 +130,22 @@ Download Code On : developers.khontermfan.com
 			$("#mem_sex").focus();
 			chk = false;
 		}
+		$.get("module/user_files/checkuser.php", {
+			mem_card: $("#mem_card").val(),
+			act_id: $("#act_id").val()
+		}, function (data) {
+			//   alert(data);
+			if (data == 0) {
+				$("#usercheck").html('<font color=red>ใช้ไม่ได้นะค่ะ เนื่องจากมีการลงทะเบียนแล้วค่ะ</font>');
+				$("#mem_card").val('');
+				$("#mem_card").focus();
+				chk = false;
+			} else {
+				chk = true;
+			}
+		});
 
 		if (chk) {
-
 			var url = "module/admin_files/savetb_member.php";
 			var form = $('#frminsert')[0];
 			var data = new FormData(form);
@@ -138,8 +160,6 @@ Download Code On : developers.khontermfan.com
 				timeout: 600000,
 				success: function (data) {
 					//alert(data);
-
-
 					if (data.trim() == '1') {
 						$("#status_save").html('<font color=green>บันทึกข้อมูลเรียบร้อยแล้วค่ะ...</font><br>');
 						setTimeout(function () {
@@ -147,12 +167,20 @@ Download Code On : developers.khontermfan.com
 						}, 3000);
 					} else $("#status_save").html(
 						'<font color=red>ไม่สามารถบันทึกข้อมูลได้...กรุณาตรวจสอบข้อมูลอีกครั้ง...</font><br>');
-
 				},
 				error: function (e) {
 					$("#status_save").html(e.responseText);
 				}
 			});
+
+		} else {
+			return false;
+		}
+	}
+
+	function checkuser(mem_card) {
+		if (mem_card != "") {
+			//   alert(mem_card);
 
 		} else {
 			return false;
