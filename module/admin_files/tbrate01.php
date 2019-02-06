@@ -93,10 +93,7 @@ require_once "config.php";
 <hr>
     <div class="row justify-content-end">
       <div class="col-3 text-right">
-        <div class="form-group">
-          <input type="text" name="mem_id" id="mem_id" min="13" class="form-control" id="exampleInputEmail1"
-            aria-describedby="emailHelp" placeholder="รหัสบัตรประชาชน">
-        </div>
+       
       </div>
       <div class="col-2 text-right">
         <button type="button" onclick="return checkEmpty();" class="btn btn-primary btn-block">ส่งคำตอบ</button>

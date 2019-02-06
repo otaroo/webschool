@@ -32,7 +32,7 @@ Download Code On : developers.khontermfan.com
 				 	<th>วันที่กิจกรรม  </th>
 				 	<th>รายละเอียด  </th>
 				 	<th>สถานที่  </th>
-                    <th>เพิ่มรูปภาพ  </th>
+                    <th>รูปภาพ  </th>
 				  	<th>แก้ไข  </th>
 				  	<th>ลบ  </th>
 		</tr>
@@ -49,17 +49,16 @@ Download Code On : developers.khontermfan.com
 					<td><?php echo $dt->DtoLDthai($fd2['act_date']);?></td>
 					<td><?php echo $fd2['act_des'];?></td>
 					<td><?php echo $fd2['act_place'];?></td>
-                    <td><a href='?fd=admin&page=add_file_news&act_id=<?php echo $fd2['act_id'];?>'>รูปภาพ  </a></td>
-					  			<td><a href='?fd=admin&page=edittbact&act_id=<?php echo $fd2['act_id'];?>'><img src="img/edit.jpg" height="30" width="30">  </a></td>
-					  			<td><span class ="act_id"><?php echo $fd2['act_id'];?></span><img class="picdel"  src="img/del.png" height="25" width="25"></td>
+                    <td><a href='./?fd=admin&page=add_file_news&act_id=<?php echo $fd2['act_id'];?>'>รูปภาพ  </a></td>
+					  			
 		  	</tr>
 		  	<?php  } ?>
 		  	
 		</tbody>
 		</table>
 		</div>
-		</div>
-	</div>
+  </div>
+</div>
 	<script src="js/search.js"></script>
 	<script type="text/javascript">
 		$(document).ready(function(){

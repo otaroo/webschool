@@ -6,10 +6,10 @@
 <?php /*
 Create By:PK Model
 Generate Code By :Mr.Thanawat Kaewwongkhieo
-Date Create : 2018-11-30 08:38:43
+Date Create : 2019-02-05 22:34:02
 Download Code On : developers.khontermfan.com
 */?> <?php
-		require_once "config.php";
+		require_once "../../config.php";
 			
 					$person_id = '';
 					$person_name = $_POST['person_name'];

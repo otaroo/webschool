@@ -6,7 +6,7 @@
 <?php /*
 Create By:PK Model
 Generate Code By :Mr.Thanawat Kaewwongkhieo
-Date Create : 2018-11-29 09:56:03
+Date Create : 2019-02-05 22:36:23
 Download Code On : developers.khontermfan.com
 */?> 
  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -14,10 +14,7 @@ Download Code On : developers.khontermfan.com
 <link rel="stylesheet" href="css/pagation-style.css">
 <link rel="stylesheet" href="css/page-style.css">
 <div class="container-fluid">
- <span id="status_save"></span>
-		  <br />
-          <p><a href="?fd=admin&page=addtb_person">เพิ่มข้อมูล</a></p>
-  <h2><b>ข้อมูลบุคลากร</b></h2>
+<h2><b>ข้อมูลบุคลากร</b></h2>
 <div class="w3-row content_box"><?php
 	require_once("class/DatetimeFormat.class.php");
 	$dt = new DatetimeFormat();
@@ -30,7 +27,7 @@ Download Code On : developers.khontermfan.com
    			<table id='tblSearch' width='90%' align='center' class='tblSearch table table-bordered table-hover'>
 			    <thead>
 			      <tr>
-				 	<th>รหัสบุคลากร  </th>
+				 	<th>ลำดับบุคลากร  </th>
 				 	<th>ชื่อบุคลากร  </th>
 				 	<th>ดำรงตำแหน่ง  </th>
 				 	<th>ตั้งแต่  </th>
@@ -40,17 +37,17 @@ Download Code On : developers.khontermfan.com
 		</tr>
 		</thead>
 		<tbody><?php 
-			$sql2 ="select * from tb_person where 1 order by person_name desc";  
+			$sql2 ="select * from tb_person where 1  order by person_name desc";  
 			$qess2=$db->query($sql2);	
 			while($fd2=$qess2->fetch_assoc()){	
 			
 		?><tr>
 					<td><?php echo $fd2['person_id'];?></td>
 					<td><?php echo $fd2['person_name'];?></td>
-					<td><?php echo $dt->DTtoLDthai($fd2['person_pos']);?></td>
+					<td><?php echo $fd2['person_pos'];?></td>
 					<td><?php echo $fd2['person_since'];?></td>
-					<td><?php echo $fd2['person_pos1'];?></td>
-					  			<td><a href='?fd=admin&page=edittb_person&person_id=<?php echo $fd2['person_id'];?>'><img src="img/edit.png" height="30" width="30">  </a></td>
+					<td><?php echo $fd2['person_pos1 '];?></td>
+					  			<td><a href='?fd=admin&page=edittb_person&person_id=<?php echo $fd2['person_id'];?>'><img src="img/edit.jpg" height="30" width="30">  </a></td>
 					  			<td><span class ="person_id"><?php echo $fd2['person_id'];?></span><img class="picdel"  src="img/del.png" height="25" width="25"></td>
 		  	</tr>
 		  	<?php  } ?>
@@ -68,7 +65,7 @@ Download Code On : developers.khontermfan.com
            var  person_id=$(this).parent().find(".person_id").html();
            //alert(course_id);
            if(confirm('คุณต้องการลบข้อมูลใช่หรือไม่')){
-             var url="module/admin_files/delttb_person.php";
+             var url="?fd=admin&page=deltb_person.php";
              $.post(url,{person_id:person_id},function (data) {
               alert(data);
               location.reload(); 

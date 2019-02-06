@@ -49,6 +49,7 @@ Download Code On : developers.khontermfan.com
 					
 			<td><?php echo $fd2['act_name'];?></td>
 			<td><?php echo $fd2['act_date'];?></td>
+        
             <td><div align="center"><a href='?fd=admin&page=tbrate01&act_id=<?php echo $fd2['act_id'];?>'>ประเมินกิจกรรม  </a></div></td>
                    
 		  	</tr>

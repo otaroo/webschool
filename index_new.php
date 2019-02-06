@@ -77,9 +77,7 @@
             <a class="nav-link" href="?fd=admin&page=addtbact">เพิ่มกิจกรรม</a>
           </li>
 
-          <li class="nav-item">
-            <a class="nav-link" href="?fd=admin&page=addph">รูป</a>
-          </li>
+         
           <li class="nav-item">
             <a class="nav-link" href="?fd=admin&page=addnews">ข่าว</a>
           </li>

@@ -35,10 +35,10 @@ Download Code On : developers.khontermfan.com
 							<th bgcolor="#3399CC">ลำดับ </th>
 							<th bgcolor="#3399CC">ชื่อกิจกรรม </th>
 							<th bgcolor="#3399CC">ชื่อผู้สมัคร </th>
-							<th bgcolor="#3399CC">เบอร์โทร </th>
-							<th bgcolor="#3399CC">เลขบัตรประชาชน </th>
+							<th bgcolor="#3399CC">เบอร์โทรศัพท์ </th>
+							
 							<th bgcolor="#3399CC">เพศ </th>
-                            <th bgcolor="#3399CC">แก้ไข</th>
+                            
 							
 
 						</tr>
@@ -75,9 +75,7 @@ Download Code On : developers.khontermfan.com
 							<td>
 								<?php echo $fd2['mem_tel'];?>
 							</td>
-							<td>
-								<?php echo $fd2['mem_card'];?>
-							</td>
+							
 							<td>
 								<?php 
 	        			$_array = array('M'=>'ชาย','F'=>'หญิง');
@@ -86,7 +84,7 @@ Download Code On : developers.khontermfan.com
 
 					
 
-<td><a href='?fd=admin&page=edittb_member&mem_id=<?php echo $fd2['mem_id'];?>'><img src="img/edit.jpg" height="30" width="30">  </a></td>
+
 					  </tr>
 						<?php  } ?>
 

@@ -95,7 +95,7 @@
 	</div>
 	<div class="row">
 		<div class="col-12 text-center">
-			<a id="print" href=target="_blank"><img src="img/ac.png" height="30" width="30"> </a>
+			
 		</div>
 	</div>
 </div>

@@ -37,6 +37,7 @@
 					
 					<td><?php echo $fd2['person_name'];?></td>
 					<td><?php echo $fd2['person_pos'];?></td>
+					
 					<td><?php echo $fd2['person_since'];?></td>
 					<td><?php echo $fd2['person_pos1'];?></td>
 					  			<td><a href='?fd=admin&page=editperson&person_id=<?php echo $fd2['person_id'];?>'><img src="img/edit.png" height="30" width="30">  </a></td>

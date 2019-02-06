@@ -38,15 +38,16 @@ Download Code On : developers.khontermfan.com
 						       ?>
 			</select>
 		</div>
+        
 		<div class="form-group"><label for="mem_name">ชื่อผู้สมัคร:</label><label id="err3" class="err"></label>
 			<input type="text" class="form-control" id="mem_name" name="mem_name">
 		</div>
 		<div class="form-group"><label for="mem_tel">เบอร์โทร:</label><label id="err4" class="err"></label>
-			<input type="tel" class="form-control" id="mem_tel" name="mem_tel">
+			<input type="tex"  Maxlength ="10" class="form-control" id="mem_tel" name="mem_tel" />
 		</div>
 		<div class="form-group"><label for="mem_card">เลขบัตรประชาชน:</label><label id="usercheck"></label><label id="err4"
 			 class="err"></label>
-			<input type="tex" class="form-control" id="mem_card" name="mem_card">
+			<input type="tex" Maxlength ="13" class="form-control" id="mem_card" name="mem_card">
 			<div class="form-group"><label for="mem_sex">เพศ:</label><label id="err5" class="err"></label>
 				<div class="radio">
 					<label class="radio-inline"><input type="radio" id="mem_sex" name="mem_sex" value="M"> ชาย</label>
