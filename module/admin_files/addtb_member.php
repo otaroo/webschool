@@ -38,7 +38,12 @@ Download Code On : developers.khontermfan.com
 						       ?>
 			</select>
 		</div>
-        
+        <div class="form-group"><label for="mem_title">คำนำหน้า:</label><label id="err5" class="err"></label>
+				<div class="radio">
+					<label class="radio-inline"><input type="radio" id="mem_title" name="mem_title" value="Mr"> นาย</label>
+					<label class="radio-inline"><input type="radio" id="mem_title" name="mem_title" value="Mrs"> นาง</label>
+                    <label class="radio-inline"><input type="radio" id="mem_title" name="mem_title" value="Miss"> นางสาว</label>
+				</div>
 		<div class="form-group"><label for="mem_name">ชื่อผู้สมัคร:</label><label id="err3" class="err"></label>
 			<input type="text" class="form-control" id="mem_name" name="mem_name">
 		</div>

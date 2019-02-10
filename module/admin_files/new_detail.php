@@ -44,35 +44,31 @@
         <div class="col-md-4">
 
 
-            <!-- Categories Widget -->
+           <!-- Categories Widget -->
             <div class="card my-4">
-                <h5 class="card-header">Categories</h5>
+                <h5 class="card-header">เว็บไซต์ที่น่าสนใจ</h5>
                 <div class="card-body">
                     <div class="row">
                         <div class="col-lg-6">
                             <ul class="list-unstyled mb-0">
                                 <li>
-                                    <a href="#">Web Design</a>
+                                    <a href="http://www.nfe.go.th/">สำนักงาน กศน.</a>
                                 </li>
-                                <li>
-                                    <a href="#">HTML</a>
-                                </li>
-                                <li>
-                                    <a href="#">Freebies</a>
+                                
+                               <li>
+                                    <a href="http://www.etvthai.tv/stream/home.aspx">สถานีวิทยุเพื่อการศึกษา ETV</a>
                                 </li>
                             </ul>
                         </div>
                         <div class="col-lg-6">
                             <ul class="list-unstyled mb-0">
                                 <li>
-                                    <a href="#">JavaScript</a>
+                                    <a href="http://www.ceted.org/">CET ศูนย์เทคโนโลยีทางการศึกษา</a>
                                 </li>
                                 <li>
-                                    <a href="#">CSS</a>
+                                    <a href="http://www.moe.go.th/moe/th/home/">กระทรวงศึกษาธิการ</a>
                                 </li>
-                                <li>
-                                    <a href="#">Tutorials</a>
-                                </li>
+                                
                             </ul>
                         </div>
                     </div>
@@ -81,12 +77,15 @@
 
             <!-- Side Widget -->
             <div class="card my-4">
-                <h5 class="card-header">Side Widget</h5>
+       
+              <h5 class="card-header">ช่องทางการติดต่อ</h5>
                 <div class="card-body">
-                    You can put anything you want inside of these side widgets. They are easy to use, and feature the
-                    new Bootstrap 4 card containers!
+                    <p><img src="img/icon/icontexto-user-web20-facebook_icon-icons.com_55373.png" width="48" height="48" />facebook: กศน. ตำบลนาโบสถ์ นาโบสถ์                </p>
+                    <p><img src="img/icon/Email_30017.png" width="48" height="48" />wangchao.tak@hotmail.com </p>
+                    <p><img src="img/icon/linphone_phonecall_linphone_6086.png" width="48" height="48" />055 - 593013  </p>
+                    <p>เบอร์โทรสาร :  055-593013</p>
                 </div>
-            </div>
+          </div>
 
         </div>
 
