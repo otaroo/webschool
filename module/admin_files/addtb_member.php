@@ -114,15 +114,35 @@ Download Code On : developers.khontermfan.com
 				if (arr[1] >= arr[0]) {
 					$('#btnAdd').addClass("disabled");
 					$("#err9").html('กิจกรรมนี้คนสมัครเต็มแล้ว');
+					return false
 
-					return false;
 				} else {
 					$('#btnAdd').removeClass("disabled");
 					$("#err9").html('');
-					return true;
+
 				}
 
+				if (diffDate(arr[2]) < 0) {
+					$('#btnAdd').addClass("disabled");
+					$("#err9").html('กิจกรรมนี้หมดเวลารับสมัครแล้ว');
+					return false
+				} else {
+					$('#btnAdd').removeClass("disabled");
+					$("#err9").html('');
+
+				}
 			});
+		}
+
+
+
+		function diffDate(date1) {
+			var date_act = new Date(date1)
+			var date_now = new Date(Date.now())
+			var date = (date_act - date_now);
+			var one_day = 1000 * 60 * 60 * 24;
+			return Math.round(date / one_day);
+
 		}
 	});
 
@@ -190,6 +210,16 @@ Download Code On : developers.khontermfan.com
 				if (arr[1] >= arr[0]) {
 					$('#btnAdd').addClass("disabled");
 					$("#err9").html('กิจกรรมนี้คนสมัครเต็มแล้ว');
+					chk = false;
+				} else {
+					$('#btnAdd').removeClass("disabled");
+					$("#err9").html('');
+					chk = true;
+				}
+
+				if (diffDate(arr[2]) < 0) {
+					$('#btnAdd').addClass("disabled");
+					$("#err9").html('กิจกรรมนี้หมดเวลารับสมัครแล้ว');
 					chk = false;
 				} else {
 					$('#btnAdd').removeClass("disabled");
