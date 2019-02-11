@@ -38,26 +38,34 @@ Download Code On : developers.khontermfan.com
 						       ?>
 			</select>
 		</div>
-        
+
+		<div class="form-group"><label for="mem_name">คำนำหน้า:</label><label id="err6" class="err"></label>
+			<div class="radio">
+				<label class="radio-inline"><input type="radio" id="mem_title" name="mem_title" value="นาย"> นาย</label>
+				<label class="radio-inline"><input type="radio" id="mem_title" name="mem_title" value="นาง"> นาง</label>
+				<label class="radio-inline"><input type="radio" id="mem_title" name="mem_title" value="นางสาว"> นางสาว</label>
+			</div>
+		</div>
 		<div class="form-group"><label for="mem_name">ชื่อผู้สมัคร:</label><label id="err3" class="err"></label>
 			<input type="text" class="form-control" id="mem_name" name="mem_name">
 		</div>
 		<div class="form-group"><label for="mem_tel">เบอร์โทร:</label><label id="err4" class="err"></label>
-			<input type="tex"  Maxlength ="10" class="form-control" id="mem_tel" name="mem_tel" />
+			<input type="tex" Maxlength="10" class="form-control" id="mem_tel" name="mem_tel" />
 		</div>
-		<div class="form-group"><label for="mem_card">เลขบัตรประชาชน:</label><label id="usercheck"></label><label id="err4"
+		<div class="form-group"><label for="mem_card">เลขบัตรประชาชน:</label><label id="usercheck"></label><label id="err8"
 			 class="err"></label>
-			<input type="tex" Maxlength ="13" class="form-control" id="mem_card" name="mem_card">
-			<div class="form-group"><label for="mem_sex">เพศ:</label><label id="err5" class="err"></label>
-				<div class="radio">
-					<label class="radio-inline"><input type="radio" id="mem_sex" name="mem_sex" value="M"> ชาย</label>
-					<label class="radio-inline"><input type="radio" id="mem_sex" name="mem_sex" value="F"> หญิง</label>
-				</div>
-			</div>
+			<input type="tex" Maxlength="13" class="form-control" id="mem_card" name="mem_card">
 
-			<span id="status_save"></span>
-			<button type="button" onclick="return checkEmpty();" id="btnAdd" name="btnAdd" class="btn btn-info">เพิ่มข้อมูล</button>
-			<button type="reset" class="btn btn-warning">ล้างข้อมูล</button>
+		</div>
+		<div class="form-group"><label for="mem_sex">เพศ:</label><label id="err7" class="err"></label>
+			<div class="radio">
+				<label class="radio-inline"><input type="radio" id="mem_sex" name="mem_sex" value="M"> ชาย</label>
+				<label class="radio-inline"><input type="radio" id="mem_sex" name="mem_sex" value="F"> หญิง</label>
+			</div>
+		</div>
+		<span id="status_save"></span>
+		<button type="button" onclick="return checkEmpty();" id="btnAdd" name="btnAdd" class="btn btn-info">เพิ่มข้อมูล</button>
+		<button type="reset" class="btn btn-warning">ล้างข้อมูล</button>
 	</form>
 </div>
 <script type="text/javascript">
@@ -76,7 +84,7 @@ Download Code On : developers.khontermfan.com
 				$("#err2").html('กรุณากำหนดค่า รหัสกิจกรรม ด้วยค่ะ');
 				$("#act_id").focus();
 				return false;
-			}else{
+			} else {
 				$("#err2").html('');
 			}
 			if (mem_card != "") {
@@ -103,6 +111,9 @@ Download Code On : developers.khontermfan.com
 		$("#err3").html('');
 		$("#err4").html('');
 		$("#err5").html('');
+		$("#err6").html('');
+		$("#err7").html('');
+		$("#err8").html('');
 		var chk = true;
 
 		if ($("#act_id").val() == "") {
@@ -121,13 +132,18 @@ Download Code On : developers.khontermfan.com
 			chk = false;
 		}
 		if ($("#mem_card").val() == "") {
-			$("#err5").html('กรุณากำหนดค่า เลขบัตรประชาชน ด้วยค่ะ');
+			$("#err8").html('กรุณากำหนดค่า เลขบัตรประชาชน ด้วยค่ะ');
 			$("#mem_card").focus();
 			chk = false;
 		}
-		if ($("#mem_sex").val() == "") {
-			$("#err5").html('กรุณากำหนดค่า เพศ ด้วยค่ะ');
+		if ($("input[name='mem_sex']:checked").val() == undefined) {
+			$("#err7").html('กรุณากำหนดค่า เพศ ด้วยค่ะ');
 			$("#mem_sex").focus();
+			chk = false;
+		}
+		if ($("input[name='mem_title']:checked").val() == undefined) {
+			$("#err6").html('กรุณากำหนดค่า คำนำหน้า ด้วยค่ะ');
+			$("#mem_title").focus();
 			chk = false;
 		}
 		$.get("module/user_files/checkuser.php", {
