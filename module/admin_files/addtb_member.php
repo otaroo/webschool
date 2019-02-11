@@ -64,18 +64,19 @@ Download Code On : developers.khontermfan.com
 			</div>
 		</div>
 		<span id="status_save"></span>
-		<button type="button" onclick="return checkEmpty();" id="btnAdd" name="btnAdd" class="btn btn-info">เพิ่มข้อมูล</button>
-		<button type="reset" class="btn btn-warning">ล้างข้อมูล</button>
+		<button type="button" onclick="return checkEmpty();" id="btnAdd" name="btnAdd" class="btn btn-info disabled">เพิ่มข้อมูล</button>
+
+		<button type="reset" class="btn btn-warning">ล้างข้อมูล</button><label id="err9" class="err"></label>
 	</form>
 </div>
 <script type="text/javascript">
 	$(document).ready(function () {
-		//alert(55);
 		let act_id = '';
 		$('#act_id').on('change', function () {
 			let value = $("#act_id option:selected").val();
 			act_id = value;
 			$("#mem_card").val('');
+			checkActCount();
 		});
 
 		$("#mem_card").focusout(function () {
@@ -104,6 +105,25 @@ Download Code On : developers.khontermfan.com
 				});
 			}
 		});
+
+		function checkActCount() {
+			$.get("module/user_files/checkActCount.php", {
+				act_id: act_id
+			}, function (data) {
+				var arr = data.split("|");
+				if (arr[1] >= arr[0]) {
+					$('#btnAdd').addClass("disabled");
+					$("#err9").html('กิจกรรมนี้คนสมัครเต็มแล้ว');
+
+					return false;
+				} else {
+					$('#btnAdd').removeClass("disabled");
+					$("#err9").html('');
+					return true;
+				}
+
+			});
+		}
 	});
 
 	function checkEmpty() {
@@ -114,6 +134,7 @@ Download Code On : developers.khontermfan.com
 		$("#err6").html('');
 		$("#err7").html('');
 		$("#err8").html('');
+		$("#err9").html('');
 		var chk = true;
 
 		if ($("#act_id").val() == "") {
@@ -160,6 +181,24 @@ Download Code On : developers.khontermfan.com
 				chk = true;
 			}
 		});
+
+		if ($("#act_id").val() != null) {
+			$.get("module/user_files/checkActCount.php", {
+				act_id: $("#act_id").val()
+			}, function (data) {
+				var arr = data.split("|");
+				if (arr[1] >= arr[0]) {
+					$('#btnAdd').addClass("disabled");
+					$("#err9").html('กิจกรรมนี้คนสมัครเต็มแล้ว');
+					chk = false;
+				} else {
+					$('#btnAdd').removeClass("disabled");
+					$("#err9").html('');
+					chk = true;
+				}
+			});
+		}
+
 
 		if (chk) {
 			var url = "module/admin_files/savetb_member.php";
