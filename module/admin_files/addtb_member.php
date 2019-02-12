@@ -38,41 +38,45 @@ Download Code On : developers.khontermfan.com
 						       ?>
 			</select>
 		</div>
-        <div class="form-group"><label for="mem_title">คำนำหน้า:</label><label id="err5" class="err"></label>
-				<div class="radio">
-					<label class="radio-inline"><input type="radio" id="mem_title" name="mem_title" value="Mr"> นาย</label>
-					<label class="radio-inline"><input type="radio" id="mem_title" name="mem_title" value="Mrs"> นาง</label>
-                    <label class="radio-inline"><input type="radio" id="mem_title" name="mem_title" value="Miss"> นางสาว</label>
-				</div>
+
+		<div class="form-group"><label for="mem_name">คำนำหน้า:</label><label id="err6" class="err"></label>
+			<div class="radio">
+				<label class="radio-inline"><input type="radio" id="mem_title" name="mem_title" value="นาย"> นาย</label>
+				<label class="radio-inline"><input type="radio" id="mem_title" name="mem_title" value="นาง"> นาง</label>
+				<label class="radio-inline"><input type="radio" id="mem_title" name="mem_title" value="นางสาว"> นางสาว</label>
+			</div>
+		</div>
 		<div class="form-group"><label for="mem_name">ชื่อผู้สมัคร:</label><label id="err3" class="err"></label>
 			<input type="text" class="form-control" id="mem_name" name="mem_name">
 		</div>
 		<div class="form-group"><label for="mem_tel">เบอร์โทร:</label><label id="err4" class="err"></label>
-			<input type="tex"  Maxlength ="10" class="form-control" id="mem_tel" name="mem_tel" />
+			<input type="tex" Maxlength="10" class="form-control" id="mem_tel" name="mem_tel" />
 		</div>
-		<div class="form-group"><label for="mem_card">เลขบัตรประชาชน:</label><label id="usercheck"></label><label id="err4"
+		<div class="form-group"><label for="mem_card">เลขบัตรประชาชน:</label><label id="usercheck"></label><label id="err8"
 			 class="err"></label>
-			<input type="tex" Maxlength ="13" class="form-control" id="mem_card" name="mem_card">
-			<div class="form-group"><label for="mem_sex">เพศ:</label><label id="err5" class="err"></label>
-				<div class="radio">
-					<label class="radio-inline"><input type="radio" id="mem_sex" name="mem_sex" value="M"> ชาย</label>
-					<label class="radio-inline"><input type="radio" id="mem_sex" name="mem_sex" value="F"> หญิง</label>
-				</div>
-			</div>
+			<input type="tex" Maxlength="13" class="form-control" id="mem_card" name="mem_card">
 
-			<span id="status_save"></span>
-			<button type="button" onclick="return checkEmpty();" id="btnAdd" name="btnAdd" class="btn btn-info">เพิ่มข้อมูล</button>
-			<button type="reset" class="btn btn-warning">ล้างข้อมูล</button>
+		</div>
+		<div class="form-group"><label for="mem_sex">เพศ:</label><label id="err7" class="err"></label>
+			<div class="radio">
+				<label class="radio-inline"><input type="radio" id="mem_sex" name="mem_sex" value="M"> ชาย</label>
+				<label class="radio-inline"><input type="radio" id="mem_sex" name="mem_sex" value="F"> หญิง</label>
+			</div>
+		</div>
+		<span id="status_save"></span>
+		<button type="button" onclick="return checkEmpty();" id="btnAdd" name="btnAdd" class="btn btn-info disabled">เพิ่มข้อมูล</button>
+
+		<button type="reset" class="btn btn-warning">ล้างข้อมูล</button><label id="err9" class="err"></label>
 	</form>
 </div>
 <script type="text/javascript">
 	$(document).ready(function () {
-		//alert(55);
 		let act_id = '';
 		$('#act_id').on('change', function () {
 			let value = $("#act_id option:selected").val();
 			act_id = value;
 			$("#mem_card").val('');
+			checkActCount();
 		});
 
 		$("#mem_card").focusout(function () {
@@ -81,7 +85,7 @@ Download Code On : developers.khontermfan.com
 				$("#err2").html('กรุณากำหนดค่า รหัสกิจกรรม ด้วยค่ะ');
 				$("#act_id").focus();
 				return false;
-			}else{
+			} else {
 				$("#err2").html('');
 			}
 			if (mem_card != "") {
@@ -101,6 +105,45 @@ Download Code On : developers.khontermfan.com
 				});
 			}
 		});
+
+		function checkActCount() {
+			$.get("module/user_files/checkActCount.php", {
+				act_id: act_id
+			}, function (data) {
+				var arr = data.split("|");
+				if (arr[1] >= arr[0]) {
+					$('#btnAdd').addClass("disabled");
+					$("#err9").html('กิจกรรมนี้คนสมัครเต็มแล้ว');
+					return false
+
+				} else {
+					$('#btnAdd').removeClass("disabled");
+					$("#err9").html('');
+
+				}
+
+				if (diffDate(arr[2]) < 0) {
+					$('#btnAdd').addClass("disabled");
+					$("#err9").html('กิจกรรมนี้หมดเวลารับสมัครแล้ว');
+					return false
+				} else {
+					$('#btnAdd').removeClass("disabled");
+					$("#err9").html('');
+
+				}
+			});
+		}
+
+
+
+		function diffDate(date1) {
+			var date_act = new Date(date1)
+			var date_now = new Date(Date.now())
+			var date = (date_act - date_now);
+			var one_day = 1000 * 60 * 60 * 24;
+			return Math.round(date / one_day);
+
+		}
 	});
 
 	function checkEmpty() {
@@ -108,6 +151,10 @@ Download Code On : developers.khontermfan.com
 		$("#err3").html('');
 		$("#err4").html('');
 		$("#err5").html('');
+		$("#err6").html('');
+		$("#err7").html('');
+		$("#err8").html('');
+		$("#err9").html('');
 		var chk = true;
 
 		if ($("#act_id").val() == "") {
@@ -126,13 +173,18 @@ Download Code On : developers.khontermfan.com
 			chk = false;
 		}
 		if ($("#mem_card").val() == "") {
-			$("#err5").html('กรุณากำหนดค่า เลขบัตรประชาชน ด้วยค่ะ');
+			$("#err8").html('กรุณากำหนดค่า เลขบัตรประชาชน ด้วยค่ะ');
 			$("#mem_card").focus();
 			chk = false;
 		}
-		if ($("#mem_sex").val() == "") {
-			$("#err5").html('กรุณากำหนดค่า เพศ ด้วยค่ะ');
+		if ($("input[name='mem_sex']:checked").val() == undefined) {
+			$("#err7").html('กรุณากำหนดค่า เพศ ด้วยค่ะ');
 			$("#mem_sex").focus();
+			chk = false;
+		}
+		if ($("input[name='mem_title']:checked").val() == undefined) {
+			$("#err6").html('กรุณากำหนดค่า คำนำหน้า ด้วยค่ะ');
+			$("#mem_title").focus();
 			chk = false;
 		}
 		$.get("module/user_files/checkuser.php", {
@@ -149,6 +201,34 @@ Download Code On : developers.khontermfan.com
 				chk = true;
 			}
 		});
+
+		if ($("#act_id").val() != null) {
+			$.get("module/user_files/checkActCount.php", {
+				act_id: $("#act_id").val()
+			}, function (data) {
+				var arr = data.split("|");
+				if (arr[1] >= arr[0]) {
+					$('#btnAdd').addClass("disabled");
+					$("#err9").html('กิจกรรมนี้คนสมัครเต็มแล้ว');
+					chk = false;
+				} else {
+					$('#btnAdd').removeClass("disabled");
+					$("#err9").html('');
+					chk = true;
+				}
+
+				if (diffDate(arr[2]) < 0) {
+					$('#btnAdd').addClass("disabled");
+					$("#err9").html('กิจกรรมนี้หมดเวลารับสมัครแล้ว');
+					chk = false;
+				} else {
+					$('#btnAdd').removeClass("disabled");
+					$("#err9").html('');
+					chk = true;
+				}
+			});
+		}
+
 
 		if (chk) {
 			var url = "module/admin_files/savetb_member.php";
