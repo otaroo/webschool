@@ -34,6 +34,7 @@ Download Code On : developers.khontermfan.com
 
 							<th bgcolor="#3399CC">ลำดับ </th>
 							<th bgcolor="#3399CC">ชื่อกิจกรรม </th>
+                             <th bgcolor="#3399CC">คำนำหน้า</th>
 							<th bgcolor="#3399CC">ชื่อผู้สมัคร </th>
 							<th bgcolor="#3399CC">เบอร์โทรศัพท์ </th>
 							
@@ -65,9 +66,12 @@ Download Code On : developers.khontermfan.com
 							$fd3=$qess3->fetch_assoc();
 							
 						?>
-
+ 
 							<td>
 								<?php echo $fd3['name'];?>
+							</td>
+                           <td>
+								<?php echo $fd2['mem_title'];?>
 							</td>
 							<td>
 								<?php echo $fd2['mem_name'];?>
@@ -77,9 +81,7 @@ Download Code On : developers.khontermfan.com
 							</td>
 							
 							<td>
-								<?php 
-	        			$_array = array('M'=>'ชาย','F'=>'หญิง');
-	        		echo $_array[$fd2['mem_sex']];?>
+								<?php echo $fd2['mem_sex'];?>
 							</td>
 
 					
