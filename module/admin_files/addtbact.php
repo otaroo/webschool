@@ -1,14 +1,22 @@
+<?php 
+if(!isset($_SESSION['Status']))
+{
+	echo "Please Login!";
+	exit();
+}	
+
+
+if(!isset($_SESSION['Status']))
+{
+	echo "This page for Admin only!";
+	exit();
+}	
+?>
 
 
 
 
-
-<?php /*
-Create By:PK Model
-Generate Code By :Mr.Thanawat Kaewwongkhieo
-Date Create : 2019-01-29 20:00:40
-Download Code On : developers.khontermfan.com
-*/?> 
+ 
     	<style> .err{color:red;}</style>
     	 <div style="display:table; margin:0 auto; padding: 20px; width:70%;">
 		       <h2>กิจกรรม</h2>

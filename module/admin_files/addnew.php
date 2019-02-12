@@ -16,12 +16,7 @@ if(!isset($_SESSION['Status']))
 
 
 
-<?php /*
-Create By:PK Model
-Generate Code By :Mr.Thanawat Kaewwongkhieo
-Date Create : 2019-01-24 18:22:20
-Download Code On : developers.khontermfan.com
-*/?> 
+
 
     	<style> .err{color:red;}</style>
     	 <div style="display:table; margin:0 auto; padding: 20px; width:70%;">

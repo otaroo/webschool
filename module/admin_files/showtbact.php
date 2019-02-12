@@ -1,20 +1,43 @@
 
+<?php 
+if(!isset($_SESSION['Status']))
+{
+	echo "Please Login!";
+	exit();
+}	
+
+
+if(!isset($_SESSION['Status']))
+{
+	echo "This page for Admin only!";
+	exit();
+}	
+?>
 
 
 
 
-<?php /*
-Create By:PK Model
-Generate Code By :Mr.Thanawat Kaewwongkhieo
-Date Create : 2019-01-29 20:01:55
-Download Code On : developers.khontermfan.com
-*/?> 
+
  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="http://sogddt.vinhphuc.gov.vn/ResourcesList/jquery.tablePagination.0.5.js"></script>
 <link rel="stylesheet" href="css/pagation-style.css">
 <link rel="stylesheet" href="css/page-style.css">
-<div class="container-fluid">
-<h2><b>กิจกรรม</b></h2>
+   
+  
+<div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+   คลิกเพิ่มกิจกรรม
+  </button>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    <a class="dropdown-item" href="?fd=admin&page=addtbact">เพิ่มกิจกรรม</a>
+    
+  </div>
+</div>
+
+
+
+
+<h2><b>ชื่อกิจกรรม</b></h2>
 <div class="w3-row content_box"><?php
 	require_once("class/DatetimeFormat.class.php");
 	$dt = new DatetimeFormat();
@@ -58,7 +81,7 @@ Download Code On : developers.khontermfan.com
 		</tbody>
 		</table>
 		</div>
-		</div>
+	  </div>
 	</div>
 	<script src="js/search.js"></script>
 	<script type="text/javascript">
