@@ -13,23 +13,21 @@ Download Code On : developers.khontermfan.com
 	<form id="frminsert" name="frminsert" method="post" enctype="multipart/form-data">
 		<div class="form-group"><label for="act_id">ชื่อกิจกรรม:</label><label id="err2" class="err"></label>
 			<select id="act_id" name="act_id" class="form-control">
-				<option selected value="" disabled>เลือก</option>
+				<option  value="" disabled>เลือก</option>
 				<?php
-								 $id_activity='';
+								 $id_activity='111';
+								
 								 $id_activity=$_GET['id_activity'];
+								
 							$sql3 ="select act_id id,act_name  name from tb_activity ";  
-							$qess3=$db->query($sql3);	
-							
-							$num = 1;
-							$num += 1; 													
+							$qess3=$db->query($sql3);													
 							while ($fd3=$qess3->fetch_assoc()){
-								if($fd3['id'] ==  $id_activity){ ?>
-				<option value="<?php echo $fd3['id'];?>">
+								if(intval($fd3['id']) ==  intval($id_activity)){ ?>
+				<option selected value="<?php echo $fd3['id'];?>">
 					<?php echo $fd3['name'];?>
 				</option>
-
 				<?php	}else{ ?>
-				?>
+				
 				<option value="<?php echo $fd3['id'];?>">
 					<?php echo $fd3['name'];?>
 				</option>
@@ -38,7 +36,6 @@ Download Code On : developers.khontermfan.com
 						       ?>
 			</select>
 		</div>
-
 		<div class="form-group"><label for="mem_name">คำนำหน้า:</label><label id="err6" class="err"></label>
 			<div class="radio">
 				<label class="radio-inline"><input type="radio" id="mem_title" name="mem_title" value="นาย"> นาย</label>
@@ -112,11 +109,11 @@ Download Code On : developers.khontermfan.com
 			}, function (data) {
 				var arr = data.split("|");
 				console.log(arr);
-				
+
 				if (parseInt(arr[1]) >= parseInt(arr[0])) {
 					$('#btnAdd').hide();
 					$("#err9").html('กิจกรรมนี้คนสมัครเต็มแล้ว');
-					
+
 					return false
 
 				} else {
