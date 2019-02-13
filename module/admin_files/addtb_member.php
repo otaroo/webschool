@@ -9,7 +9,7 @@ Download Code On : developers.khontermfan.com
 */?>
 <style> .err{color:red;}</style>
 <div style="display:table; margin:0 auto; padding: 20px; width:70%;">
-	<h2>สมัครกิจกรรม</h2>
+	<h2>สมัครเข้าร่วมกิจกรรม</h2>
 	<form id="frminsert" name="frminsert" method="post" enctype="multipart/form-data">
 		<div class="form-group"><label for="act_id">ชื่อกิจกรรม:</label><label id="err2" class="err"></label>
 			<select id="act_id" name="act_id" class="form-control">

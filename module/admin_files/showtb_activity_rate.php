@@ -16,8 +16,8 @@ Download Code On : developers.khontermfan.com
 </style>
     <div class="container-fluid">
 
-	<h2 class="style1">กิจกรรม</h2>
-	<div class="w3-row content_box">
+	<h2 class="style1">การประเมินกิจกรรม</h2>
+  <div class="w3-row content_box">
 		<?php
 	// require_once("class/DatetimeFormat.class.php");
 	// $dt = new DatetimeFormat();
@@ -41,7 +41,7 @@ Download Code On : developers.khontermfan.com
 				</thead>
 				<tbody>
 					<?php 
-			$sql2 ="select * from tb_activity where 1  order by act_name desc";  
+			$sql2 ="select * from tb_activity where 1  order by act_name asc";  
 			$qess2=$db->query($sql2);	
 			while($fd2=$qess2->fetch_assoc()){	
 			
