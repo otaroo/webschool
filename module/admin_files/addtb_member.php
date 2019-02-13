@@ -111,23 +111,26 @@ Download Code On : developers.khontermfan.com
 				act_id: act_id
 			}, function (data) {
 				var arr = data.split("|");
-				if (arr[1] >= arr[0]) {
-					$('#btnAdd').addClass("disabled");
+				console.log(arr);
+				
+				if (parseInt(arr[1]) >= parseInt(arr[0])) {
+					$('#btnAdd').hide();
 					$("#err9").html('กิจกรรมนี้คนสมัครเต็มแล้ว');
+					
 					return false
 
 				} else {
-					$('#btnAdd').removeClass("disabled");
+					$('#btnAdd').show();
 					$("#err9").html('');
 
 				}
 
 				if (diffDate(arr[2]) < 0) {
-					$('#btnAdd').addClass("disabled");
+					$('#btnAdd').hide();
 					$("#err9").html('กิจกรรมนี้หมดเวลารับสมัครแล้ว');
 					return false
 				} else {
-					$('#btnAdd').removeClass("disabled");
+					$('#btnAdd').show();
 					$("#err9").html('');
 
 				}
@@ -208,21 +211,21 @@ Download Code On : developers.khontermfan.com
 			}, function (data) {
 				var arr = data.split("|");
 				if (arr[1] >= arr[0]) {
-					$('#btnAdd').addClass("disabled");
+					$('#btnAdd').hide();
 					$("#err9").html('กิจกรรมนี้คนสมัครเต็มแล้ว');
 					chk = false;
 				} else {
-					$('#btnAdd').removeClass("disabled");
+					$('#btnAdd').show();
 					$("#err9").html('');
 					chk = true;
 				}
 
 				if (diffDate(arr[2]) < 0) {
-					$('#btnAdd').addClass("disabled");
+					$('#btnAdd').hide();
 					$("#err9").html('กิจกรรมนี้หมดเวลารับสมัครแล้ว');
 					chk = false;
 				} else {
-					$('#btnAdd').removeClass("disabled");
+					$('#btnAdd').show();
 					$("#err9").html('');
 					chk = true;
 				}
