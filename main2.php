@@ -3,7 +3,7 @@ require_once "config.php";
 ?>
 <style type="text/css">
     body {
-        background-image: url(img/1264242635.jpg);
+	background-image: url();
     }
 </style>
 
