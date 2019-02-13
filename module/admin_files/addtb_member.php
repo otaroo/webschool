@@ -61,7 +61,7 @@ Download Code On : developers.khontermfan.com
 			</div>
 		</div>
 		<span id="status_save"></span>
-		<button type="button" onclick="return checkEmpty();" id="btnAdd" name="btnAdd" class="btn btn-info disabled">เพิ่มข้อมูล</button>
+		<button type="button" onclick="return checkEmpty();" id="btnAdd" name="btnAdd" class="btn btn-info">เพิ่มข้อมูล</button>
 
 		<button type="reset" class="btn btn-warning">ล้างข้อมูล</button><label id="err9" class="err"></label>
 	</form>
