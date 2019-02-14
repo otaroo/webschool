@@ -1,12 +1,5 @@
 <style>
-  [class*="col"] {
-    padding-top: 15px;
-    padding-bottom: 15px;
-    background-color: #eee;
-    background-color: rgba(86, 61, 124, .15);
-    border: 1px solid #ddd;
-    border: 1px solid rgba(86, 61, 124, .2);
-  }
+
 </style>
 <div class="container">
   <div class="row">
@@ -17,36 +10,121 @@
     </div>
   </div>
 
-  <div class="row text-center ">
-    <div class="col-12 ">
-      <div class="card" style="width: 18rem;">
-        <img class="card-img-top" src="img/user/1.jpg" alt="Card image cap">
+  <div class="row justify-content-center">
+
+    <?php
+    $sql ="SELECT * FROM personnel where id_personnel = 1 ";  
+    $qess=$db->query($sql);	
+    while($fd=$qess->fetch_assoc()){	?>
+    <div class="col-4">
+      <div class="card text-center" style="width: 18rem;">
+        <img class="card-img-top" src="img/user/<? echo $fd['personnel_img']?>" alt="Card image cap">
         <div class="card-body">
-          <h5 class="card-title">ชื่อ... </h5>
-          <p class="card-text"> ตำแหน่ง ... </p>
+          <h5 class="card-title">
+            <? echo $fd['personnel_name']?>
+          </h5>
+          <p class="card-text">
+            <? echo $fd['personnel_position']?>
+          </p>
         </div>
       </div>
     </div>
+    <?php }?>
   </div>
-  <div class="row text-center">
-    <div class="col-6 ">
-      <div class="card" style="width: 18rem;">
-        <img class="card-img-top" src="img/user/1.jpg" alt="Card image cap">
+
+
+
+  <div class="row justify-content-center">
+    <?php
+    $sql ="SELECT * FROM personnel where id_personnel = 2 ";  
+    $qess=$db->query($sql);	
+    while($fd=$qess->fetch_assoc()){	?>
+    <div class="col-4 ">
+    <div class="card text-center" style="width: 18rem;">
+    <img class="card-img-top" src="img/user/<? echo $fd['personnel_img']?>" alt="Card image cap">
         <div class="card-body">
-          <h5 class="card-title">ชื่อ... </h5>
-          <p class="card-text"> ตำแหน่ง ... </p>
+          <h5 class="card-title">
+            <? echo $fd['personnel_name']?>
+          </h5>
+          <p class="card-text">
+            <? echo $fd['personnel_position']?>
+          </p>
         </div>
       </div>
     </div>
-    <div class="col-6">
-      <div class="card" style="width: 18rem;">
-        <img class="card-img-top" src="img/user/1.jpg" alt="Card image cap">
-        <div class="card-body">
-          <h5 class="card-title">ชื่อ... </h5>
-          <p class="card-text"> ตำแหน่ง ... </p>
-        </div>
-      </div>
-    </div>
+    <?php }?>
   </div>
+
+
+
+  <div class="row justify-content-center">
+    <?php
+    $sql ="SELECT * FROM personnel where id_personnel = 3 ";  
+    $qess=$db->query($sql);	
+    while($fd=$qess->fetch_assoc()){	?>
+    <div class="col-4 ">
+    <div class="card text-center" style="width: 18rem;">
+    <img class="card-img-top" src="img/user/<? echo $fd['personnel_img']?>" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">
+            <? echo $fd['personnel_name']?>
+          </h5>
+          <p class="card-text">
+            <? echo $fd['personnel_position']?>
+          </p>
+        </div>
+      </div>
+    </div>
+    <?php }?>
+  </div>
+
+
+
+  <div class="row justify-content-center" >
+    <?php
+    $sql ="SELECT * FROM personnel where id_personnel = 4 ";  
+    $qess=$db->query($sql);	
+    while($fd=$qess->fetch_assoc()){	?>
+    <div class="col-4 ">
+    <div class="card text-center" style="width: 18rem;">
+    <img class="card-img-top" src="img/user/<? echo $fd['personnel_img']?>" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">
+            <? echo $fd['personnel_name']?>
+          </h5>
+          <p class="card-text">
+            <? echo $fd['personnel_position']?>
+          </p>
+        </div>
+      </div>
+    </div>
+    <?php }?>
+  </div>
+
+
+
+
+  <div class="row justify-content-center" >
+    <?php
+    $sql ="SELECT * FROM personnel where id_personnel = 5 ";  
+    $qess=$db->query($sql);	
+    while($fd=$qess->fetch_assoc()){	?>
+    <div class="col-4 ">
+    <div class="card text-center" style="width: 18rem;">
+    <img class="card-img-top" src="img/user/<? echo $fd['personnel_img']?>" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">
+            <? echo $fd['personnel_name']?>
+          </h5>
+          <p class="card-text">
+            <? echo $fd['personnel_position']?>
+          </p>
+        </div>
+      </div>
+    </div>
+    <?php }?>
+  </div>
+
+
 
 </div>
