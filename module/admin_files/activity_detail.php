@@ -41,26 +41,26 @@
             ?>
 
             <style>
-            .a {
+                .a {
                 wi
                 
             }
             </style>
             <!-- Preview Image -->
             <!-- <img class="img-fluid rounded" src="http://placehold.it/900x300" alt=""> -->
-            <img src="<?php echo $url_img;?>" style=" width: 100%"/>
+            <img src="<?php echo $url_img;?>" style=" width: 100%" />
             <hr>
 
             <!-- Post Content -->
             <p class="lead">
                 <? echo $fd['act_des']?>
             </p>
-
+           
             <a type="button" id="btn_reg" href="?fd=admin&page=addtb_member&id_activity=<? echo  $id_activity; ?>"
                 class="btn btn-primary">สมัคร</a>
             <label id="err9" class="err"></label>
             <hr>
-
+           
 
 
         </div>
@@ -117,6 +117,11 @@
 
         </div>
         <!-- /.row -->
+        <div class="row">
+            <div class="col-12">
+            <div id="showPhoto"> </div>
+            </div>
+        </div>
     </div>
     <!-- /.container -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -159,5 +164,31 @@
                 return Math.round(date / one_day);
 
             }
+
+            var act_id = $('#act_id').val();
+            var url = "module/admin_files/getPhoto_act.php";
+            $.post(url, {
+                act_id: act_id
+            }, function (data) {
+                //alert(data);
+                setTimeout(function () {
+                    $("#showPhoto").html(data);
+                    // $(".path_img").hide();
+                    // $(".del_img").click(function () {
+                    //     if (confirm("คุณต้องการลบภาพนี้ใช่หรือไม่")) {
+                    //         var del_file = $(this).parent().find(".path_img").html();
+                    //         del_file = "../../" + del_file;
+                    //         var url_img = "module/admin_files/del_file.php";
+
+                    //         $.post(url_img, {
+                    //             del_file: del_file
+                    //         }, function (data) {
+                    //             // alert(data);
+                    //             location.reload();
+                    //         });
+                    //     }
+                    // });
+                }, 1000);
+            });
         });
     </script>
