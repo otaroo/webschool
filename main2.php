@@ -48,9 +48,6 @@ require_once "config.php";
 
         <div class="col-lg-4 col-sm-6 portfolio-item">
             <div class="card h-100">
-<<<<<<< HEAD
-                <a href="#"><img class="card-img-top" src="img/cut9.jpg" alt=""></a>
-=======
              
                     <?php
              $dir_url="img/news/".$fd['act_id']."/";
@@ -65,7 +62,6 @@ require_once "config.php";
                      <img src="<?php echo $url_img;?>" style=" height:250px"/>
 
               
->>>>>>> 094252266874d248cbf54db0063afd3683f2d7ed
                 <div class="card-body">
                     <h4 class="card-title">
                         <a href="#">
