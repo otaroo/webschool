@@ -55,6 +55,8 @@ if(!isset($_SESSION['Status']))
 				 	<th>วันที่กิจกรรม  </th>
 				 	<th>รายละเอียด  </th>
 				 	<th>สถานที่  </th>
+					 <th>จำนวนคนสมัคร  </th>
+					 <th>วันเวลาที่หมดการสมัคร  </th>
                     <th>เพิ่มรูปภาพ  </th>
 				  	<th>แก้ไข  </th>
 				  	<th>ลบ  </th>
@@ -72,6 +74,8 @@ if(!isset($_SESSION['Status']))
 					<td><?php echo $dt->DtoLDthai($fd2['act_date']);?></td>
 					<td><?php echo $fd2['act_des'];?></td>
 					<td><?php echo $fd2['act_place'];?></td>
+					<td><?php echo $fd2['act_delimit'];?></td>
+					<td><?php echo $dt->DtoLDthai($fd2['act_limited']);?></td>
                     <td><a href='?fd=admin&page=add_file_news&act_id=<?php echo $fd2['act_id'];?>'>รูปภาพ  </a></td>
 					  			<td><a href='?fd=admin&page=edittbact&act_id=<?php echo $fd2['act_id'];?>'><img src="img/edit.jpg" height="30" width="30">  </a></td>
 					  			<td><span class ="act_id"><?php echo $fd2['act_id'];?></span><img class="picdel"  src="img/del.png" height="25" width="25"></td>

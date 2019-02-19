@@ -14,7 +14,7 @@ require_once "config.php";
     <!-- Marketing Icons Section -->
     <div class="row">
         <?php
-    $sql ="SELECT * FROM tb_new  limit 5 ";  
+    $sql ="SELECT * FROM tb_new  limit 6 ";  
     $qess=$db->query($sql);	
     while($fd=$qess->fetch_assoc()){	?>
 
@@ -47,7 +47,7 @@ require_once "config.php";
 
         <div class="col-lg-4 col-sm-6 portfolio-item">
             <div class="card h-100">
-                <a href="#"><img class="card-img-top" src="img/cut10.jpg" alt=""></a>
+                <a href="#"><img class="card-img-top" src="img/cut9.jpg" alt=""></a>
                 <div class="card-body">
                     <h4 class="card-title">
                         <a href="#">

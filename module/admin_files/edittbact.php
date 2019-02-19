@@ -48,6 +48,10 @@ if(!isset($_SESSION['Status']))
 				<div class="form-group"><label for="act_place">สถานที่:</label><label id="err5" class="err"></label>
 			<textarea class="form-control" rows="5" id="act_place" name="act_place"><?php echo $row_q['act_place'] ?></textarea>
 				</div>
+		
+
+
+
 		  <span id="status_save"></span>
 		  <button type="button" onclick="return checkEmpty();" id="btnAdd" name="btnAdd" class="btn btn-info">แก้ไขข้อมูล</button>
 		  <button type="reset"   class="btn btn-warning">ล้างข้อมูล</button>
@@ -61,6 +65,10 @@ if(!isset($_SESSION['Status']))
 				 $("#err3").html('');
 				 $("#err4").html('');
 				 $("#err5").html('');
+				
+				 
+
+
 		 			  var chk=true; 
 		 			  
 				  if($("#act_id").val() == "")
@@ -93,7 +101,16 @@ if(!isset($_SESSION['Status']))
 				    $("#act_place").focus();
 				    chk= false;
 				  }
-			  
+			  if($("#act_id").val() == "")
+				  {
+				    $("#err1").html('กรุณากำหนดค่า รหัสกิจกรรม ด้วยค่ะ');
+				    $("#act_id").focus();
+				    chk= false;
+				  }
+
+
+
+
 				  if(chk){ 
 				  	  
 				  	    var url="module/admin_files/updatetbact.php"
