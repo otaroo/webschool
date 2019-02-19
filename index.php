@@ -151,6 +151,7 @@
     <script src="vendor/jquery/jquery.min.js"></script>
     </span>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="js/DataTables/datatables.min.js"></script>
 </body>
 
 </html>

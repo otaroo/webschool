@@ -1,5 +1,4 @@
 
-  
 <script src="https://rawgithub.com/hayageek/jquery-upload-file/master/js/jquery.uploadfile.min.js"></script>
 <link href="https://rawgithub.com/hayageek/jquery-upload-file/master/css/uploadfile.css" rel="stylesheet">
  <div style="display:table; margin:0 auto; padding: 20px; width:70%;">
