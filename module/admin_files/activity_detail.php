@@ -29,10 +29,26 @@
             </p>
 
             <hr>
+            <?php
+             $dir_url="img/news/".$fd['act_id']."/";
 
+				if(is_dir($dir_url)){
+				    $fol2 = scandir($dir_url);
+					$url_img = $dir_url .$fol2[2];
+				    $lastname = explode(".",$fol2[2]); 
+
+				}
+            ?>
+
+            <style>
+            .a {
+                wi
+                
+            }
+            </style>
             <!-- Preview Image -->
-            <img class="img-fluid rounded" src="http://placehold.it/900x300" alt="">
-
+            <!-- <img class="img-fluid rounded" src="http://placehold.it/900x300" alt=""> -->
+            <img src="<?php echo $url_img;?>" style=" width: 100%"/>
             <hr>
 
             <!-- Post Content -->
