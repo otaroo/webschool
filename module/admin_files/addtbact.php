@@ -31,9 +31,18 @@ if(!isset($_SESSION['Status']))
 			<textarea class="form-control" rows="5" id="act_des" name="act_des"></textarea>
 		</div>
 		<div class="form-group"><label for="act_place">สถานที่:</label><label id="err5" class="err"></label>
-			<textarea class="form-control" rows="5" id="act_place" name="act_place"></textarea>
+
+			<input type="text" class="form-control" id="act_place" name="act_place">
 		</div>
-		
+
+		<div class="form-group"><label for="act_delimit">จำนวนเปิดรับสมัคร:</label><label id="err6" class="err"></label>
+			<input type="number" class="form-control" id="act_delimit" name="act_delimit">
+		</div>
+
+		<div class="form-group"><label for="act_limited">วันที่สิ้นสุดการสมัคร:</label><label id="err7" class="err"></label>
+			<input type="date" class="form-control" id="act_limited" name="act_limited">
+		</div>
+
 		<span id="status_save"></span>
 		<button type="button" onclick="return checkEmpty();" id="btnAdd" name="btnAdd" class="btn btn-info">เพิ่มข้อมูล</button>
 		<button type="reset" class="btn btn-warning">ล้างข้อมูล</button>
@@ -45,7 +54,9 @@ if(!isset($_SESSION['Status']))
 		$("#err3").html('');
 		$("#err4").html('');
 		$("#err5").html('');
-		
+		$("#err6").html('');
+		$("#err7").html('');
+
 		var chk = true;
 
 		if ($("#act_name").val() == "") {
@@ -68,7 +79,17 @@ if(!isset($_SESSION['Status']))
 			$("#act_place").focus();
 			chk = false;
 		}
-		
+		if ($("#act_delimit").val() == "") {
+			$("#err6").html('กรุณากำหนดค่า จำนวนคน ด้วยค่ะ');
+			$("#act_place").focus();
+			chk = false;
+		}
+		if ($("#act_limited").val() == "") {
+			$("#err7").html('กรุณากำหนดค่า วันที่สิ้นสุดการสมัคร ด้วยค่ะ');
+			$("#act_place").focus();
+			chk = false;
+		}
+
 		if (chk) {
 
 			var url = "module/admin_files/savetbact.php";

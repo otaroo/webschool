@@ -77,7 +77,7 @@ if(!isset($_SESSION['Status']))
 					<td><?php echo $fd2['act_delimit'];?></td>
 					<td><?php echo $dt->DtoLDthai($fd2['act_limited']);?></td>
                     <td><a href='?fd=admin&page=add_file_news&act_id=<?php echo $fd2['act_id'];?>'>รูปภาพ  </a></td>
-					  			<td><a href='?fd=admin&page=edittbact&act_id=<?php echo $fd2['act_id'];?>'><img src="img/edit.jpg" height="30" width="30">  </a></td>
+					  			<td  ><a href='?fd=admin&page=edittbact&act_id=<?php echo $fd2['act_id'];?>'><i class="fas fa-edit"></i>  </a></td>
 					  			<td><span class ="act_id"><?php echo $fd2['act_id'];?></span><img class="picdel"  src="img/del.png" height="25" width="25"></td>
 		  	</tr>
 		  	<?php  } ?>
