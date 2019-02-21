@@ -8,7 +8,8 @@
       
         <!-- Post Content Column -->
         <div class="col-lg-8">
-
+		<input type="hidden" id="act_id" value="<? echo $fd['id_news']?>">
+            <!-- Title -->
             <!-- Title -->
             <h1 class="mt-4"> ข่าว:  <? echo $fd['title_news'];?></h1>
 
@@ -23,12 +24,26 @@
             <!-- Date/Time -->
             <p>วันที่ </p>
 
-            <hr>
+           <hr>
+            <?php
+             $dir_url="img/news/".$fd['id_news']."/";
 
+				if(is_dir($dir_url)){
+				    $fol2 = scandir($dir_url);
+					$url_img = $dir_url .$fol2[2];
+				    $lastname = explode(".",$fol2[2]); 
+
+				}
+            ?>
+            <style>
+                .a {
+                wi
+                
+            }
+            </style>
             <!-- Preview Image -->
-            <img class="img-fluid rounded" src="http://placehold.it/900x300" alt="">
-
-            <hr>
+            <!-- <img class="img-fluid rounded" src="http://placehold.it/900x300" alt=""> -->
+            <img src="<?php echo $url_img;?>" style=" width: 100%" />
 
             <!-- Post Content -->
             <p class="lead"> <? echo $fd['description_news'];?> </p>
@@ -91,4 +106,5 @@
 
     </div>
     <!-- /.row -->
+    
 </div>

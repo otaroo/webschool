@@ -72,7 +72,7 @@
               เกี่ยวกับ              </a>
               <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownPortfolio">
                 <a class="dropdown-item" href="?fd=admin&page=history">ประวัติโรงเรียน</a>
-                <a class="dropdown-item" href="?fd=admin&page=showpersonnel_new">คณะทำงาน</a>
+                <a class="dropdown-item" href="?fd=admin&page=showper">คณะทำงาน</a>
                 <a class="dropdown-item" href="?fd=admin&page=showper_new">ทำเนียบผู้บริหาร</a>              </div>
             </li>
             <li class="nav-item">

@@ -44,6 +44,7 @@ Download Code On : developers.khontermfan.com
 				 	<th>ลำดับข่าว  </th>
 				 	<th>หัวข้อข่าว  </th>
 				 	<th>รายละเอียดข่าว  </th>
+                    <th>เพิ่มรูปภาพข่าว</th>
 				  	<th>แก้ไข  </th>
 				  	<th>ลบ  </th>
 		</tr>
@@ -57,6 +58,7 @@ Download Code On : developers.khontermfan.com
 					<td><?php echo $fd2['id_news'];?></td>
 					<td><?php echo $fd2['title_news'];?></td>
 					<td><?php echo $fd2['description_news'];?></td>
+                    <td><a href='?fd=admin&page=add_file_news&act_id=<?php echo $fd2['id_news'];?>'>รูปภาพ  </a></td>
 					  			<td><a href='?fd=admin&page=editnews&id_news=<?php echo $fd2['id_news'];?>'><img src="img/edit.jpg" height="30" width="30">  </a></td>
 					  			<td><span class ="id_news"><?php echo $fd2['id_news'];?></span><img class="picdel"  src="img/del.png" height="25" width="25"></td>
 		  	</tr>
