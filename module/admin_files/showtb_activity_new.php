@@ -57,7 +57,7 @@ Download Code On : developers.khontermfan.com
 
 				}
             ?>
-             <img src="<?php echo $url_img;?>" style="height:300px;"/>
+             <img src="<?php echo $url_img;?>" style="height:300px;" width="300"/>
              
              </td>
 		  	</tr>
