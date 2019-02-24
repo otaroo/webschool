@@ -78,7 +78,7 @@ if(!isset($_SESSION['Status']))
 					<td><?php echo $dt->DtoLDthai($fd2['act_limited']);?></td>
                     <td><a href='?fd=admin&page=add_file_news&act_id=<?php echo $fd2['act_id'];?>'> <i class="fas fa-images"></i>   </a></td>
 					  			<td><a href='?fd=admin&page=edittbact&act_id=<?php echo $fd2['act_id'];?>'>  <i class="fas fa-edit"></i>  </a></td>
-					  			<td><span class ="act_id"><?php echo $fd2['act_id'];?></span> <i class="fas fa-trash-alt"></i></td>  
+					  			<td> <span class ="act_id"><?php echo $fd2['act_id'];?></span> <i class="fas fa-trash-alt picdel"></i></td>  
 		  	</tr>
 		  	<?php  } ?>
 		  	
@@ -93,10 +93,9 @@ if(!isset($_SESSION['Status']))
     	   $(".act_id").hide();
   		   $(".picdel").click(function(){
            var  act_id=$(this).parent().find(".act_id").html();
-           //alert(course_id);
            if(confirm('คุณต้องการลบข้อมูลใช่หรือไม่')){
-             var url="?fd=admin&page=delact.php";
-             $.post(url,{act_id:act_id},function (data) {
+             var url="module/admin_files/delact.php";
+             $.get(url,{act_id:act_id},function (data) {
               alert(data);
               location.reload(); 
           });
