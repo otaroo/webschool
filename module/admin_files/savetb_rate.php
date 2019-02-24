@@ -6,9 +6,9 @@ Download Code On : developers.khontermfan.com
 */?>
 <?php
 		require_once "../../config.php";
-					$rate_id = '';
+					
 					$act_id = $_POST['act_id'];
-					$mem_id = $_POST['mem_id'];
+					// $mem_id = $_POST['mem_id'];
 					$r1 = $_POST['r1'];
 					$r2 = $_POST['r2'];
 					$r3 = $_POST['r3'];
@@ -20,7 +20,7 @@ Download Code On : developers.khontermfan.com
 					$r9 = $_POST['r9'];
 					$r10 = $_POST['r10'];
 					$date_rate =date("Y-m-s H:i:s");
-  			 $sql_add = "insert into tb_rate (act_id,mem_id_card,r1,r2,r3,r4,r5,r6,r7,r8,r9,r10,date_rate) values('$act_id','$mem_id',$r1,$r2,$r3,$r4,$r5,$r6,$r7,$r8,$r9,$r10,'$date_rate')";
+  			 $sql_add = "insert into tb_rate (act_id,r1,r2,r3,r4,r5,r6,r7,r8,r9,r10,date_rate) values('$act_id',$r1,$r2,$r3,$r4,$r5,$r6,$r7,$r8,$r9,$r10,'$date_rate')";
 			  $qqes = $db->query($sql_add);
 			 if($qqes){
 				echo "1";
