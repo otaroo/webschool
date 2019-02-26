@@ -72,11 +72,13 @@
               <a class="dropdown-item" href="?fd=admin&page=addperson">ทำเนียบผู้บริหาร</a>
             </div>
           </li>
-
+		  <li class="nav-item">
+            <a class="nav-link" href="?fd=admin&page=showtbact">โชว์กิจกรรม</a>
+          </li>
           <li class="nav-item">
             <a class="nav-link" href="?fd=admin&page=addtbact">เพิ่มกิจกรรม</a>
           </li>
-
+			
          
           <li class="nav-item">
             <a class="nav-link" href="?fd=admin&page=addnews">ข่าว</a>
