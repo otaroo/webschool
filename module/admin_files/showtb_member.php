@@ -22,7 +22,7 @@ Download Code On : developers.khontermfan.com
 
 	
 	?>
-	
+
 			<p style="text-align:center;width:90%;">
 				<span style="font-weight:;">ค้นหา:</span> <input type="text" id="txtSearch" name="txtSearch" mgetShowTableaxlength="50" />&nbsp;
 				<img id="imgSearch" src="img/del.png" alt="เคลียร์" title="เคลียร์" style="width:150px;width:14px;height:14px;">
@@ -34,25 +34,18 @@ Download Code On : developers.khontermfan.com
 
 							<th bgcolor="#3399CC">ลำดับ </th>
 							<th bgcolor="#3399CC">ชื่อกิจกรรม </th>
-                             <th bgcolor="#3399CC">คำนำหน้า</th>
+							<th bgcolor="#3399CC">คำนำหน้า</th>
 							<th bgcolor="#3399CC">ชื่อผู้สมัคร </th>
 							<th bgcolor="#3399CC">เบอร์โทรศัพท์ </th>
-							
 							<th bgcolor="#3399CC">เพศ </th>
-                            
-							
-
 						</tr>
 					</thead>
 					<tbody>
 						<?php 
-			$sql2 ="select * from tb_member where 1  order by act_id asc";  
+			$act_id = $_GET['act_id'];
+			$sql2 ="select * from tb_member where act_id='$act_id'  order by mem_id desc";  
 			$qess2=$db->query($sql2);
 			$num = 1 ;
-
-		
-		
-
 			while($fd2=$qess2->fetch_assoc()){	
 			$num += 1;
 		?>
@@ -66,11 +59,11 @@ Download Code On : developers.khontermfan.com
 							$fd3=$qess3->fetch_assoc();
 							
 						?>
- 
+
 							<td>
 								<?php echo $fd3['name'];?>
 							</td>
-                           <td>
+							<td>
 								<?php echo $fd2['mem_title'];?>
 							</td>
 							<td>
@@ -79,15 +72,15 @@ Download Code On : developers.khontermfan.com
 							<td>
 								<?php echo $fd2['mem_tel'];?>
 							</td>
-							
+
 							<td>
 								<?php echo $fd2['mem_sex'];?>
 							</td>
 
-					
 
 
-					  </tr>
+
+						</tr>
 						<?php  } ?>
 
 					</tbody>

@@ -108,8 +108,6 @@ Download Code On : developers.khontermfan.com
 				act_id: act_id
 			}, function (data) {
 				var arr = data.split("|");
-				console.log(arr);
-
 				if (parseInt(arr[1]) >= parseInt(arr[0])) {
 					$('#btnAdd').hide();
 					$("#err9").html('กิจกรรมนี้คนสมัครเต็มแล้ว');
@@ -248,7 +246,7 @@ Download Code On : developers.khontermfan.com
 					if (data.trim() == '1') {
 						$("#status_save").html('<font color=green>บันทึกข้อมูลเรียบร้อยแล้วค่ะ...</font><br>');
 						setTimeout(function () {
-							location = '?fd=admin&page=showtb_member';
+							location = '?fd=admin&page=showtb_member&act_id='+$("#act_id").val();
 						}, 3000);
 					} else $("#status_save").html(
 						'<font color=red>ไม่สามารถบันทึกข้อมูลได้...กรุณาตรวจสอบข้อมูลอีกครั้ง...</font><br>');
