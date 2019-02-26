@@ -106,7 +106,7 @@ require_once "config.php";
   function checkEmpty() {
     var chk = true;
    
-    for (let index = 1; index < 10; index++) {
+    for (let index = 1; index <= 10; index++) {
       $("input[name='r"+index+"']:checked").val()
       if ( $("input[name='r"+index+"']:checked").val() === undefined) {
         alert('กรุณาทำแบบประเมินให้ครบ');
