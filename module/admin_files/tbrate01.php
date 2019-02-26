@@ -90,10 +90,10 @@ require_once "config.php";
         </table>
       </div>
     </div>
-<hr>
+    <hr>
     <div class="row justify-content-end">
       <div class="col-3 text-right">
-       
+
       </div>
       <div class="col-2 text-right">
         <button type="button" onclick="return checkEmpty();" class="btn btn-primary btn-block">ส่งคำตอบ</button>
@@ -105,11 +105,16 @@ require_once "config.php";
 <script language="javascript">
   function checkEmpty() {
     var chk = true;
-    if ($("#mem_id").val() == "") {
-      alert('กรุณาใส่รหัสบัตรประชาชน');
-      chk = false;
-      return;
+   
+    for (let index = 1; index < 10; index++) {
+      $("input[name='r"+index+"']:checked").val()
+      if ( $("input[name='r"+index+"']:checked").val() === undefined) {
+        alert('กรุณาทำแบบประเมินให้ครบ');
+        chk = false;
+        return false
+      }
     }
+
     console.log(chk);
     if (chk) {
       var url = "module/admin_files/savetb_rate.php";
@@ -126,7 +131,7 @@ require_once "config.php";
         timeout: 600000,
         success: function (data) {
           //alert(data);
-          if (data.trim() == '1') { 
+          if (data.trim() == '1') {
             alert('บันทึกสำเร็จ');
             setTimeout(function () {
               location = '?';
