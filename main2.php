@@ -55,11 +55,59 @@ require_once "config.php";
     </div>
     <!-- /.row  -->
     <br />
-    <h2>กิจกรรมของ กศน.นาโบสถ์</h2>
+    <h2>กิจกรรมที่กำลังจะถึงของ กศน.นาโบสถ์</h2>
 
     <div class="row">
         <?php
-    $sql ="SELECT * FROM tb_activity order by act_date desc limit 10";  
+    $sql ="SELECT * FROM tb_activity
+    WHERE act_date > now()
+    order by act_date desc limit 10";  
+    $qess=$db->query($sql);	
+    while($fd=$qess->fetch_assoc()){	?>
+
+        <div class="col-lg-4 col-sm-6 portfolio-item">
+            <div class="card h-100">
+             
+                    <?php
+             $dir_url="img/news/".$fd['act_id']."/";
+
+				if(is_dir($dir_url)){
+				    $fol2 = scandir($dir_url);
+					$url_img = $dir_url .$fol2[2];
+				    $lastname = explode(".",$fol2[2]); 
+
+				}
+            ?>
+                     <img src="<?php echo $url_img;?>" style=" height:300px"/>
+
+              
+                <div class="card-body">
+                    <h4 class="card-title">
+                        <a href="#">
+                            <?php echo $fd['act_name'];  ?></a>
+                    </h4>
+                    <p class="card-text">
+                        <?php echo $fd['act_des']; ?>
+                    </p>
+
+                </div>
+                <div class="card-footer">
+                    <a href="index.php?fd=admin&page=activity_detail&id_activity=<?php echo $fd['act_id'];?>" class="btn btn-primary">รายละเอียด</a>
+                </div>
+            </div>
+        </div>
+
+        <?php } ?>
+
+    </div>
+    <!-- /.row  -->
+
+
+    <h2>กิจกรรมที่ผ่านมาของ กศน.นาโบสถ์</h2>
+
+    <div class="row">
+        <?php
+    $sql ="SELECT * FROM tb_activity WHERE act_date < now() order by act_date desc limit 10";  
     $qess=$db->query($sql);	
     while($fd=$qess->fetch_assoc()){	?>
 
