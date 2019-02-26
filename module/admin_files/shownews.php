@@ -13,7 +13,6 @@ Download Code On : developers.khontermfan.com
 		font-size: 24px;
 		font-weight: bold;
 	}
-
 </style>
 <div class="dropdown">
 	<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
@@ -68,7 +67,7 @@ Download Code On : developers.khontermfan.com
 						<?php echo $fd2['description_news'];?>
 					</td>
 					<td><a href='?fd=admin&page=add_file_news&act_id=<?php echo $fd2[' id_news'];?>'>รูปภาพ </a></td>
-					<td><a href='?fd=admin&page=editnews&id_news=<?php echo $fd2['id_news'];?>'>  <i class="fas fa-edit"></i>  </a></td>
+					<td><a href='?fd=admin&page=editnews&id_news=<?php echo $fd2[' id_news'];?>'> <i class="fas fa-edit"></i> </a></td>
 
 					<td><span class="id_news">
 							<?php echo $fd2['id_news'];?></span><img class="picdel" src="img/del.png" height="25" width="25"></td>
@@ -85,14 +84,14 @@ Download Code On : developers.khontermfan.com
 	$(document).ready(function () {
 		$(".id_news").hide();
 		$(".picdel").click(function () {
-			var id_news = $(this).parent().find(".id_news").html();
-			//alert(course_id);
+			var id_news = $(this).parent().find(".id_news").html().trim();
+
 			if (confirm('คุณต้องการลบข้อมูลใช่หรือไม่')) {
-				var url = "?fd=admin&page=delnews.php";
-				$.post(url, {
+				var url = "module/admin_files/delnews.php";
+				$.get(url, {
 					id_news: id_news
 				}, function (data) {
-					alert(data);
+					alert(data);					
 					location.reload();
 				});
 			}
