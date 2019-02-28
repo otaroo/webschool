@@ -189,11 +189,14 @@ Download Code On : developers.khontermfan.com
 					// 	"point": data['count_mem'] + ' คน'
 					// });
 					result.push({
-						"name": 'รวม',
-						"point":(parseFloat(data['r1']) +parseFloat(data['r2'])+parseFloat(data['r3'])+parseFloat(data['r4'])+parseFloat(data['r5'])
-						+parseFloat(data['r6'])+parseFloat(data['r7'])+parseFloat(data['r8'])+parseFloat(data['r9'])+parseFloat(data['r10']) ).toFixed(2)
+						"name": '<b>รวม</b>',
+						"point":((parseFloat(data['r1']) +parseFloat(data['r2'])+parseFloat(data['r3'])+parseFloat(data['r4'])+parseFloat(data['r5'])
+						+parseFloat(data['r6'])+parseFloat(data['r7'])+parseFloat(data['r8'])+parseFloat(data['r9'])+parseFloat(data['r10']) )/10).toFixed(2)
 					});
-
+					result.push({
+						"name": '<b>จำนวนคนประเมินทั้งหมด</b>',
+						"point": data['count_mem'] + ' คน'
+					});
 					if (data['act_id'] === null) {
 						result = []
 					}
