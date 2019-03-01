@@ -18,8 +18,9 @@ Download Code On : developers.khontermfan.com
 					$act_place = $_POST['act_place'];
 					$act_delimit = $_POST['act_delimit'];
 					$act_limited = $_POST['act_limited'];
+					$rate_limited = $_POST['rate_limited'];
 
-  		 	  $sql_add = "insert into tb_activity (act_id,act_name,act_date,act_des,act_place,act_delimit,act_limited) values('$act_id','$act_name','$act_date','$act_des','$act_place','$act_delimit','$act_limited')";
+  		 	  $sql_add = "insert into tb_activity (act_id,act_name,act_date,act_des,act_place,act_delimit,act_limited,rate_date) values('$act_id','$act_name','$act_date','$act_des','$act_place','$act_delimit','$act_limited','$rate_limited')";
 			  $qqes = $db->query($sql_add);
 			 if($qqes){
 				echo "1";

@@ -54,8 +54,9 @@ if(!isset($_SESSION['Status']))
 		<div class="form-group"><label for="act_limited">วันที่สิ้นสุดการสมัคร:</label><label id="err7" class="err"></label>
 			<input type="date" class="form-control" id="act_limited" name="act_limited" value="<?php echo $row_q['act_limited'] ?>">
 		</div>
-
-
+		<div class="form-group"><label for="rate_limited">วันที่สิ้นสุดการประเมิน:</label><label id="err8" class="err"></label>
+			<input type="date" class="form-control" id="rate_limited" name="rate_limited" value="<?php echo $row_q['rate_date'] ?>">
+		</div>
 
 
 		<span id="status_save"></span>
@@ -114,6 +115,12 @@ if(!isset($_SESSION['Status']))
 		}
 		if ($("#act_limited").val() == "") {
 			$("#err7").html('กรุณากำหนดค่า วันที่สิ้นสุดการสมัคร ด้วยค่ะ');
+			$("#act_place").focus();
+			chk = false;
+		}
+
+		if ($("#rate_limited").val() == "") {
+			$("#err8").html('กรุณากำหนดค่า วันที่สิ้นสุดการประเมิน ด้วยค่ะ');
 			$("#act_place").focus();
 			chk = false;
 		}

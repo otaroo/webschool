@@ -18,9 +18,10 @@ Download Code On : developers.khontermfan.com
 					$act_place = $_POST['act_place'];
 					$act_delimit = $_POST['act_delimit'];
 					$act_limited = $_POST['act_limited'];
+					$rate_limited = $_POST['rate_limited'];
 
 
-  		 	  $sql_update = "update tb_activity set act_name='$act_name',act_date='$act_date',act_des='$act_des',act_place='$act_place',act_delimit='$act_delimit',act_limited='$act_limited' where act_id='$act_id' ";
+  		 	  $sql_update = "update tb_activity set act_name='$act_name',act_date='$act_date',act_des='$act_des',act_place='$act_place',act_delimit='$act_delimit',act_limited='$act_limited',rate_date='$rate_limited' where act_id='$act_id' ";
 			  $qqes = $db->query($sql_update);
 			 if($qqes){
 				echo "1";

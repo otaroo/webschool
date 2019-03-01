@@ -42,6 +42,9 @@ if(!isset($_SESSION['Status']))
 		<div class="form-group"><label for="act_limited">วันที่สิ้นสุดการสมัคร:</label><label id="err7" class="err"></label>
 			<input type="date" class="form-control" id="act_limited" name="act_limited">
 		</div>
+		<div class="form-group"><label for="rate_limited">วันที่สิ้นสุดการประเมิน:</label><label id="err8" class="err"></label>
+			<input type="date" class="form-control" id="rate_limited" name="rate_limited">
+		</div>
 
 		<span id="status_save"></span>
 		<button type="button" onclick="return checkEmpty();" id="btnAdd" name="btnAdd" class="btn btn-info">เพิ่มข้อมูล</button>
@@ -56,7 +59,7 @@ if(!isset($_SESSION['Status']))
 		$("#err5").html('');
 		$("#err6").html('');
 		$("#err7").html('');
-
+		$("#err8").html('');
 		var chk = true;
 
 		if ($("#act_name").val() == "") {
@@ -86,6 +89,12 @@ if(!isset($_SESSION['Status']))
 		}
 		if ($("#act_limited").val() == "") {
 			$("#err7").html('กรุณากำหนดค่า วันที่สิ้นสุดการสมัคร ด้วยค่ะ');
+			$("#act_place").focus();
+			chk = false;
+		}
+
+		if ($("#rate_limited").val() == "") {
+			$("#err8").html('กรุณากำหนดค่า วันที่สิ้นสุดการประเมิน ด้วยค่ะ');
 			$("#act_place").focus();
 			chk = false;
 		}
