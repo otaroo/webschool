@@ -44,12 +44,17 @@ Download Code On : developers.khontermfan.com
 					<td><?php echo $fd2['personnel_id'];?></td>
 					<td><?php echo $fd2['personnel_name'];?></td>
 					<td><?php echo $fd2['personnel_position'];?></td>
-					<td><p align="center"><img src="<?php echo $url_img;?>" width="150px"/> </p>       
-				  <p align="center"><a href="?fd=admin&amp;page=editlper&personnel_id=<?php echo $fd2['personnel_id'];?>"><img src="img/dl.png" height="30" width="30"></a>แก้ไขรูปภาพ
-          <p align="center"><a href="?fd=admin&amp;page=editlper1&personnel_id=<?php echo $fd2['personnel_id'];?>"><img src="img/dl.png" height="30" width="30"></a>แก้ไขข้อมูล
-					<p align="center"> 
+					<td><p align="center"><img src="<?php echo $url_img;?>" width="150px"/> </p>
+                    
+                   
+                    
+				    <p align="center"><a href="?fd=admin&amp;page=editlper&personnel_id=<?php echo $fd2['personnel_id'];?>"><img src="img/dl.png" height="30" width="30"></a>แก้ไขรูปภาพ
+                     <p align="center"><a href="?fd=admin&amp;page=editlper1&personnel_id=<?php echo $fd2['personnel_id'];?>"><img src="img/dl.png" height="30" width="30"></a>แก้ไขข้อมูล
 					<p align="center">
-  
+					  
+					<p align="center">
+                  
+					  
 		  </div></td>
 					  			<td><div align="center"><a href='?fd=admin&page=editpersonnel&personnel_id=<?php echo $fd2['personnel_id'];?>'><img src="img/do.png" height="30" width="30">  </a></div></td>
 					  			<td><div align="center"><span class ="personnel_id"><?php echo $fd2['personnel_id'];?></span><img class="picdel"  src="img/del.png" height="25" width="25"></div></td>
