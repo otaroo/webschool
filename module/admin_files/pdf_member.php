@@ -14,7 +14,7 @@ $html = '<h1>mPDF</h1>
 $sql2 ="select * from tb_activity";  
 $qess2=$db->query($sql2);	
 while($fd2=$qess2->fetch_assoc()){	
-    $html = $html.'<tr><td>Row 1</td><td>'.$fd2['act_name'].'</td><td>This is data</td></tr>';
+    $html = $html.'<tr><td>Row 1</td><td>'.$fd2['act_name'].'</td></tr>';
 }
 $html = $html.'</tbody></table>'; 
 
