@@ -22,7 +22,7 @@ if(!isset($_SESSION['Status']))
 	<h2>กิจกรรม</h2>
 	<form id="frminsert" name="frminsert" method="post" enctype="multipart/form-data">
 		<div class="form-group"><label for="act_name">ชื่อกิจกรรม:</label><label id="err2" class="err"></label>
-			<input type="text" class="form-control" id="act_name" name="act_name">
+			<input type="text" autocomplete="off" class="form-control" id="act_name" name="act_name">
 		</div>
 		<div class="form-group"><label for="act_date">วันที่กิจกรรม:</label><label id="err3" class="err"></label>
 			<input type="date" class="form-control" id="act_date" name="act_date">
@@ -32,7 +32,7 @@ if(!isset($_SESSION['Status']))
 		</div>
 		<div class="form-group"><label for="act_place">สถานที่:</label><label id="err5" class="err"></label>
 
-			<input type="text" class="form-control" id="act_place" name="act_place">
+			<input type="text" autocomplete="off" class="form-control" id="act_place" name="act_place">
 		</div>
 
 		<div class="form-group"><label for="act_delimit">จำนวนเปิดรับสมัคร:</label><label id="err6" class="err"></label>

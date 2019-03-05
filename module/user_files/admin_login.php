@@ -5,7 +5,7 @@
 <div class="wrapper">
   <form class="form-signin" id="frm_login"  method="post">       
     <h2 align="center" class="form-signin-heading">การเข้าสู่ระบบ</h2>
-    <input type="text" class="form-control" name="member_user" id="member_user" placeholder="User Name" required="" autofocus="" /><span id='err1'></span>
+    <input type="text" autocomplete="off" class="form-control" name="member_user" id="member_user" placeholder="User Name" required="" autofocus="" /><span id='err1'></span>
     <input type="password" class="form-control" name="member_pass" id="member_pass" placeholder="Password" required=""/><span id='err2'></span>
     <label class="checkbox">
       <input type="checkbox" value="remember-me" id="rememberMe" name="rememberMe"> Remember me

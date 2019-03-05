@@ -14,10 +14,10 @@ Download Code On : developers.khontermfan.com
 		       <h2>ข้อมูลคณะทำงาน</h2>
 			<form id="frminsert" name="frminsert"  method="post" enctype="multipart/form-data">
 				<div class="form-group"><label for="personnel_name">ชื่อผู้ทำงาน:</label><label id="err2" class="err"></label>    	
-    		<input type="text" class="form-control" id="personnel_name" name="personnel_name"  >
+    		<input type="text"  autocomplete="off" class="form-control" id="personnel_name" name="personnel_name"  >
 				</div>
 				<div class="form-group"><label for="personnel_position">ตำแหน่ง:</label><label id="err3" class="err"></label>    	
-    		<input type="text" class="form-control" id="personnel_position" name="personnel_position"  >
+    		<input type="text" autocomplete="off" class="form-control" id="personnel_position" name="personnel_position"  >
 				</div>
 				<div class="form-group"><label for="personnel_img">รูปคณะทำงาน:</label><label id="err4" class="err"></label>    	
     		<input type="file" class="form-control" id="personnel_img" name="personnel_img" accept="pdf,doc,docx,jpg,png,gif,ppt,pptx,jpge,xls,xlsx">

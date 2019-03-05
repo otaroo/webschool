@@ -55,7 +55,7 @@ Download Code On : developers.khontermfan.com
 
 						<td>
 						<? if($fd2['rate_date'] > date("Y-m-d")){ ?>
-							<div align="center"><a href='?fd=admin&page=tbrate01&act_id=<?php echo $fd2[' act_id'];?>'>ประเมินกิจกรรม </a></div>
+							<div align="center"><a href='?fd=admin&page=tbrate01&act_id=<?php echo $fd2['act_id'];?>'>ประเมินกิจกรรม </a></div>
 						<? }else{ ?>
 							<div align="center" style="color:red;">หมดเวลาประเมิน</div>
 						<? } ?>

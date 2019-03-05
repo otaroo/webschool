@@ -29,7 +29,7 @@ Download Code On : developers.khontermfan.com
 		       <h2>ข่าวประชาสัมพันธ์</h2>
 			<form id="frminsert" name="frminsert"  method="post" enctype="multipart/form-data">
 				<div class="form-group"><label for="title_news">หัวข้อข่าว:</label><label id="err2" class="err"></label>    	
-    		<input type="text" class="form-control" id="title_news" name="title_news"  >
+    		<input type="text" autocomplete="off" class="form-control" id="title_news" name="title_news"  >
 				</div>
 				<div class="form-group"><label for="description_news">รายละเอียดข่าว:</label><label id="err3" class="err"></label>
 			<textarea class="form-control" rows="5" id="description_news" name="description_news"></textarea>

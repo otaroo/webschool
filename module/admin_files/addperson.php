@@ -14,10 +14,10 @@ Download Code On : developers.khontermfan.com
 		       <h2>ข้อมูลบุคลากร</h2>
 			<form id="frminsert" name="frminsert"  method="post" enctype="multipart/form-data">
 				<div class="form-group"><label for="person_name">ชื่อบุคลากร:</label><label id="err2" class="err"></label>    	
-    		<input type="text" class="form-control" id="person_name" name="person_name"  >
+    		<input type="text" autocomplete="off" class="form-control" id="person_name" name="person_name"  >
 				</div>
 				<div class="form-group"><label for="person_pos">ดำรงตำแหน่ง:</label><label id="err3" class="err"></label>    	
-    		<input type="text" class="form-control" id="person_pos" name="person_pos"  >
+    		<input type="text" autocomplete="off" class="form-control" id="person_pos" name="person_pos"  >
 				</div>
 				<div class="form-group"><label for="person_since">ตั้งแต่:</label><label id="err4" class="err"></label>    	
     		<input type="date" class="form-control" id="person_since" name="person_since"  >
