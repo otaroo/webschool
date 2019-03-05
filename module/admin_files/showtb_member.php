@@ -45,9 +45,9 @@ Download Code On : developers.khontermfan.com
 			$sql2=""; 
 			if(isset($_GET['act_id'] ) ){
 				$act_id = $_GET['act_id'];
-				$sql2 ="select * from tb_member where act_id like %'$act_id'%  order by mem_id desc";  
+				$sql2 ="select * from tb_member where act_id = '$act_id' order by mem_id desc";  
 			}else{
-				$sql2 ="select * from tb_member   order by act_id desc";  
+				$sql2 ="select * from tb_member  order by act_id desc";  
 			}
 			$qess2=$db->query($sql2);
 			$num = 1 ;
