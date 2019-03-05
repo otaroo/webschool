@@ -10,11 +10,9 @@ Date Create : 2019-01-24 18:22:20
 Download Code On : developers.khontermfan.com
 */?> <?php
 		require_once "../../config.php";
-			
-					$id_news = '';
-					$title_news = $_POST['title_news'];
-					$description_news = $_POST['description_news'];
-					
+			  $id_news = '';
+			  $title_news = $_POST['title_news'];
+			  $description_news = $_POST['description_news'];
   		 	  $sql_add = "insert into tb_new (id_news,title_news,description_news) values('$id_news','$title_news','$description_news')";
 			  $qqes = $db->query($sql_add);
 			 if($qqes){
