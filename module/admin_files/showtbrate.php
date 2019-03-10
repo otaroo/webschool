@@ -33,7 +33,7 @@ function MM_jumpMenu(targ,selObj,restore){ //v3.0
 	<div class="row">
 		<div class="col-12 text-center">
 	 
-		    <form name="form" id="form">
+		    <form name="form" id="form" action="reportaddpro.php">
 		      <select name="act_id" id="act_id" onchange="MM_jumpMenu('parent',this,0)">
 		      	<option value="">เลือกกิจกรรม</option>
 				<?php 
@@ -49,7 +49,7 @@ function MM_jumpMenu(targ,selObj,restore){ //v3.0
 				<?php  } ?>
                
               </select>
-            </form>
+            
 	    </div>
 	</div>
 
@@ -66,7 +66,7 @@ $_arr = array("","1.กิจกรรมนี้มีประโยชน์
 					 
 						<th   valign="center" rowspan="2">รายการ</th>
 						<th scope="col" colspan="3">ระดับความคิดเห็น (ร้อยละ)</th>
-						<th valign="center" rowspan="2">คะแนน</th>
+						<th valign="center" rowspan="2">ค่าเฉลี่ย</th>
 					</tr>
 					<tr align="center">				 
 						<th>มาก</th>
@@ -139,27 +139,36 @@ $act_avg_all =0;
 							 $act_avg = (($act_max+$act_middle+$act_min)/$count_act) ;
 							 $act_avg_all += $act_avg;
 							 echo number_format($act_avg,2,".",",");
-							?>
-						</td>
+							?>						</td>
 	</tr>
 
 				<?php } ?>		
 				<tr>
-					<td colspan="4">สรุป</td>
-					<td><?php echo number_format(($act_avg_all/10),2,".",",");?></td>
+					<td colspan="3">สรุผลการประเมินกิจกรรม</td>
+					<td><?php
+$t = number_format(($act_avg_all/10),2,".",",");
 
+if ($t < "1") {
+    echo "น้อย";
+} elseif ($t < "2.60") {
+    echo "ปานกลาง";
+} else {
+    echo "มาก";
+}
+?></td>
+					<td><?php echo number_format(($act_avg_all/10),2,".",",");?></td>
 </tr>
 				<tr>
-					<td colspan="5">จำนวนผู้ประเมิน <?php echo $count_act;?> หน่อ</td>
-					 
-
+					<td colspan="5"><p>จำนวนผู้ประเมิน <?php echo $count_act;?> หน่อ</p>
+                   
+				    <p>&nbsp;</p></td>
 </tr>
 				</tbody>
 			</table>
-		</div>
+	  </div>
 	</div>
 
-
+</form>
 
 
 

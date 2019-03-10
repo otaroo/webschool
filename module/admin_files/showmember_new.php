@@ -212,6 +212,7 @@
 				{
 					"data": null,
 					"render": function (data) {
+						
 						return '<span class="mem_id">' +
 							'<?php echo $fd2["mem_id"];?></span><img class="picdel" src="img/del.png" height="25" width="25">'
 					}

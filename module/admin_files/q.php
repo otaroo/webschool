@@ -19,18 +19,19 @@ table {
 </style>
 <div class="container">
 
-<h2 align="center">รายชื่อผู้เข้าร่วมกิจกรรม</h2> 
+<h2 align="center">แบบสรุปผลการประเมินกิจกรรม</h2> 
+
 <table border="1" width=600px height=90% align="center">
 
-<tbody><tr><td width=174><strong>ชื่อ-นามสกุล</strong></td><td width=174><strong>เบอร์โทร</strong></td><td width=174><strong>ลงชื่อ</strong></td></tr>'; 
+<tbody><tr><td width=200><strong>รายการ</strong></td><td width=100><strong>มาก</strong></td><td width=100><strong>ปานกลาง</strong></td><td width=100><strong>น้อย</strong></td><td width=100><strong>ค่าเฉลี่ย</strong></td></tr>'; 
 
 
 
 
-$sql2 ="select * from tb_member where act_id='$act_id'";  
+$sql2 ="select * from tb_rate where act_id='$act_id'";  
 $qess2=$db->query($sql2);	
 while($fd2=$qess2->fetch_assoc()){	
-    $html = $html.'<tr><td align="left">'.$fd2['mem_name'].'</td><td>'.$fd2['mem_tel'].'</td><td></td></tr>';
+    $html = $html.'<tr><td align="left">'.$fd2['r1'].'</td><td>'.$fd2['mem_tel'].'</td><td></td></tr>';
 }
 $html = $html.'</tbody></table>' ; 
 

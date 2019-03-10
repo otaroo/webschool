@@ -12,6 +12,7 @@ Download Code On : developers.khontermfan.com
 <style type="text/css">
 
 .style1 {
+	
 	font-size: 36px;
 	font-weight: bold;
 }
@@ -25,18 +26,16 @@ Download Code On : developers.khontermfan.com
 	require_once("class/DatetimeFormat.class.php");
 	$dt = new DatetimeFormat();
 	?>
-    	<p style="text-align:center;width:90%;">&nbsp;</p>
-<div class='datagrid'>      
-   			<table id='tblSearch' width='90%' align='center' class='tblSearch table table-bordered table-hover'>
-	        <thead>
-			      <tr>
+    <table class="table table-bordered">
+  <thead>
+    <tr>
+      <th scope="col">ชื่อกิจกรรม</th>
+      <th scope="col">วันที่กิจกรรม</th>
+      <th scope="col">รายละเอียด</th>
+      <th scope="col">คลิกดูรูปภาพ</th>
+    </tr>
+  </thead>
 				 	
-				 	<th bgcolor="#33CCFF">ชื่อกิจกรรม  </th>
-				 	<th bgcolor="#33CCFF">วันที่กิจกรรม  </th>
-                    <th bgcolor="#33CCFF">รายละเอียด  </th>
-                    <th bgcolor="#33CCFF">รูปภาพ  </th> 
-		</tr>
-		</thead>
 		<tbody><?php 
 			$sql2 ="select * from tb_activity where 1  order by act_name asc";  
 			$qess2=$db->query($sql2);	
@@ -47,17 +46,9 @@ Download Code On : developers.khontermfan.com
 			<td><?php echo $fd2['act_name'];?></td>
 			<td><?php echo $dt->DtoLDthai($fd2['act_date']);?></td>
            	<td><?php echo $fd2['act_des'];?></td>
-            <td><?php
-             $dir_url="img/news/".$fd2['act_id']."/";
-
-				if(is_dir($dir_url)){
-				    $fol2 = scandir($dir_url);
-					$url_img = $dir_url .$fol2[2];
-				    $lastname = explode(".",$fol2[2]); 
-
-				}
-            ?>
-             <img src="<?php echo $url_img;?>" style="height:300px;" width="300"/>
+            <td>
+						
+             	 <a href="?fd=admin&page=activity_detail&id_activity=<?php echo $fd['act_id'];?>"<i class="btn btn-primary">รายละเอียด</a>
              
              </td>
 		  	</tr>

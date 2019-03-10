@@ -67,10 +67,9 @@ Download Code On : developers.khontermfan.com
 						<?php echo $fd2['description_news'];?>
 					</td>
 					<td><a href='?fd=admin&page=add_file_news&act_id=<?php echo $fd2[' id_news'];?>'>รูปภาพ </a></td>
-					<td><a href='?fd=admin&page=editnews&id_news=<?php echo $fd2[' id_news'];?>'> <i class="fas fa-edit"></i> </a></td>
-
-					<td><span class="id_news">
-							<?php echo $fd2['id_news'];?></span><img class="picdel" src="img/del.png" height="25" width="25"></td>
+					<td><a href='?fd=admin&page=editnews&id_news=<?php echo $fd2['id_news'];?>'>  <i class="fas fa-edit"></i>  </a></td>
+					<td> <span class ="id_news"><?php echo $fd2['id_news'];?></span> <i class="fas fa-trash-alt picdel"></i></td> 
+					
 				</tr>
 				<?php  } ?>
 
@@ -85,7 +84,7 @@ Download Code On : developers.khontermfan.com
 		$(".id_news").hide();
 		$(".picdel").click(function () {
 			var id_news = $(this).parent().find(".id_news").html().trim();
-
+			//alert(course_id);
 			if (confirm('คุณต้องการลบข้อมูลใช่หรือไม่')) {
 				var url = "module/admin_files/delnews.php";
 				$.get(url, {
