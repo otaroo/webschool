@@ -37,7 +37,7 @@ Download Code On : developers.khontermfan.com
 							<th bgcolor="#3399CC">คำนำหน้า</th>
 							<th bgcolor="#3399CC">ชื่อผู้สมัคร </th>
 							<th bgcolor="#3399CC">เบอร์โทรศัพท์ </th>
-							<th bgcolor="#3399CC">เพศ </th>
+							
 						</tr>
 					</thead>
 					<tbody>
@@ -78,9 +78,7 @@ Download Code On : developers.khontermfan.com
 								<?php echo $fd2['mem_tel'];?>
 							</td>
 
-							<td>
-								<?php echo $fd2['mem_sex'];?>
-							</td>
+						
 
 
 

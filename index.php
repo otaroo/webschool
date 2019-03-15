@@ -10,6 +10,7 @@
 
 <head>
   <title>กศน.ตำบลนาโบสถ์</title>
+  <link rel="stylesheet" href="../dist/css/lightbox.min.css">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Bootstrap core CSS -->
@@ -18,7 +19,7 @@
   <!-- Custom styles for this template -->
   <link href="css/modern-business.css" rel="stylesheet">
 
-
+  <link href="vendor/lightbox2/src/css/lightbox.css" rel="stylesheet">
 
   <style>
     /* Remove the navbar's default margin-bottom and rounded borders */ 
@@ -77,7 +78,7 @@
             </li>
             <li class="nav-item">
             
-              <a class="nav-link"  href="?fd=admin&page=showtb_activity_new">กิจกรรมทั้งหมด</a>            </li>
+              <a class="nav-link"  href="?fd=admin&page=showtb_activity_new">ข่าวสาร/กิจกรรมทั้งหมด</a>            </li>
             <li class="nav-item">
               <a class="nav-link" href="?fd=admin&page=addtb_member">สมัครกิจกรรม กศน.</a>            </li>
             <li class="nav-item">
@@ -153,6 +154,8 @@
     </span>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="js/DataTables/datatables.min.js"></script>
+    <script src="vendor/lightbox2/src/js/lightbox.js"></script>
+
 </body>
 
 </html>

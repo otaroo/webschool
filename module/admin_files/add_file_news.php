@@ -5,7 +5,7 @@
  
       <ol class="breadcrumb">
                             <li class="active">
-  <h2>จัดการรูปภาพข่าวประชาสัมพันธ์</h2>
+  <h2>จัดการรูปภาพข่าวประชาสัมพันธ์/กิจกรรมของกศน.</h2>
   </li>
   </ol>
    <form name="frm" id="frm" action="#"  method="post" onsubmit="return checkdata();" enctype="multipart/form-data">

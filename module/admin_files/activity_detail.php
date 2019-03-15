@@ -48,19 +48,23 @@
             </style>
             <!-- Preview Image -->
             <!-- <img class="img-fluid rounded" src="http://placehold.it/900x300" alt=""> -->
-            <img src="<?php echo $url_img;?>" style=" width: 100%" />
+
+            <a href="<?php echo $url_img;?>" data-lightbox="image-1" data-title="My caption"> 
+                <img src="<?php echo $url_img;?>"
+                    style=" width: 100%" />
+            </a>
             <hr>
 
             <!-- Post Content -->
             <p class="lead">
                 <? echo $fd['act_des']?>
             </p>
-           
+
             <a type="button" id="btn_reg" href="?fd=admin&page=addtb_member&id_activity=<? echo  $id_activity; ?>"
                 class="btn btn-primary">สมัคร</a>
             <label id="err9" class="err"></label>
             <hr>
-           
+
 
 
         </div>
@@ -119,7 +123,7 @@
         <!-- /.row -->
         <div class="row">
             <div class="col-12">
-            <div id="showPhoto"> </div>
+                <div id="showPhoto"> </div>
             </div>
         </div>
     </div>
