@@ -25,7 +25,10 @@ if(is_dir($dir_l)){
      
      
       <div class="col-4" style=" text-align:center; padding:3px;" >
+      <a href="<?php echo $url_img;?>" data-lightbox="image-1" data-title="My caption"> 
         <img src="<?php echo $url_img;?>" style="width:100%; "  class=" rounded">
+      </a>
+        
       
       </div>
      

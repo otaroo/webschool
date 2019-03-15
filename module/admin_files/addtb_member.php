@@ -244,7 +244,7 @@ Download Code On : developers.khontermfan.com
 				success: function (data) {
 					//alert(data);
 					if (data.trim() == '1') {
-						$("#status_save").html('<font color=green>บันทึกข้อมูลเรียบร้อยแล้วค่ะ...</font><br>');
+						$("#status_save").html('<font color=green>กรุณาตรวจสอบข้อมูลให้เรียบร้อยก่อนกดตกลงนะค่ะ...</font><br>');
 						setTimeout(function () {
 							location = '?fd=admin&page=showtb_member&act_id='+$("#act_id").val();
 						}, 3000);

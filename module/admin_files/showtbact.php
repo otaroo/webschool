@@ -22,7 +22,8 @@ if(!isset($_SESSION['Status']))
 <script src="http://sogddt.vinhphuc.gov.vn/ResourcesList/jquery.tablePagination.0.5.js"></script>
 <link rel="stylesheet" href="css/pagation-style.css">
 <link rel="stylesheet" href="css/page-style.css">
-   
+
+  
   
 <div class="dropdown">
   <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -36,8 +37,7 @@ if(!isset($_SESSION['Status']))
 
 
 
-
-<h2><b>ชื่อกิจกรรม</b></h2>
+<h2 align="center"><b>รายชื่อของกิจกรรม</b></h2>
 <div class="w3-row content_box"><?php
 	require_once("class/DatetimeFormat.class.php");
 	$dt = new DatetimeFormat();

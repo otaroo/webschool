@@ -8,7 +8,7 @@
       
         <!-- Post Content Column -->
         <div class="col-lg-8">
-		<input type="hidden" id="act_id" value="<? echo $fd['id_news']?>">
+		<input type="hidden" id="id_news" value="<? echo $fd['id_news']?>">
             <!-- Title -->
             <!-- Title -->
             <h1 class="mt-4"> ข่าว:  <? echo $fd['title_news'];?></h1>
@@ -105,8 +105,82 @@
         </div>
 
     </div>
+    </div>
     <!-- /.row -->
-    
-</div>
 
-   
+    <div class="row">
+            <div class="col-12">
+                <div id="showPhoto"> </div>
+            </div>
+        </div>
+    </div>
+    <!-- /.container -->
+    
+    <<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $.get("module/user_files/checkActCount.php", {
+                act_id: $('#act_id').val()
+            }, function (data) {
+                var arr = data.split("|");
+                console.log(arr);
+
+                if (parseInt(arr[1]) >= parseInt(arr[0])) {
+                    $('#btn_reg').hide();
+                    $("#err9").html('กิจกรรมนี้คนสมัครเต็มแล้ว');
+
+                    return false
+
+                } else {
+                    $('#btn_reg').show();
+                    $("#err9").html('');
+
+                }
+
+                if (diffDate(arr[2]) < 0) {
+                    $('#btn_reg').hide();
+                    $("#err9").html('กิจกรรมนี้หมดเวลารับสมัครแล้ว');
+                    return false
+                } else {
+                    $('#btn_reg').show();
+                    $("#err9").html('');
+
+                }
+            });
+
+            function diffDate(date1) {
+                var date_act = new Date(date1)
+                var date_now = new Date(Date.now())
+                var date = (date_act - date_now);
+                var one_day = 1000 * 60 * 60 * 24;
+                return Math.round(date / one_day);
+
+            }
+
+            var id_news = $('#id_news').val();
+            var url = "module/admin_files/getpho_news.php";
+            $.post(url, {
+                id_news: id_news
+            }, function (data) {
+                //alert(data);
+                setTimeout(function () {
+                    $("#showPhoto").html(data);
+                    // $(".path_img").hide();
+                    // $(".del_img").click(function () {
+                    //     if (confirm("คุณต้องการลบภาพนี้ใช่หรือไม่")) {
+                    //         var del_file = $(this).parent().find(".path_img").html();
+                    //         del_file = "../../" + del_file;
+                    //         var url_img = "module/admin_files/del_file.php";
+
+                    //         $.post(url_img, {
+                    //             del_file: del_file
+                    //         }, function (data) {
+                    //             // alert(data);
+                    //             location.reload();
+                    //         });
+                    //     }
+                    // });
+                }, 1000);
+            });
+        });
+    </script>

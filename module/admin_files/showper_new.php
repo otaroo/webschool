@@ -26,7 +26,7 @@ Download Code On : developers.khontermfan.com
 			      <tr>
 				 	
 				 	<th>ชื่อบุคลากร  </th>
-                    <th>ดำรงตำแหน่ง  </th>
+          <th>ดำรงตำแหน่ง  </th>
 				 	<th>ตั้งแต่  ค.ศ </th>
 				 	<th>พ้นจากตำแหน่ง  </th>
 		</tr>
@@ -39,7 +39,7 @@ Download Code On : developers.khontermfan.com
 		?><tr>
 					
 					<td><?php echo $fd2['person_name'];?></td>
-                    <td><?php echo $fd2['person_pos'];?></td>
+          <td><?php echo $fd2['person_pos'];?></td>
 					<td><?php echo $fd2['person_since'];?></td>
 					<td><?php echo $fd2['person_pos1'];?></td>
 		  	</tr>

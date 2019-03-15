@@ -17,7 +17,7 @@
     $qess=$db->query($sql);	
     while($fd=$qess->fetch_assoc()){	?>
     <div class="col-4">
-      <div class="card text-center" style="width: 18rem;">
+      <div class="card text-center" style="width: 16rem;">
         <img class="card-img-top" src="img/user/<? echo $fd['personnel_img']?>" alt="Card image cap">
         <div class="card-body">
           <h5 class="card-title">
@@ -40,7 +40,7 @@
     $qess=$db->query($sql);	
     while($fd=$qess->fetch_assoc()){	?>
     <div class="col-4 ">
-    <div class="card text-center" style="width: 18rem;">
+    <div class="card text-center" style="width: 16rem;">
     <img class="card-img-top" src="img/user/<? echo $fd['personnel_img']?>" alt="Card image cap">
         <div class="card-body">
           <h5 class="card-title">
@@ -63,7 +63,7 @@
     $qess=$db->query($sql);	
     while($fd=$qess->fetch_assoc()){	?>
     <div class="col-4 ">
-    <div class="card text-center" style="width: 18rem;">
+    <div class="card text-center" style="width: 16rem;">
     <img class="card-img-top" src="img/user/<? echo $fd['personnel_img']?>" alt="Card image cap">
         <div class="card-body">
           <h5 class="card-title">
@@ -86,7 +86,7 @@
     $qess=$db->query($sql);	
     while($fd=$qess->fetch_assoc()){	?>
     <div class="col-4 ">
-    <div class="card text-center" style="width: 18rem;">
+    <div class="card text-center" style="width: 16rem;">
     <img class="card-img-top" src="img/user/<? echo $fd['personnel_img']?>" alt="Card image cap">
         <div class="card-body">
           <h5 class="card-title">
@@ -110,7 +110,7 @@
     $qess=$db->query($sql);	
     while($fd=$qess->fetch_assoc()){	?>
     <div class="col-4 ">
-    <div class="card text-center" style="width: 18rem;">
+    <div class="card text-center" style="width: 16rem;">
     <img class="card-img-top" src="img/user/<? echo $fd['personnel_img']?>" alt="Card image cap">
         <div class="card-body">
           <h5 class="card-title">

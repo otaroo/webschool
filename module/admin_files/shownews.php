@@ -1,3 +1,24 @@
+<?php 
+if(!isset($_SESSION['Status']))
+{
+	echo "Please Login!";
+	exit();
+}	
+
+
+if(!isset($_SESSION['Status']))
+{
+	echo "This page for Admin only!";
+	exit();
+}	
+?>
+
+
+
+
+
+
+
 <?php /*
 Create By:PK Model
 Generate Code By :Mr.Thanawat Kaewwongkhieo
@@ -10,7 +31,7 @@ Download Code On : developers.khontermfan.com
 <link rel="stylesheet" href="css/page-style.css">
 <style type="text/css">
 	.style1 {
-		font-size: 24px;
+		font-size: 36px;
 		font-weight: bold;
 	}
 </style>
@@ -66,7 +87,7 @@ Download Code On : developers.khontermfan.com
 					<td>
 						<?php echo $fd2['description_news'];?>
 					</td>
-					<td><a href='?fd=admin&page=add_file_news&act_id=<?php echo $fd2[' id_news'];?>'>รูปภาพ </a></td>
+					 <td><a href='?fd=admin&page=add_file_img&id_news=<?php echo $fd2['id_news'];?>'> <i class="fas fa-images"></i>   </a></td>
 					<td><a href='?fd=admin&page=editnews&id_news=<?php echo $fd2['id_news'];?>'>  <i class="fas fa-edit"></i>  </a></td>
 					<td> <span class ="id_news"><?php echo $fd2['id_news'];?></span> <i class="fas fa-trash-alt picdel"></i></td> 
 					

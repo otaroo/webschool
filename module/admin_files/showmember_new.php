@@ -4,7 +4,7 @@
 <link rel="stylesheet" href="css/page-style.css">
 <style type="text/css">
 	.style1 {
-		font-size: 24px;
+		font-size: 36px;
 		font-weight: bold;
 	}
 </style>
@@ -84,15 +84,16 @@
 						<th>ลำดับ </th>
 						<th>ชื่อผู้สมัคร </th>
 						<th>เบอร์โทร </th>
-						<th>เลขบัตรประชาชน </th>
+						
 						<th>เพศ </th>
 						<th>ลบ </th>
+                        
 					</tr>
 				</thead>
 				<tbody>
 				</tbody>
 			</table>
-		</div>
+           
 	</div>
 	<div class="row">
 		<div class="col-12 text-center">
@@ -193,9 +194,7 @@
 				{
 					"data": "mem_tel"
 				},
-				{
-					"data": "mem_card"
-				},
+				
 				{
 					"data": "mem_sex",
 					"render": function (data) {
@@ -213,9 +212,9 @@
 					"data": null,
 					"render": function (data) {
 						
-						return '<span class="mem_id">' +
-							'<?php echo $fd2["mem_id"];?></span><img class="picdel" src="img/del.png" height="25" width="25">'
-					}
+						return '<span class="mem_id">' +data.mem_id+
+							'</span><img class="picdel" src="img/del.png" height="25" width="25">'
+					}  
 				},
 
 			],
@@ -231,7 +230,7 @@
 							mem_id: mem_id
 						}, function (data) {
 							alert(data);
-							location.reload();
+							table_mem.ajax.reload();
 						});
 					}
 				});

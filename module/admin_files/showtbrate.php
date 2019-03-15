@@ -87,6 +87,7 @@ for($l=1;$l<=10;$l++){
 	$arr_act_count[$l][3]=0;
 }
 $count_act = $qess2->num_rows;
+$count_act = ($count_act!=0)?$count_act:1;
 while($fd2=$qess2->fetch_assoc()){
 	$arr_act_count[1][$fd2['r1']]+=1;
 	$arr_act_count[2][$fd2['r2']]+=1;
@@ -167,9 +168,9 @@ $act_avg_all =0;
 							<?php
 $t = number_format(($act_avg_all/10),2,".",",");
 
-if ($t < "1") {
+if ($t < "1.59") {
     echo "น้อย";
-} elseif ($t < "2.60") {
+} elseif ($t < "2.59") {
     echo "ปานกลาง";
 } else {
     echo "มาก";
