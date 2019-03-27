@@ -1,4 +1,7 @@
 <?php
+
+
+
 		ob_start();
 		@session_start();
 		include("config.php");
@@ -10,7 +13,8 @@
 
 <head>
   <title>กศน.ตำบลนาโบสถ์</title>
-  <meta charset="utf-8"><script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <meta charset="utf-8">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Bootstrap core CSS -->
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -19,33 +23,38 @@
   <link href="css/modern-business.css" rel="stylesheet">
 
   <link rel="stylesheet" href="js/DataTables/datatables.min.css">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+    integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
   <style>
-    /* Remove the navbar's default margin-bottom and rounded borders */ 
+    /* Remove the navbar's default margin-bottom and rounded borders */
     .navbar {
       margin-bottom: 0;
       border-radius: 0;
     }
-    
+
     /* Add a gray background color and some padding to the footer */
     footer {
       background-color: #228B22;
       padding: 25px;
     }
-    
-  .carousel-inner img {
-      width: 100%; /* Set width to 100% */
-      margin: auto;
-      min-height:200px;
-  }
 
-  /* Hide the carousel text when the screen is less than 600 pixels wide */
-  @media (max-width: 600px) {
-    .carousel-caption {
-      display: none; 
+    .carousel-inner img {
+      width: 100%;
+      /* Set width to 100% */
+      margin: auto;
+      min-height: 200px;
     }
-  }
-  .style1 {font-size: 36px}
+
+    /* Hide the carousel text when the screen is less than 600 pixels wide */
+    @media (max-width: 600px) {
+      .carousel-caption {
+        display: none;
+      }
+    }
+
+    .style1 {
+      font-size: 36px
+    }
   </style>
 </head>
 
@@ -55,8 +64,9 @@
   <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top">
     <div class="container">
       <a href="#" class="navbar-brand style1"><strong>กศน.ตำบลนาโบสถ์</strong></a>
-      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive"
-        aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+        data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
+        aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarResponsive">
@@ -72,14 +82,14 @@
               <a class="dropdown-item" href="?fd=admin&page=addperson">ทำเนียบผู้บริหาร</a>
             </div>
           </li>
-		  <li class="nav-item">
+          <li class="nav-item">
             <a class="nav-link" href="?fd=admin&page=showtbact">โชว์กิจกรรม</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="?fd=admin&page=addtbact">เพิ่มกิจกรรม</a>
           </li>
-			
-         
+
+
           <li class="nav-item">
             <a class="nav-link" href="?fd=admin&page=addnews">ข่าว</a>
           </li>
@@ -89,10 +99,20 @@
           <li class="nav-item">
             <a class="nav-link" href="?fd=admin&page=showtbrate">ดูผลการประเมิน</a>
           </li>
-         
+
           <li class="nav-item">
-            <a class="nav-link" href="?fd=admin&page=logout">ออกจากระบบนะจ๊ะ</a>
+            <a class="nav-link" href="?fd=admin&page=logout">ออกจากระบบ</a>
           </li>
+          <? 
+        $user = $_SESSION['UserID'];
+        $sql ="SELECT * FROM tb_admin WHERE member_user = '$user'";  
+         $qess=$db->query($sql);	
+         while($fd=$qess->fetch_assoc()){ ?>
+          <li class="nav-item">
+            <p class="nav-link"><?php echo $fd['member_name'];?></p>
+          </li>
+          <?}?>
+
         </ul>
       </div>
     </div>
@@ -164,7 +184,7 @@
     <!-- /.container -->
   </footer>
   <!-- Bootstrap core JavaScript -->
- 
+
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="js/DataTables/datatables.min.js"></script>
 
