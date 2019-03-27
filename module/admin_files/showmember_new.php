@@ -23,8 +23,10 @@
 					$qess2=$db->query($sql2);	
 					while($fd2=$qess2->fetch_assoc()){	
 				?>
-				<option value="<?php echo $fd2['act_id'];?>">
-					<?php echo $fd2['act_name'];?>
+				<option value="<?php echo $fd2['act_id'];
+				$id_act = $fd2['act_id'];
+				?>">
+					<?php echo $fd2['act_name']?>
 				</option>
 				<?php  } ?>
 			</select>
@@ -91,9 +93,13 @@
 					</tr>
 				</thead>
 				<tbody>
+                
 				</tbody>
 			</table>
-           
+           <td>
+  
+  
+		 <center>  <td><a id="pdf" href='?fd=admin&page=pdf&act_id=<?php echo $id_act;?>'> <i class="btn btn-warning fa fa-print"  style="width:30%">พิมพ์ใบรายชื่อ</i>  </a></td></center>
 	</div>
 	<div class="row">
 		<div class="col-12 text-center">
@@ -117,6 +123,7 @@
 			act_id = value;
 			table_mem.ajax.reload();
 			count_mem(act_id);
+			$('#pdf').attr('href','?fd=admin&page=pdf&act_id='+act_id)
 		});
 
 		function count_mem(params) {

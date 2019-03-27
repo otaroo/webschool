@@ -136,18 +136,17 @@ $tr3 = '
 table {
     
     text-align: center;
-    font-size: 14pt;
+    font-size: 12pt;
 	border: 7mm solid aqua;
 	border-collapse: collapse;
 }
 td {
-	padding : 7px;
+	padding : 5px;
 }
 </style>
-
-
- <h1>การสรุปผลประเมินกิจกรรม</h1>
- <h2>'.$act_name.'<h2>
+<div align="center"><img src="img/icon.png" width="70" height="70" /></div>
+ <h1><div align="center">การสรุปผลประเมินกิจกรรม</div></h1>
+ <h2><div align="center">'.$act_name.'</div><h2>
  <table border="1" align="center">
   <thead>
   <tr align="center">

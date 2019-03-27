@@ -5,7 +5,16 @@ ob_clean();
 require_once dirname(__DIR__, 2). '\vendor\autoload.php';
 // echo __DIR__;
  require_once dirname(__DIR__, 2).'\config.php';
+
+
+$act_name='';
+$sql2 ="select * from tb_activity where act_id='$act_id'";  
+$qess2=$db->query($sql2);	
+while($fd2=$qess2->fetch_assoc()){	
+    $act_name = $fd2['act_name'];
+}
 $html = '
+
 <style>
 
 table {
@@ -18,8 +27,10 @@ table {
 
 </style>
 <div class="container">
+<div align="center"><img src="img/icon.png" width="70" height="70" /></div>
 
-<h2 align="center">รายชื่อผู้เข้าร่วมกิจกรรม</h2> 
+<h2 align="center">รายชื่อผู้เข้าร่วมกิจกรรม '.$act_name.'</h2> 
+
 <table border="1" width=600px height=90% align="center">
 
 <tbody><tr><td width=174><strong>ชื่อ-นามสกุล</strong></td><td width=174><strong>เบอร์โทร</strong></td><td width=174><strong>ลงชื่อ</strong></td></tr>'; 

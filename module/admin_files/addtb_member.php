@@ -47,11 +47,11 @@ Download Code On : developers.khontermfan.com
 			<input type="text" autocomplete="off" class="form-control" id="mem_name" name="mem_name">
 		</div>
 		<div class="form-group"><label for="mem_tel">เบอร์โทร:</label><label id="err4" class="err"></label>
-			<input type="tex" autocomplete="off" Maxlength="10" class="form-control" id="mem_tel" name="mem_tel" />
+			<input type="number" autocomplete="off" Maxlength="10" class="form-control" id="mem_tel" name="mem_tel" />
 		</div>
 		<div class="form-group"><label for="mem_card">เลขบัตรประชาชน:</label><label id="usercheck"></label><label id="err8"
 			 class="err"></label>
-			<input type="tex" autocomplete="off" Maxlength="13" class="form-control" id="mem_card" name="mem_card">
+			<input type="number" autocomplete="off" Maxlength="13" class="form-control" id="mem_card" name="mem_card">
 
 		</div>
 		<div class="form-group"><label for="mem_sex">เพศ:</label><label id="err7" class="err"></label>

@@ -1,19 +1,4 @@
 
-<?php 
-if(!isset($_SESSION['Status']))
-{
-	echo "Please Login!";
-	exit();
-}	
-
-
-if(!isset($_SESSION['Status']))
-{
-	echo "This page for Admin only!";
-	exit();
-}	
-?>
-
 
 
 

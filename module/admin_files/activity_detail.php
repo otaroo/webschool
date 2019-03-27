@@ -109,11 +109,10 @@
 
                 <h5 class="card-header">ช่องทางการติดต่อ</h5>
                 <div class="card-body">
-                    <p><img src="img/icon/icontexto-user-web20-facebook_icon-icons.com_55373.png" width="48" height="48" />facebook:
-                        กศน. ตำบลนาโบสถ์ นาโบสถ์ </p>
-                    <p><img src="img/icon/Email_30017.png" width="48" height="48" />wangchao.tak@hotmail.com </p>
-                    <p><img src="img/icon/linphone_phonecall_linphone_6086.png" width="48" height="48" />055 - 593013 
-                    </p>
+                    <p><img src="img/icon/icontexto-user-web20-facebook_icon-icons.com_55373.png" width="48" height="48" /><a href="https://web.facebook.com/profile.php?id=100021403591840&amp;epa=SEARCH_BOX">facebook:
+                        กศน. ตำบลนาโบสถ์ นาโบสถ์ </a></p>
+                  <p><img src="img/icon/Email_30017.png" width="48" height="48" />wangchao.tak@hotmail.com </p>
+                    <p><img src="img/icon/linphone_phonecall_linphone_6086.png" width="48" height="48" />087-1986902</p>
                     <p>เบอร์โทรสาร :  055-593013</p>
                 </div>
 

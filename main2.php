@@ -14,9 +14,12 @@ require_once "config.php";
     <!-- Marketing Icons Section -->
     <div class="row">
         <?php
-    $sql ="SELECT * FROM tb_new order by id_news  limit 6 ";  
+    $sql ="SELECT * FROM tb_new order by id_news  desc";  
     $qess=$db->query($sql);	
     while($fd=$qess->fetch_assoc()){	?>
+
+
+
 
         <div class="col-lg-4 mb-4">
             <div class="card h-100">
