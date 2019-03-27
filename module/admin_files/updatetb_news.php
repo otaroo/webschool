@@ -1,14 +1,10 @@
-
-
-
-
-
 <?php /*
 Create By:PK Model
 Generate Code By :Mr.Thanawat Kaewwongkhieo
 Date Create : 2018-12-01 14:25:22
 Download Code On : developers.khontermfan.com
-*/?> <?php
+*/?>
+<?php
 		require_once "../../config.php";
 			
 					$id = $_POST['id'];
@@ -26,7 +22,7 @@ Download Code On : developers.khontermfan.com
 						$lastname=strtolower($array_last [$c]);
 						$distination = $dir."/".$id.".".$lastname;
 	 					@copy($source,$distination);
-  		 	  $sql_update = "update tb_news set title='$title',description='$description',publish_time='.".$lastname',new_files='$new_files' where id='$id' ";
+						 $sql_update = "update tb_news set title='$title',description='$description',publish_time='$lastname',new_files='$new_files' where id='$id' ";
 			  $qqes = $db->query($sql_update);
 			 if($qqes){
 				echo "1";
