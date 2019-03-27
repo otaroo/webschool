@@ -1,18 +1,4 @@
 
-<?php 
-if(!isset($_SESSION['Status']))
-{
-	echo "Please Login!";
-	exit();
-}	
-
-
-if(!isset($_SESSION['Status']))
-{
-	echo "This page for Admin only!";
-	exit();
-}	
-?>
 
 
 
@@ -29,7 +15,7 @@ Download Code On : developers.khontermfan.com
 					$title_news = $_POST['title_news'];
 					$description_news = $_POST['description_news'];
 			
-  		 	  $sql_update = "update tb_new set title_news='$title_news',description_news='$description_news' where id_news='$id_news' ";
+  		 	  $sql_update = "UPDATE tb_new SET title_news='$title_news',description_news='$description_news' WHERE  id_news='$id_news' ";
 			  $qqes = $db->query($sql_update);
 			 if($qqes){
 				echo "1";
