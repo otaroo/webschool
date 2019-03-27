@@ -107,19 +107,19 @@
       </ol>
       <div class="carousel-inner" role="listbox">
         <!-- Slide One - Set the background image for this slide in the line below -->
-        <div class="carousel-item active" style="background-image: url('img/wed.png')">
+        <div class="carousel-item active" style="background-image: url('img/001.jpg')">
           <div class="carousel-caption d-none d-md-block">
 
           </div>
         </div>
         <!-- Slide Two - Set the background image for this slide in the line below -->
-        <div class="carousel-item" style="background-image: url('img/add.png')">
+        <div class="carousel-item" style="background-image: url('img/002.jpg')">
           <div class="carousel-caption d-none d-md-block">
 
           </div>
         </div>
         <!-- Slide Three - Set the background image for this slide in the line below -->
-        <div class="carousel-item" style="background-image: url('img/af.png')">
+        <div class="carousel-item" style="background-image: url('img/003.jpg')">
           <div class="carousel-caption d-none d-md-block">
 
           </div>
@@ -159,7 +159,7 @@
 
   <footer class="py-5 bg-dark">
     <div class="container">
-      <p class="m-0 text-center text-white">กศน.ตำบลนาโบสถ์ อำเภอวังเจ้า จังหวัดตาก 63000 โทร 089-8337446</p>
+      <p class="m-0 text-center text-white">กศน.ตำบลนาโบสถ์ อำเภอวังเจ้า จังหวัดตาก 63000 โทร 087-1986902</p>
     </div>
     <!-- /.container -->
   </footer>

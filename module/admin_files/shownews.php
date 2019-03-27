@@ -35,17 +35,13 @@ Download Code On : developers.khontermfan.com
 		font-weight: bold;
 	}
 </style>
-<div class="dropdown">
-	<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
-	 aria-haspopup="true" aria-expanded="false">
-		คลิกเพิ่มข่าว
-	</button>
-	<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-		<a class="dropdown-item" href="?fd=admin&page=addnews">เพิ่มข่าว</a>
 
-	</div>
-</div>
 
+<ul class="nav justify-content-end">
+  <li class="nav-item">
+   <h3> <a class="nav-link active" href="?fd=admin&page=addnews">เพิ่มข่าวประชาสัมพันธ์</a></h3>
+  </li>
+</ul>
 
 
 <h2><b>ข่าวประชาสัมพันธ์</b></h2>
@@ -72,7 +68,7 @@ Download Code On : developers.khontermfan.com
 			</thead>
 			<tbody>
 				<?php 
-			$sql2 ="select * from tb_new where 1  order by title_news asc";  
+			$sql2 ="select * from tb_new where 1  order by id_news asc";  
 			$qess2=$db->query($sql2);	
 			while($fd2=$qess2->fetch_assoc()){	
 			

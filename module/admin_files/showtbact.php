@@ -25,16 +25,11 @@ if(!isset($_SESSION['Status']))
 
   
   
-<div class="dropdown">
-  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-   คลิกเพิ่มกิจกรรม
-  </button>
-  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-    <a class="dropdown-item" href="?fd=admin&page=addtbact">เพิ่มกิจกรรม</a>
-    
-  </div>
-</div>
-
+<ul class="nav justify-content-end">
+  <li class="nav-item">
+   <h3> <a class="nav-link active" href="?fd=admin&page=addtbact">เพิ่มกิจกรรม</a></h3>
+  </li>
+</ul>
 
 
 <h2 align="center"><b>รายชื่อของกิจกรรม</b></h2>
@@ -50,7 +45,7 @@ if(!isset($_SESSION['Status']))
    			<table id='tblSearch' width='90%' align='center' class='tblSearch table table-bordered table-hover'>
 			    <thead>
 			      <tr>
-				 	
+					<th>ลำดับข่าว </th>
 				 	<th>ชื่อกิจกรรม  </th>
 				 	<th>วันที่กิจกรรม  </th>
 				 	<th>รายละเอียด  </th>
@@ -63,12 +58,12 @@ if(!isset($_SESSION['Status']))
 		</tr>
 		</thead>
 		<tbody><?php 
-			$sql2 ="select * from  tb_activity where 1  order by act_name asc";  
+			$sql2 ="select * from  tb_activity where 1  order by act_id asc";  
 			$qess2=$db->query($sql2);	
 			while($fd2=$qess2->fetch_assoc()){	
 			
 		?><tr>
-					
+					<td><?php echo $fd2['act_id'];?></td>
 					<td><?php echo $fd2['act_name'];?></td>
 					
 					<td><?php echo $dt->DtoLDthai($fd2['act_date']);?></td>

@@ -65,6 +65,7 @@
         <a href="index.php" class="navbar-brand style1">กศน.ตำบลนาโบสถ์</a>
 <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>        </button>
+          
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
           <li class="nav-item dropdown">
@@ -101,15 +102,15 @@
         </ol>
         <div class="carousel-inner" role="listbox">
           <!-- Slide One - Set the background image for this slide in the line below -->
-          <div class="carousel-item active" style="background-image: url('img/46245.jpg')">
+          <div class="carousel-item active" style="background-image: url('img/001.jpg')">
             <div class="carousel-caption d-none d-md-block">            </div>
           </div>
           <!-- Slide Two - Set the background image for this slide in the line below -->
-          <div class="carousel-item" style="background-image: url('img/46783.jpg')">
+          <div class="carousel-item" style="background-image: url('img/002.jpg')">
             <div class="carousel-caption d-none d-md-block">            </div>
           </div>
           <!-- Slide Three - Set the background image for this slide in the line below -->
-          <div class="carousel-item" style="background-image: url('img/d.png')">
+          <div class="carousel-item" style="background-image: url('img/003.jpg')">
             <div class="carousel-caption d-none d-md-block">            </div>
           </div>
         </div>
@@ -143,7 +144,7 @@
 
   <footer class="py-5 bg-dark">
     <div class="container">
-      <p class="m-0 text-center text-white style2">กศน.ตำบลนาโบสถ์ อำเภอวังเจ้า จังหวัดตาก 63180 โทร 089-8337446</p>
+      <p class="m-0 text-center text-white style2">กศน.ตำบลนาโบสถ์ อำเภอวังเจ้า จังหวัดตาก 63180 โทร087-1986902</p>
     </div>
     <span class="style2">
     <!-- /.container -->

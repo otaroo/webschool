@@ -187,10 +187,21 @@ if ($t < "1.59") {
 					<tr>
 						<td colspan="5">
 							<p>จำนวนผู้ประเมิน
-								<?php echo $count_act;?> หน่อ</p>
+								<?php echo $count_act;?> คน</p>
 
-							<p>&nbsp;</p>
-						</td>
+
+
+						<center><a href='?fd=admin&page=pdf_rate&act_id=<?php
+$sql3 =" SELECT * FROM `tb_rate` where act_id = '$act_id' ";  
+$qess2=$db->query($sql3);
+$result;	
+$fd2=$qess2->fetch_assoc();
+echo $fd2['act_id'];
+
+?>'>  <i class="btn btn-warning fa fa-print"  style="width:30%">พิมพ์ใบสรุปการประเมิน</i>  </a></center>
+					  </td>
+                        
+                        
 					</tr>
 <!-- end tr -->					
 				</tbody>
