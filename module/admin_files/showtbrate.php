@@ -43,7 +43,8 @@ Download Code On : developers.khontermfan.com
 					while($fd2=$qess2->fetch_assoc()){	
 						$act_select = ($act_id==$fd2['act_id'])?"selected":"";
 				?>
-					<option value="?fd=admin&page=showtbrate&act_id=<?php echo $fd2['act_id'];?>" <?php echo $act_select;?>>
+					<option value="?fd=admin&page=showtbrate&act_id=<?php echo $fd2['act_id'];?>"
+						<?php echo $act_select;?>>
 						<?php echo $fd2['act_name'];?>
 					</option>
 					<?php  } ?>
@@ -114,7 +115,7 @@ while($fd2=$qess2->fetch_assoc()){
 ?>
 
 
-<!-- start tr -->
+					<!-- start tr -->
 					<tr>
 
 						<?php
@@ -154,14 +155,14 @@ $act_avg_all =0;
 							?>
 						</td>
 					</tr>
-<!-- end tr -->
+					<!-- end tr -->
 
 					<?php } ?>
 
 
 
 
-<!-- start tr -->
+					<!-- start tr -->
 					<tr>
 						<td colspan="3">สรุผลการประเมินกิจกรรม</td>
 						<td>
@@ -181,9 +182,9 @@ if ($t < "1.59") {
 							<?php echo number_format(($act_avg_all/10),2,".",",");?>
 						</td>
 					</tr>
-<!-- end tr -->
+					<!-- end tr -->
 
-<!-- start tr -->
+					<!-- start tr -->
 					<tr>
 						<td colspan="5">
 							<p>จำนวนผู้ประเมิน
@@ -191,19 +192,19 @@ if ($t < "1.59") {
 
 
 
-						<center><a href='?fd=admin&page=pdf_rate&act_id=<?php
+							<center><a href='?fd=admin&page=pdf_rate&act_id=<?php
 $sql3 =" SELECT * FROM `tb_rate` where act_id = '$act_id' ";  
 $qess2=$db->query($sql3);
 $result;	
 $fd2=$qess2->fetch_assoc();
 echo $fd2['act_id'];
 
-?>'>  <i class="btn btn-warning fa fa-print"  style="width:30%">พิมพ์ใบสรุปการประเมิน</i>  </a></center>
-					  </td>
-                        
-                        
+?>'> <i class="btn btn-warning fa fa-print" style="width:30%">พิมพ์ใบสรุปการประเมิน</i> </a></center>
+						</td>
+
+
 					</tr>
-<!-- end tr -->					
+					<!-- end tr -->
 				</tbody>
 			</table>
 		</div>
@@ -294,9 +295,11 @@ echo $fd2['act_id'];
 					// });
 					result.push({
 						"name": '<b>รวม</b>',
-						"point": ((parseFloat(data['r1']) + parseFloat(data['r2']) + parseFloat(data['r3']) + parseFloat(data['r4']) +
+						"point": ((parseFloat(data['r1']) + parseFloat(data['r2']) +
+							parseFloat(data['r3']) + parseFloat(data['r4']) +
 							parseFloat(data['r5']) +
-							parseFloat(data['r6']) + parseFloat(data['r7']) + parseFloat(data['r8']) + parseFloat(data['r9']) +
+							parseFloat(data['r6']) + parseFloat(data['r7']) +
+							parseFloat(data['r8']) + parseFloat(data['r9']) +
 							parseFloat(data['r10'])) / 10).toFixed(2)
 					});
 					result.push({

@@ -19,29 +19,26 @@ require_once("class/DatetimeFormat.class.php");
 	}
 </style>
 <div class="container-fluid">
-
-	<h2 class="style1">การประเมินกิจกรรม</h2>
+	<br>
+	<center>
+		<h2 class="style1">การประเมินกิจกรรม</h2>
+	</center>
 	<div class="w3-row content_box">
 		<?php
 	
 	?>
-
+		<br>
 		<div class='datagrid'>
-			<table id='tblSearch' width='51%' align='center' class='tblSearch table table-bordered table-hover'>
+			<table class="table table-hover">
 				<thead>
 					<tr>
 
-						<th>
-							<div align="center">ชื่อกิจกรรม </div>
-						</th>
-						<th>
-							<div align="center">วันที่กิจกรรม </div>
-						</th>
-						<th>
-							<div align="center">ประเมินกิจกรรม </div>
-						</th>
+						<th scope="col">ชื่อกิจกรรม</th>
+						<th scope="col">วันที่กิจกรรม</th>
+						<th scope="col">ประเมินกิจกรรม</th>
 					</tr>
 				</thead>
+
 				<tbody>
 					<?php 
 			$sql2 ="select * from tb_activity where 1  order by act_date desc ";  
@@ -52,18 +49,18 @@ require_once("class/DatetimeFormat.class.php");
 						<td>
 							<?php echo $fd2['act_name'];?>
 						</td>
-						<td>  
-						<div align="center"><?php echo $dt->DtoLDthai($fd2['act_date']); ?></div>	
+						<td>
+							<?php echo $dt->DtoLDthai($fd2['act_date']); ?>
 						</td>
 
 						<td>
-						<? if($fd2['rate_date'] > date("Y-m-d")){ ?>
-							<div align="center"><a href='?fd=admin&page=tbrate01&act_id=<?php echo $fd2['act_id'];?>'>ประเมินกิจกรรม </a></div>
-						<? }else{ ?>
-							<div align="center" style="color:red;">หมดเวลาประเมิน</div>
-						<? } ?>
+							<? if($fd2['rate_date'] > date("Y-m-d")){ ?>
+							<a href='?fd=admin&page=tbrate01&act_id=<?php echo $fd2['act_id'];?>'>ประเมินกิจกรรม </a>
+							<? }else{ ?>
+							<div style="color:red;">หมดเวลาประเมิน</div>
+							<? } ?>
 
-							
+
 						</td>
 					</tr>
 					<?php  } ?>

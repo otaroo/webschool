@@ -7,7 +7,7 @@
 <title>ประวัติความเป็นมา</title>
 <style type="text/css">
 <!--
-.style1 {font-size: 36px}
+.style1 {font-size: 24px}
 .style4 {font-weight: bold; font-size: 36px; }
 -->
 </style>
@@ -16,7 +16,7 @@
   <div align="center">
     <table width="1105" border="0" cellspacing="0" cellpadding="0">
       <tr>
-      
+      <br>
         <td bgcolor="#99CC66"><div align="center" class="style4">ประวัติความเป็นมาของสถานศึกษา</div></td>
       </tr>
       <tr>

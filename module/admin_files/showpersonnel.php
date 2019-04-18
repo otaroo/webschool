@@ -14,15 +14,13 @@ Download Code On : developers.khontermfan.com
 <link rel="stylesheet" href="css/pagation-style.css">
 <link rel="stylesheet" href="css/page-style.css">
 <div class="container-fluid">
-<h2><b>ข้อมูลคณะทำงาน</b></h2>
+<br>
+<center><h2><b>ข้อมูลคณะทำงาน</b></h2></center>
 <div class="w3-row content_box"><?php
 	require_once("class/DatetimeFormat.class.php");
 	$dt = new DatetimeFormat();
 	?>
-    	<p style="text-align:center;width:90%;">
-         <span style="font-weight:;">ค้นหา:</span> <input type="text" id="txtSearch" name="txtSearch" mgetShowTableaxlength="50" />&nbsp; 
-        <img id="imgSearch" src="img/del.png" alt="เคลียร์" title="เคลียร์" style="width:150px;width:14px;height:14px;">
-     </p>
+    	<br>
     	<div class='datagrid'>      
    			<table id='tblSearch' width='90%' align='center' class='tblSearch table table-bordered table-hover'>
 			    <thead>

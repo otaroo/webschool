@@ -3,17 +3,19 @@ Create By:PK Model
 Generate Code By :Mr.Thanawat Kaewwongkhieo
 Date Create : 2018-11-27 19:23:34
 Download Code On : developers.khontermfan.com
-*/?> <?php
+*/?> 
+<?php
 	session_start();
 	require_once "../../config.php";
 	$user_log = $_POST['member_user'];
 	$pass_log = $_POST['member_pass'];
 	
-	$pass_log = sha1($pass_log);
+	//$pass_log = sha1($pass_log);
 	
-    $sql ="select * from  tb_admin 
+    /*$sql ="select * from  tb_admin 
     where member_user='$user_log' 
-    and member_pass='$pass_log'";
+    and member_pass='$pass_log'";*/
+	$sql = "SELECT * FROM `tb_admin` WHERE `member_user` = '".$user_log."' AND `member_pass` = '".$pass_log."'";
 
 	$qqes=$db->query($sql);
 	if($qqes->num_rows>0){
@@ -31,3 +33,4 @@ Download Code On : developers.khontermfan.com
 	}else{
 		echo "0";
 	}
+	?>

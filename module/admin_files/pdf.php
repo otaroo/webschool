@@ -1,3 +1,4 @@
+
 <?
  $act_id = $_GET['act_id'];
 ob_clean();
@@ -7,11 +8,15 @@ require_once dirname(__DIR__, 2). '\vendor\autoload.php';
  require_once dirname(__DIR__, 2).'\config.php';
 
 
+
+
+
 $act_name='';
 $sql2 ="select * from tb_activity where act_id='$act_id'";  
 $qess2=$db->query($sql2);	
 while($fd2=$qess2->fetch_assoc()){	
     $act_name = $fd2['act_name'];
+	
 }
 $html = '
 
@@ -26,6 +31,7 @@ table {
 }
 
 </style>
+
 <div class="container">
 <div align="center"><img src="img/icon.png" width="70" height="70" /></div>
 
@@ -41,6 +47,7 @@ table {
 $sql2 ="select * from tb_member where act_id='$act_id'";  
 $qess2=$db->query($sql2);	
 while($fd2=$qess2->fetch_assoc()){	
+
     $html = $html.'<tr><td align="left">'.$fd2['mem_name'].'</td><td>'.$fd2['mem_tel'].'</td><td></td></tr>';
 }
 $html = $html.'</tbody></table>' ; 

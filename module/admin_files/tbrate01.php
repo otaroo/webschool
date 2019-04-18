@@ -102,6 +102,7 @@ require_once "config.php";
 
   </form>
 </div>
+<br>
 <script language="javascript">
   function checkEmpty() {
     var chk = true;

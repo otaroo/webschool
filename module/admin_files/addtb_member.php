@@ -1,6 +1,14 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
-
+<script language="JavaScript">
+	function chkNum(ele)
+	{
+	var vchar = String.fromCharCode(event.keyCode);
+	if (vchar<'0' || vchar>'9') return false;
+	ele.onKeyPress=vchar;
+	
+	}
+</script>
 <?php /*
 Create By:PK Model
 Generate Code By :Mr.Thanawat Kaewwongkhieo
@@ -47,11 +55,11 @@ Download Code On : developers.khontermfan.com
 			<input type="text" autocomplete="off" class="form-control" id="mem_name" name="mem_name">
 		</div>
 		<div class="form-group"><label for="mem_tel">เบอร์โทร:</label><label id="err4" class="err"></label>
-			<input type="number" autocomplete="off" Maxlength="10" class="form-control" id="mem_tel" name="mem_tel" />
+			<input type="text"  autocomplete="off" Maxlength="10" OnKeyPress="return chkNum(this)" class="form-control" id="mem_tel" name="mem_tel" />
 		</div>
 		<div class="form-group"><label for="mem_card">เลขบัตรประชาชน:</label><label id="usercheck"></label><label id="err8"
 			 class="err"></label>
-			<input type="number" autocomplete="off" Maxlength="13" class="form-control" id="mem_card" name="mem_card">
+			<input type="text" autocomplete="off" Maxlength="13" OnKeyPress="return chkNum(this)" class="form-control" id="mem_card" name="mem_card">
 
 		</div>
 		<div class="form-group"><label for="mem_sex">เพศ:</label><label id="err7" class="err"></label>

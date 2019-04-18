@@ -14,18 +14,16 @@ require_once "config.php";
     <!-- Marketing Icons Section -->
     <div class="row">
         <?php
-    $sql ="SELECT * FROM tb_new order by id_news  desc";  
+    $sql ="SELECT * FROM tb_new order by id_news   desc limit 3";  
     $qess=$db->query($sql);	
     while($fd=$qess->fetch_assoc()){	?>
 
 
-
-
         <div class="col-lg-4 mb-4">
             <div class="card h-100">
-            
-              <p>
-                <?php
+
+                <p>
+                    <?php
              $dir_url="img/news/".$fd['id_news']."/";
 
 				if(is_dir($dir_url)){
@@ -35,17 +33,18 @@ require_once "config.php";
 
 				}
             ?>
-                <img src="<?php echo $url_img;?>" style=" height:250px" width="340"/>
-                
-                
-                
-                
-                     <a href="index.php?fd=admin&page=new_detail&id_news=<?php echo $fd['id_news']; ?>"><img class="card-img-top" src="img/.jpg" alt="">
-                          </a></p>
-              <a href="index.php?fd=admin&page=new_detail&id_news=<?php echo $fd['id_news']; ?>">
-              <h4 class="card-header">
-                  <?php echo $fd['title_news'];  ?>              </h4>
-              </a>
+                    <img src="<?php echo $url_img;?>" style=" height:250px" width="340" />
+
+
+
+
+                    <a href="index.php?fd=admin&page=new_detail&id_news=<?php echo $fd['id_news']; ?>"><img
+                            class="card-img-top" src="img/.jpg" alt="">
+                    </a></p>
+                <a href="index.php?fd=admin&page=new_detail&id_news=<?php echo $fd['id_news']; ?>">
+                    <h4 class="card-header">
+                        <?php echo $fd['title_news'];  ?> </h4>
+                </a>
                 <!-- <div class="card-body">
 
                     <div class="card-footer">
@@ -53,7 +52,7 @@ require_once "config.php";
                     </div>
                 </div> -->
             </div>
-      </div>
+        </div>
         <?php } ?>
     </div>
     <!-- /.row  -->
@@ -70,8 +69,8 @@ require_once "config.php";
 
         <div class="col-lg-4 col-sm-6 portfolio-item">
             <div class="card h-100">
-             
-                    <?php
+
+                <?php
              $dir_url="img/news/".$fd['act_id']."/";
 
 				if(is_dir($dir_url)){
@@ -81,9 +80,9 @@ require_once "config.php";
 
 				}
             ?>
-                     <img src="<?php echo $url_img;?>" style=" height:300px"/>
+                <img src="<?php echo $url_img;?>" style=" height:300px" />
 
-              
+
                 <div class="card-body">
                     <h4 class="card-title">
                         <a href="#">
@@ -95,7 +94,8 @@ require_once "config.php";
 
                 </div>
                 <div class="card-footer">
-                    <a href="index.php?fd=admin&page=activity_detail&id_activity=<?php echo $fd['act_id'];?>" class="btn btn-primary">รายละเอียด</a>
+                    <a href="index.php?fd=admin&page=activity_detail&id_activity=<?php echo $fd['act_id'];?>"
+                        class="btn btn-primary">รายละเอียด</a>
                 </div>
             </div>
         </div>
@@ -110,14 +110,14 @@ require_once "config.php";
 
     <div class="row">
         <?php
-    $sql ="SELECT * FROM tb_activity WHERE act_date < now() order by act_date desc limit 10";  
+    $sql ="SELECT * FROM tb_activity WHERE act_date < now() order by act_date desc limit 3";  
     $qess=$db->query($sql);	
     while($fd=$qess->fetch_assoc()){	?>
 
         <div class="col-lg-4 col-sm-6 portfolio-item">
             <div class="card h-100">
-             
-                    <?php
+
+                <?php
              $dir_url="img/news/".$fd['act_id']."/";
 
 				if(is_dir($dir_url)){
@@ -127,9 +127,9 @@ require_once "config.php";
 
 				}
             ?>
-                     <img src="<?php echo $url_img;?>" style=" height:300px"/>
+                <img src="<?php echo $url_img;?>" style=" height:300px" />
 
-              
+
                 <div class="card-body">
                     <h4 class="card-title">
                         <a href="#">
@@ -141,7 +141,8 @@ require_once "config.php";
 
                 </div>
                 <div class="card-footer">
-                    <a href="index.php?fd=admin&page=activity_detail&id_activity=<?php echo $fd['act_id'];?>" class="btn btn-primary">รายละเอียด</a>
+                    <a href="index.php?fd=admin&page=activity_detail&id_activity=<?php echo $fd['act_id'];?>"
+                        class="btn btn-primary">รายละเอียด</a>
                 </div>
             </div>
         </div>

@@ -108,7 +108,7 @@ require_once "config.php";
 
     <div class="row">
         <?php
-    $sql ="SELECT * FROM tb_activity WHERE act_date < now() order by act_date desc limit 10";  
+    $sql ="SELECT * FROM tb_activity WHERE act_date < now() order by act_date desc ";  
     $qess=$db->query($sql);	
     while($fd=$qess->fetch_assoc()){	?>
 

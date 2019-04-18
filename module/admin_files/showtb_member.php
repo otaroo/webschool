@@ -12,9 +12,12 @@ Download Code On : developers.khontermfan.com
 	<html>
 
 	<head>
-
-
-		<h2><b>ข้อมูลการสมัคร</b></h2>
+	<br>
+<center>
+	<h3><div class="alert alert-primary" role="alert">
+  ข้อมูลการสมัครกิจกรรม
+</div></h3>
+</center>
 		<div class="w3-row content_box">
 			<?php
 	require_once("class/DatetimeFormat.class.php");
@@ -23,34 +26,30 @@ Download Code On : developers.khontermfan.com
 	
 	?>
 
-			<p style="text-align:center;width:90%;">
-				<span style="font-weight:;">ค้นหา:</span> <input type="text" id="txtSearch" name="txtSearch" mgetShowTableaxlength="50" />&nbsp;
-				<img id="imgSearch" src="img/del.png" alt="เคลียร์" title="เคลียร์" style="width:150px;width:14px;height:14px;">
-			</p>
-			<div class='datagrid'>
-				<table id='tblSearch' width='90%' align='center' class='tblSearch table table-bordered table-hover'>
-					<thead>
-						<tr>
+			
+<div class="alert alert-secondary" role="alert">
+			<table class="table table-hover">
+				<thead>
+					<tr>
 
-							<th bgcolor="#3399CC">ลำดับ </th>
-							<th bgcolor="#3399CC">ชื่อกิจกรรม </th>
-							<th bgcolor="#3399CC">คำนำหน้า</th>
-							<th bgcolor="#3399CC">ชื่อผู้สมัคร </th>
-							<th bgcolor="#3399CC">เบอร์โทรศัพท์ </th>
-							
-						</tr>
-					</thead>
+						<th scope="col">ลำดับ</th>
+						<th scope="col">ชื่อกิจกรรม </th>
+						<th scope="col">คำนำหน้า</th>
+						<th scope="col">ชื่อผู้สมัคร</th>
+						<th scope="col">เบอร์โทร</th>
+					</tr>
+				</thead>
 					<tbody>
 						<?php
 			$sql2=""; 
 			if(isset($_GET['act_id'] ) ){
 				$act_id = $_GET['act_id'];
-				$sql2 ="select * from tb_member where act_id = '$act_id' order by mem_id desc";  
+				$sql2 ="select * from tb_member where act_id = '$act_id' order by mem_id asc";  
 			}else{
 				$sql2 ="select * from tb_member  order by act_id desc";  
 			}
 			$qess2=$db->query($sql2);
-			$num = 1 ;
+			$num = 0 ;
 			while($fd2=$qess2->fetch_assoc()){	
 			$num += 1;
 		?>

@@ -1,3 +1,24 @@
+
+<?php 
+if(!isset($_SESSION['Status']))
+{
+	echo "Please Login!";
+	exit();
+}	
+
+
+if(!isset($_SESSION['Status']))
+{
+	echo "This page for Admin only!";
+	exit();
+}	
+?>
+
+
+
+
+
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <!-- <script src="http://sogddt.vinhphuc.gov.vn/ResourcesList/jquery.tablePagination.0.5.js"></script> -->
 <link rel="stylesheet" href="css/pagation-style.css">

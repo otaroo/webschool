@@ -4,12 +4,14 @@
 <div class="container">
   <div class="row">
     <div class="col-12">
-      <h1>
+      <h2>
+      <center>
         ข้อมูลบุคลากร
-      </h1>
+        </center>
+      </h2>
     </div>
   </div>
-
+<center>
   <div class="row justify-content-center">
 
     <?php
@@ -154,5 +156,5 @@
 
 
 
-
+  </center>
 </div>

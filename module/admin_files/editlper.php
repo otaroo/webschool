@@ -13,7 +13,7 @@ Download Code On : developers.khontermfan.com
     	 <div style="display:table; margin:0 auto; padding: 20px; width:70%;">
 		  <ol class="breadcrumb">
 		   <li class="active">
-		       <h2>แก้ไขข้อมูลคณะทำงาน</h2>
+		       <h2>แก้ไขรูปภาพคณะทำงาน</h2>
 		   </li>
 		  </ol>
 <?php 

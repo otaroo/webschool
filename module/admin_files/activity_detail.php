@@ -59,9 +59,13 @@
             <p class="lead">
                 <? echo $fd['act_des']?>
             </p>
+            <p class="lead">
+                <? echo $fd['act_place']?>
+            </p>
+
 
             <a type="button" id="btn_reg" href="?fd=admin&page=addtb_member&id_activity=<? echo  $id_activity; ?>"
-                class="btn btn-primary">สมัคร</a>
+                class="btn btn-primary">สมัครกิจกรรม</a>
             <label id="err9" class="err"></label>
             <hr>
 
