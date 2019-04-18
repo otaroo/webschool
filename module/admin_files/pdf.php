@@ -3,9 +3,9 @@
  $act_id = $_GET['act_id'];
 ob_clean();
 // require_once __DIR__ . '/vendor/autoload.php';
-require_once dirname(__DIR__, 2). '\vendor\autoload.php';
+require_once dirname(__DIR__, 2). '/vendor/autoload.php';
 // echo __DIR__;
- require_once dirname(__DIR__, 2).'\config.php';
+ require_once dirname(__DIR__, 2).'/config.php';
 
 
 
