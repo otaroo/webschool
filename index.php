@@ -1,7 +1,7 @@
 <?php
 		ob_start();
 		@session_start();
-		include("config.php");
+		include("config.php");   //คือการเชื่อมต่อมาจาก หน้า config ที่เชื่อมกับฐานข้อมูล
 
 ?>
 
@@ -138,7 +138,7 @@
                 require_once("$file");
                 }
             else{
-                require_once("main2.php");
+                require_once("main2.php");   // คือการเชื่อมกับไฟล์ main2 ใน การเพิ่มข้อมูล
                 }
             ?>
     </div>
@@ -158,7 +158,7 @@
   </span>
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="js/DataTables/datatables.min.js"></script>
-  <script src="vendor/lightbox2/src/js/lightbox.js"></script>
+  <script src="vendor/lightbox2/src/js/lightbox.js"></script>  
 
 </body>
 

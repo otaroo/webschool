@@ -3,7 +3,7 @@
 
         <?php
 		$id_activity=$_GET['id_activity'];
-    $sql ="SELECT * FROM tb_activity where act_id = '$id_activity' ";  
+    $sql ="SELECT * FROM tb_activity where act_id = '$id_activity' ";  // // ในส่วนของ from มาจาก ตารางกิจกรรม tb_activity ทำการแวร์ จากไอดีกิจกรรม เม่ื่อเราต้องการให้โชว์กิจกรรมที่เราคลิกเข้ามา ก็ทำการแวร์ where act_id = '$id_activity' "; 
     $qess=$db->query($sql);	
     while($fd=$qess->fetch_assoc()){	?>
 
@@ -30,7 +30,7 @@
 
             <hr>
             <?php
-             $dir_url="img/news/".$fd['act_id']."/";
+             $dir_url="img/news/".$fd['act_id']."/";   // ทำการโชว์รูปของกิจกรรมน้ันๆ
 
 				if(is_dir($dir_url)){
 				    $fol2 = scandir($dir_url);
@@ -57,7 +57,7 @@
 
             <!-- Post Content -->
             <p class="lead">
-                <? echo $fd['act_des']?>
+                <? echo $fd['act_des']?>    
             </p>
             <p class="lead">
                 <? echo $fd['act_place']?>

@@ -2,7 +2,7 @@
     <div class="row">
         <?php
 		$id_news=$_GET['id_news'];
-    $sql ="SELECT * FROM tb_new where id_news = '$id_news' ";  
+    $sql ="SELECT * FROM tb_new where id_news = '$id_news' ";    // ในส่วนของ from มาจาก ตารางข่าว tb_new ทำการแวร์ จากไอดีข่าว
     $qess=$db->query($sql);	
     while($fd=$qess->fetch_assoc()){	?>
       
@@ -119,13 +119,13 @@
     <<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script>
         $(document).ready(function () {
-            $.get("module/user_files/checkActCount.php", {
+            $.get("module/user_files/checkActCount.php", { 
                 act_id: $('#act_id').val()
             }, function (data) {
                 var arr = data.split("|");
                 console.log(arr);
 
-                if (parseInt(arr[1]) >= parseInt(arr[0])) {
+                if (parseInt(arr[1]) >= parseInt(arr[0])) {  
                     $('#btn_reg').hide();
                     $("#err9").html('กิจกรรมนี้คนสมัครเต็มแล้ว');
 

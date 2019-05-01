@@ -9,6 +9,16 @@
 	
 	}
 </script>
+
+<script language="JavaScript">
+	function chkThai(ele)
+	{
+	var vchar = String.fromCharCode(event.keyCode);
+	if ((vchar<'ก' || vchar>'ฮ') && (vchar != 'า') && (vchar != 'ุ') && (vchar != 'ู') && (vchar != 'ึ') && (vchar != 'ื') && (vchar != 'ี') && (vchar != 'ๆ') && (vchar != 'ไ') && (vchar != 'โ') && (vchar != ' ')&& (vchar != 'ำ') && (vchar != 'ะ') && (vchar != 'ั') && (vchar != 'เ') && (vchar != '็') && (vchar != '่') && (vchar != '้') && (vchar != '๊') && (vchar != '๋') && (vchar != 'ใ') && (vchar != '์') && (vchar != 'ิ') && (vchar != 'ฯ') ) return false;
+	ele.onKeyPress=vchar;
+	
+	}
+</script>
 <?php /*
 Create By:PK Model
 Generate Code By :Mr.Thanawat Kaewwongkhieo
@@ -52,7 +62,7 @@ Download Code On : developers.khontermfan.com
 			</div>
 		</div>
 		<div class="form-group"><label for="mem_name">ชื่อผู้สมัคร:</label><label id="err3" class="err"></label>
-			<input type="text" autocomplete="off" class="form-control" id="mem_name" name="mem_name">
+			<input type="text" autocomplete="off" class="form-control" id="mem_name" name="mem_name" OnKeyPress="return chkThai(this)">  
 		</div>
 		<div class="form-group"><label for="mem_tel">เบอร์โทร:</label><label id="err4" class="err"></label>
 			<input type="text"  autocomplete="off" Maxlength="10" OnKeyPress="return chkNum(this)" class="form-control" id="mem_tel" name="mem_tel" />

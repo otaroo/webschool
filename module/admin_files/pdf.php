@@ -39,16 +39,23 @@ table {
 
 <table border="1" width=600px height=90% align="center">
 
-<tbody><tr><td width=174><strong>ชื่อ-นามสกุล</strong></td><td width=174><strong>เบอร์โทร</strong></td><td width=174><strong>ลงชื่อ</strong></td></tr>'; 
+<tbody><tr><td width=30><strong>ลำดับ</strong></td><td width=174><strong>ชื่อ-นามสกุล</strong></td><td width=174><strong>เบอร์โทร</strong></td><td width=174><strong>ลงชื่อ</strong></td></tr>'; 
 
 
 
 
 $sql2 ="select * from tb_member where act_id='$act_id'";  
 $qess2=$db->query($sql2);	
+$count=1;
 while($fd2=$qess2->fetch_assoc()){	
-
-    $html = $html.'<tr><td align="left">'.$fd2['mem_name'].'</td><td>'.$fd2['mem_tel'].'</td><td></td></tr>';
+    
+    $html = $html.'<tr>
+                    <td align="left">'.$count.'</td>
+                    <td align="left">'.$fd2['mem_name'].'</td>
+                    <td>'.$fd2['mem_tel'].'</td>
+                    <td></td>
+                </tr>';
+    $count = $count + 1;           
 }
 $html = $html.'</tbody></table>' ; 
 

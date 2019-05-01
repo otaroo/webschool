@@ -12,6 +12,10 @@
     </label>
     <span id='status_login'></span>
     <button class="btn btn-lg btn-primary btn-block" onclick="return checkEmpty();" type="button">Login</button>   
+     <div class="text-center">
+            
+            <a class="d-block small" href="?fd=user&page=forgot_password">ลืมรหัสผ่าน</a>
+          </div>
   </form>
 </div></br></br>
 </div>
