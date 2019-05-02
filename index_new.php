@@ -83,7 +83,7 @@
             </div>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="?fd=admin&page=showtbact">โชว์กิจกรรม</a>
+            <a class="nav-link" href="?fd=admin&page=showtbact">แสดงกิจกรรม</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="?fd=admin&page=addtbact">เพิ่มกิจกรรม</a>
@@ -91,13 +91,13 @@
 
 
           <li class="nav-item">
-            <a class="nav-link" href="?fd=admin&page=addnews">ข่าว</a>
+            <a class="nav-link" href="?fd=admin&page=addnews">เพิ่มข่าวประชาสัมพันธ์</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="?fd=admin&page=showmember_new">รายชื่อคนเข้ากิจกรรม</a>
+            <a class="nav-link" href="?fd=admin&page=showmember_new">รายชื่อผู้เข้าร่วมกิจกรรม</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="?fd=admin&page=showtbrate">ดูผลการประเมิน</a>
+            <a class="nav-link" href="?fd=admin&page=showtbrate">ผลการประเมิน</a>
           </li>
 
           <li class="nav-item">

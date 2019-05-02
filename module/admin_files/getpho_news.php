@@ -1,9 +1,9 @@
 
 <?php
-$id_news = $_POST['id_news'];
+$id_news = $_POST['id_news']; // ไอดีของข่าว
 $dir_l = "../../img/news/".$id_news."/";
-$dir_url = "img/news/".$id_news."/";
- $type = array("jpg","png","gif","jpge");
+$dir_url = "img/news/".$id_news."/"; 
+ $type = array("jpg","png","gif","jpge"); // การทำให้รูปอยู่ใน ไฟล์ แบบ jpg
 $files_url = array();
 $img_url = array();
 $files_type = array();

@@ -7,7 +7,7 @@
 <title>ประวัติความเป็นมา</title>
 <style type="text/css">
 <!--
-.style1 {font-size: 24px}
+.style1 {font-size: 36px}
 .style4 {font-weight: bold; font-size: 36px; }
 -->
 </style>
