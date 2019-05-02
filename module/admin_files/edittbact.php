@@ -65,6 +65,22 @@ if(!isset($_SESSION['Status']))
 	</form>
 </div>
 <script language="javascript">
+	let old_act_date = new Date( $('#act_date').val());
+	let old_act_date_text = $('#act_date').val();
+	$( "#act_date" ).change(function() {
+		let new_act_date = new Date($(this).val());
+		if(new_act_date< old_act_date){
+			// console.log(new_act_date);
+			alert(`กรุณาเลือกวันที่กิจกรรมมากกว่าวันที่ ${old_act_date.getDate()}/${old_act_date.getMonth()+1}/${old_act_date.getFullYear()}`)
+			$(this).val(old_act_date_text)
+			return false;
+		}
+		
+  	
+	});
+
+
+	
 	function checkEmpty() {
 		$("#err1").html('');
 		$("#err2").html('');
