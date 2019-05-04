@@ -32,11 +32,11 @@ $mail->SMTPSecure = 'tls';
 //Whether to use SMTP authentication
 $mail->SMTPAuth = true;
 //Username to use for SMTP authentication
-$mail->Username = "aaaa@gmail.com";
+$mail->Username = "kaewsrithong0704@gmail.com";
 //Password to use for SMTP authentication
-$mail->Password = "bbbb";
+$mail->Password = "0704254008022511";
 //Set who the message is to be sent from
-$mail->setFrom('your@gmail.com', 'Tony jone');
+$mail->setFrom('kaewsrithong0704@gmail.com', 'Tanapron kaewsrithong');
 //Set who the message is to be sent to
 $mail->addAddress('kaewsrithong0704@gmail.com', 'itoffside');
 //Set the subject line

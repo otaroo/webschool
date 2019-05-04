@@ -20,7 +20,8 @@ while($row=$result->fetch_array(MYSQLI_BOTH) ){
 //This should be done in your php.ini, but this is how to do it if you don't have access to that
 date_default_timezone_set('Asia/Bangkok');
  
-require 'phpmailer/PHPMailerAutoload.php';
+require dirname(_DIR_, 2).'PHPMailer-master/src/PHPMailer.php';
+
  
 //Create a new PHPMailer instance
 $mail = new PHPMailer;
