@@ -1,4 +1,6 @@
 <?php
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
 
 if(isset($_POST["btnforget"]))
 {
@@ -18,11 +20,14 @@ while($row=$result->fetch_array(MYSQLI_BOTH) ){
 }
 //SMTP needs accurate times, and the PHP time zone MUST be set
 //This should be done in your php.ini, but this is how to do it if you don't have access to that
-date_default_timezone_set('Asia/Bangkok');
- 
-require dirname(_DIR_, 2).'PHPMailer-master/src/PHPMailer.php';
 
- 
+
+require dirname(__DIR__, 2).'/vendor/PHPMailer/src/Exception.php';
+require dirname(__DIR__, 2).'/vendor/PHPMailer/src/PHPMailer.php';
+require dirname(__DIR__, 2).'/vendor/PHPMailer/src/SMTP.php';
+
+
+date_default_timezone_set('Asia/Bangkok');
 //Create a new PHPMailer instance
 $mail = new PHPMailer;
 $mail->CharSet = "utf-8";
@@ -44,13 +49,13 @@ $mail->SMTPSecure = 'tls';
 //Whether to use SMTP authentication
 $mail->SMTPAuth = true;
 //Username to use for SMTP authentication
-$mail->Username = "kaewsrithong0704@gmail.com";
+$mail->Username = "jibtnp0704@gmail.com";
 //Password to use for SMTP authentication
-$mail->Password = "0704254008022511"; 
+$mail->Password = "07042540"; 
 //Set who the message is to be sent from
 $mail->setFrom('adminpage@gmail.com', 'Admin');
 //Set who the message is to be sent to
-$mail->addAddress($email, $member_name." ".$member_status);
+$mail->addAddress($email);
 //Set the subject line
 $mail->Subject = 'รหัสผ่าน';
 //Read an HTML message body from an external file, convert referenced images to embedded,
@@ -92,16 +97,14 @@ if (!$mail->send()) {
     <link href="css/sb-admin.css" rel="stylesheet">
 
   </head>
-
   <body class="bg-dark">
-
     <div class="container">
       <div class="card card-login mx-auto mt-5">
         <div class="card-header"></div>
         <div class="card-body">
           <div class="text-center mb-4">
             <h4>ลืมรหัสผ่านหรือไม่?</h4>
-            <p>ป้อนที่อยู่อีเมลของคุณแล้วเราจะส่งคำแนะนำวิธีการรีเซ็ตรหัสผ่านให้คุณ</p>
+            <p>ป้อนที่อยู่อีเมลของคุณแล้วเราจะส่งรหัสผ่านให้คุณ</p>
           </div>
           <form action=""  method="post" >
             <div class="form-group">

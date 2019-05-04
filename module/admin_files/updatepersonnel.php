@@ -25,7 +25,7 @@ Download Code On : developers.khontermfan.com
 						$lastname=strtolower($array_last [$c]);
 						$distination = $dir."/".$personnel_id.".".$lastname;
 	 					@copy($source,$distination);
-  		 	  $sql_update = "update personnel set personnel_name='$personnel_name',personnel_position='$personnel_position',personnel_img='.".$lastname' where personnel_id='$personnel_id' ";
+  		 	  $sql_update = "update personnel set personnel_name='$personnel_name',personnel_position='$personnel_position',personnel_img='$lastname' where personnel_id='$personnel_id'";
 			  $qqes = $db->query($sql_update);
 			 if($qqes){
 				echo "1";
